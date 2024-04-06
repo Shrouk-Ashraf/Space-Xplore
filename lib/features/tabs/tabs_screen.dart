@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:space_app/core/theming/colors.dart';
+import 'package:space_app/core/theming/styles.dart';
 import 'package:space_app/core/widgets/background.dart';
 import 'package:space_app/features/crew/crew_screen.dart';
 
@@ -19,7 +20,8 @@ class _TabsScreenState extends State<TabsScreen> {
     // const RocketsScreen(),     // to be uncommented
     // const LaunchesScreen(),   // to be uncommented
     const CrewScreen(),
-    // const ShipsScreen(),     // to be uncommented
+    // const ShipsScreen(),           // to be uncommented
+    // const CompanyInfoScreen(),    // to be uncommented
   ];
 
   void _selectScreenIndex(int index) {
@@ -35,22 +37,24 @@ class _TabsScreenState extends State<TabsScreen> {
         child: _widgetOptions[_selectedScreenIndex],
       ),
       bottomNavigationBar: GNav(
-        tabMargin: EdgeInsets.only(
-          top: 10.h,
-          left: 5.h,
-          right: 5.h,
-        ),
         tabs: [
           _buildNavigationBarItem(Icons.rocket_sharp, 'Rockets'),
           _buildNavigationBarItem(Icons.rocket_launch_sharp, 'Launches'),
           _buildNavigationBarItem(Icons.people_sharp, 'Crew'),
           _buildNavigationBarItem(Icons.directions_boat_filled_sharp, 'Ships'),
+          _buildNavigationBarItem(Icons.info_outline, 'Company Info'),
         ],
+        tabMargin: EdgeInsets.only(
+          top: 15.h,
+          left: 10.w,
+          right: 10.w,
+        ),
+        textStyle: TextStyles.font10WhiteBold,
+        iconSize: 18.w,
+        gap: 5.w,
         backgroundColor: ColorsManager.black,
         activeColor: ColorsManager.white,
         color: ColorsManager.grey,
-        gap: 5.w,
-        iconSize: 18.sp,
         tabBackgroundColor: ColorsManager.darkGrey,
         selectedIndex: _selectedScreenIndex,
         onTabChange: _selectScreenIndex,
@@ -62,6 +66,10 @@ class _TabsScreenState extends State<TabsScreen> {
     return GButton(
       icon: icon,
       text: label,
+      padding: EdgeInsets.symmetric(
+        vertical: 5.h,
+        horizontal: 8.w,
+      ),
     );
   }
 }
