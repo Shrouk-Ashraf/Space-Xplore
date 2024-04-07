@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:space_app/core/theming/styles.dart';
 import 'package:space_app/features/crew/presentation/crew_grid_view.dart';
-import 'package:space_app/core/widgets/subtitle.dart';
 import 'package:space_app/core/widgets/title.dart';
 
 class CrewScreen extends StatelessWidget {
@@ -19,7 +19,7 @@ class CrewScreen extends StatelessWidget {
         children: [
           const TitleText(),
           SizedBox(height: 15.h),
-          const SubtitleText(subtitle: 'Crew'),
+          Text('Crew', style: TextStyles.font20White500Weight),
           const CrewGridView(),
         ],
       ),

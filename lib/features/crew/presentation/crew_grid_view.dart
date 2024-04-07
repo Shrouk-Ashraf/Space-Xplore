@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:space_app/features/crew/presentation/crew_grid_item.dart';
+import 'package:space_app/features/crew/data/crew_data.dart';
+import 'package:space_app/features/crew/presentation/crew_grid_member.dart';
 
 class CrewGridView extends StatelessWidget {
   const CrewGridView({super.key});
 
-  // should have list of widgets returned from API
-  // List<CrewModel> crew;
+  // should have list of widgets returned from API, for now import crew list from crew data
 
   @override
   Widget build(BuildContext context) {
@@ -18,13 +18,11 @@ class CrewGridView extends StatelessWidget {
         ),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          childAspectRatio: 240.w / 400.h,
-          crossAxisSpacing: 15.w,
-          mainAxisSpacing: 10.h,
+          childAspectRatio: 150.w / 250.h,
+          crossAxisSpacing: 20.w,
         ),
-        children: const [
-          // loop on list, for now no list just item
-          CrewGridItem(),
+        children: [
+          for (final member in crewList) CrewMemberGrid(crewMember: member),
         ],
       ),
     );
