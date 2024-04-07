@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:space_app/features/crew/data/crew_data.dart';
-import 'package:space_app/features/crew/presentation/crew_grid_member.dart';
+import 'package:space_app/features/crew/presentation/crew_member_grid.dart';
 
 class CrewGridView extends StatelessWidget {
   const CrewGridView({super.key});
