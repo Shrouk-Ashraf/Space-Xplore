@@ -8,7 +8,7 @@ abstract class AppTheming {
     colorScheme: ColorScheme.light(
       background: Colors.white,
       primary: Colors.white,
-      secondary: ColorManager.lightGrey,
+      secondary: ColorsManager.lightGrey,
     ),
   );
   static ThemeData darkTheme = ThemeData(
@@ -16,7 +16,7 @@ abstract class AppTheming {
     colorScheme: ColorScheme.dark(
       background: Colors.black,
       primary: Colors.black,
-      secondary: ColorManager.lightBlck,
+      secondary: ColorsManager.lightBlck,
     ),
   );
 }

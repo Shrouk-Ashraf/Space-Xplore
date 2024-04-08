@@ -15,7 +15,7 @@ abstract class StylesManager {
   static TextStyle font25Grey = TextStyle(
     fontSize: 25,
     fontWeight: FontWeightManager.regular,
-    color: ColorManager.grey,
+    color: ColorsManager.grey,
   );
   static TextStyle font25 = TextStyle(
     fontSize: 25,
@@ -29,12 +29,12 @@ abstract class StylesManager {
   static TextStyle font16Grey = TextStyle(
     fontSize: 16,
     fontWeight: FontWeightManager.regular,
-    color: ColorManager.grey,
+    color: ColorsManager.grey,
   );
   static TextStyle font20Grey = TextStyle(
     fontSize: 20,
     fontWeight: FontWeightManager.regular,
-    color: ColorManager.grey,
+    color: ColorsManager.grey,
   );
   static TextStyle font16White = TextStyle(
     fontSize: 16,
@@ -44,16 +44,16 @@ abstract class StylesManager {
   static TextStyle font36Blue = TextStyle(
     fontSize: 60,
     fontWeight: FontWeightManager.semiBold,
-    color: ColorManager.blue,
+    color: ColorsManager.blue,
   );
   static TextStyle font36Red = TextStyle(
     fontSize: 60,
     fontWeight: FontWeightManager.semiBold,
-    color: ColorManager.red,
+    color: ColorsManager.red,
   );
   static TextStyle font20Blue = TextStyle(
     fontSize: 20,
     fontWeight: FontWeightManager.medium,
-    color: ColorManager.blue,
+    color: ColorsManager.blue,
   );
 }
