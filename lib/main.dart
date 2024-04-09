@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:space_app/features/tabs/tabs_screen.dart';
+import 'package:space_app/core/widgets/bottom_nav_bar.dart';
 
 void main() {
   runApp(const SpaceApp());
@@ -15,7 +15,7 @@ class SpaceApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Space App',
-        home: TabsScreen(),
+        home: BottomNavBar(),
       ),
     );
   }

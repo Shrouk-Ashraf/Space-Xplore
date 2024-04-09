@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   google_nav_bar: ^5.0.6
   flutter_screenutil: ^5.9.0
+  persistent_bottom_nav_bar: ^5.0.2
 
 dev_dependencies:
   flutter_test:
@@ -76,10 +77,10 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+  fonts:
+    - family: Orbitron
+      fonts:
+        - asset: assets/fonts/Orbitron-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
