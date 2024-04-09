@@ -11,8 +11,8 @@ class SpaceApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const ScreenUtilInit(
-      designSize: Size(375, 812),
+    return ScreenUtilInit(
+      designSize: const Size(375, 812),
       minTextAdapt: true,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
