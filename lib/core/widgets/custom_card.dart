@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:space_app/core/theming/images_data.dart';
 
@@ -29,12 +27,6 @@ class CustomCard extends StatelessWidget {
         child: Stack(
           clipBehavior: Clip.none,
           children: [
-            BackdropFilter(
-              filter: ImageFilter.blur(
-                sigmaX: 4,
-                sigmaY: 4,
-              ),
-            ),
             const Card(
               elevation: 5,
               color: Colors.transparent,
