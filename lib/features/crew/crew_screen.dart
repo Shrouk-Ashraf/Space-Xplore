@@ -23,7 +23,7 @@ class CrewScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(height: 10.h),
-                Text('Crew', style: TextStyles.font20White500Weight),
+                Text('Crew', style: TextStyles.font18White500Weight),
                 SizedBox(height: 10.h),
                 const CrewGridView(),
               ],

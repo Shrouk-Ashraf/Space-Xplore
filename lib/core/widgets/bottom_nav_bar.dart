@@ -34,12 +34,9 @@ class BottomNavBar extends StatelessWidget {
 
   PersistentBottomNavBarItem _buildNavBarItem(IconData icon, String label) {
     return PersistentBottomNavBarItem(
-      icon: Icon(
-        icon,
-        color: ColorsManager.white,
-      ),
+      icon: Icon(icon),
+      inactiveColorPrimary: ColorsManager.white,
       title: label,
-      activeColorPrimary: ColorsManager.white,
       iconSize: 15.w,
       textStyle: TextStyles.font10WhiteBold,
     );
@@ -74,7 +71,7 @@ class BottomNavBar extends StatelessWidget {
         curve: Curves.ease,
         duration: Duration(milliseconds: 200),
       ),
-      navBarStyle: NavBarStyle.style6,
+      navBarStyle: NavBarStyle.style1,
     );
   }
 }

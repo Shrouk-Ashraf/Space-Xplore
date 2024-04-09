@@ -18,8 +18,6 @@ class CustomGridContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 100.w,
-      height: 100.h,
       clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20.r),

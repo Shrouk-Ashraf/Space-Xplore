@@ -3,9 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:space_app/core/theming/colors.dart';
 
 class TextStyles {
-  static TextStyle font30WhiteBold = TextStyle(
+  static TextStyle font24WhiteBold = TextStyle(
     color: ColorsManager.white,
-    fontSize: 30.sp,
+    fontSize: 24.sp,
     fontWeight: FontWeight.bold,
     fontFamily: 'Orbitron',
   );
@@ -13,30 +13,30 @@ class TextStyles {
     color: ColorsManager.white,
     fontSize: 10.sp,
     fontWeight: FontWeight.bold,
-    fontFamily: 'Orbitron',
+    fontFamily: 'Orienta',
   );
   static TextStyle font12WhiteBold = TextStyle(
     color: ColorsManager.white,
     fontSize: 12.sp,
     fontWeight: FontWeight.bold,
-    fontFamily: 'Orbitron',
+    fontFamily: 'Orienta',
   );
   static TextStyle font15WhiteBold = TextStyle(
     color: ColorsManager.white,
     fontSize: 15.sp,
     fontWeight: FontWeight.bold,
-    fontFamily: 'Orbitron',
+    fontFamily: 'Orienta',
   );
   static TextStyle font10White500Weight = TextStyle(
     color: ColorsManager.white,
     fontSize: 10.sp,
     fontWeight: FontWeight.w500,
-    fontFamily: 'Orbitron',
+    fontFamily: 'Orienta',
   );
-  static TextStyle font20White500Weight = TextStyle(
+  static TextStyle font18White500Weight = TextStyle(
     color: ColorsManager.white,
-    fontSize: 20.sp,
+    fontSize: 18.sp,
     fontWeight: FontWeight.w500,
-    fontFamily: 'Orbitron',
+    fontFamily: 'Orienta',
   );
 }
