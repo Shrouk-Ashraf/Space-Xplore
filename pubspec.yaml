@@ -28,7 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  cupertino_icons: ^1.0.6
+
   flutter:
     sdk: flutter
 
@@ -40,6 +40,8 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
   flutter_native_splash: ^2.4.0
+  persistent_bottom_nav_bar: ^5.0.2
+  flutter_screenutil: ^5.9.0
 
 dev_dependencies:
   flutter_lints: ^3.0.0
@@ -75,7 +77,10 @@ flutter:
         - asset: assets/fonts/Orbitron-Regular.ttf
     - family: Ubuntu
       fonts:
-        - asset: assets/fonts/Ubuntu-Regular.ttf        
+        - asset: assets/fonts/Ubuntu-Regular.ttf    
+    - family: Orienta
+      fonts:
+        - asset: assets/fonts/Orienta-Regular.ttf      
   
        
         
