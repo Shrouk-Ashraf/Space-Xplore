@@ -6,7 +6,7 @@ import 'package:space_app/core/widgets/custom_grid_container.dart';
 import '../data/rocket_data.dart';
 
 class RocketGridView extends StatelessWidget {
-  const RocketGridView({super.key});
+  const RocketGridView({super.key, });
 
   // should have a list returned from API, for now import crew list from crew dummy data
 
@@ -21,10 +21,10 @@ class RocketGridView extends StatelessWidget {
           mainAxisSpacing: 30.h,
         ),
         children: [
-          for (final member in crewList)
+          for (final member in rocketList)
             CustomGridContainer(
-              title: member.name,
-              imageUrl: member.imageUrl,
+              title: member.name!,
+              imageUrl: member.flickrImages![0],
             ),
         ],
       ),
