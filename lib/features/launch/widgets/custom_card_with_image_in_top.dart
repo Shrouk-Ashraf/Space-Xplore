@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:space_app/core/theming/styles.dart';
 
-class CustomCard extends StatelessWidget {
-  const CustomCard(
+class CustomCardWithImageInTop extends StatelessWidget {
+  const CustomCardWithImageInTop(
       {super.key,
       required this.title,
       required this.subTitle,
@@ -21,9 +21,9 @@ class CustomCard extends StatelessWidget {
       clipBehavior: Clip.none,
       children: [
         Positioned(
-          top: 75.h,
+          top: 60.h,
           child: Container(
-            width: 180.w,
+            width: 140.w,
             margin: const EdgeInsets.symmetric(vertical: 30),
             padding: const EdgeInsets.all(25),
             decoration: BoxDecoration(
@@ -55,15 +55,17 @@ class CustomCard extends StatelessWidget {
                 ),
                 Text(
                   subTitle,
-                  style: TextStyles.font12GreyRegular,
+                  style: TextStyles.font12GreyRegular
+                      .copyWith(overflow: TextOverflow.ellipsis),
+                  maxLines: 5,
                 ),
               ],
             ),
           ),
         ),
         Container(
-          height: 120.h,
-          width: 120.w,
+          height: 100.h,
+          width: 100.w,
           decoration: BoxDecoration(
             image: DecorationImage(
               image: NetworkImage(
