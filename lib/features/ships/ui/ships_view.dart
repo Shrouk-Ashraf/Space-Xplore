@@ -9,7 +9,7 @@ import 'package:space_app/features/ships/data/testData.dart';
 
 class ShipsView extends StatelessWidget {
   ShipsView({super.key});
-  List<TestMyData> data = [
+  List<TestMyData> dataOfShips = [
     TestMyData(
         imageUrl: "https://i.imgur.com/woCxpkj.jpg",
         title: "American Champion"),
@@ -55,11 +55,11 @@ class ShipsView extends StatelessWidget {
                               mainAxisSpacing: 18,
                               crossAxisSpacing: 15,
                               childAspectRatio: .8),
-                      itemCount: data.length,
+                      itemCount: dataOfShips.length,
                       itemBuilder: ((context, index) {
                         return CustomGridContainer(
-                          imageUrl: data[index].imageUrl,
-                          title: data[index].title,
+                          imageUrl: dataOfShips[index].imageUrl,
+                          title: dataOfShips[index].title,
                         );
                       })),
                 ),
