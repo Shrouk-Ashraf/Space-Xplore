@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:space_app/features/onboarding/views/onboarding_screen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:space_app/core/widgets/bottom_nav_bar.dart';
 
@@ -15,7 +16,7 @@ class SpaceApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Space App',
-        home: BottomNavBar(),
+        home: OnBoardingScreen(),
       ),
     );
   }
