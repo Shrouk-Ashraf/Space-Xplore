@@ -80,46 +80,6 @@ class LaunchesScreen extends StatelessWidget {
           ),
         ),
       ),
-
-      // ListView.separated(
-      //         scrollDirection: Axis.horizontal,
-      //         shrinkWrap: true,
-      //         itemCount: 10,
-      //         separatorBuilder: (context, index) {
-      //           return SizedBox(
-      //             width: 50.w,
-      //           );
-      //         },
-      //         itemBuilder: (context, indext) {
-      //           return CustomCardWithImageInLeft();
-      //         }),
-
-      // Container(
-      //   width: double.infinity,
-      //   height: double.infinity,
-      //   decoration: const BoxDecoration(
-      //     image: DecorationImage(
-      //       image: AssetImage(
-      //         "assets/images/background_image.png",
-      //       ),
-      //       fit: BoxFit.fill,
-      //     ),
-      //   ),
-      //   child: SafeArea(
-      //     child: ListView.separated(
-      //         scrollDirection: Axis.horizontal,
-      //         shrinkWrap: true,
-      //         itemCount: 10,
-      //         separatorBuilder: (context, index) {
-      //           return SizedBox(
-      //             width: 50.w,
-      //           );
-      //         },
-      //         itemBuilder: (context, indext) {
-      //           return CustomCardWithImageInLeft();
-      //         }),
-      //   ),
-      // ),
     );
   }
 }
