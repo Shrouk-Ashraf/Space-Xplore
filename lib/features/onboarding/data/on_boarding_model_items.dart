@@ -6,7 +6,7 @@ List<OnBoarding> onBoardingItems() {
       image: 'assets/images/Onboarding.png',
       title: 'Welcome to SpaceX',
       subTitle:
-          'Explore the world of SpaceX -\n rockets, launches, and the crew \nshaping the future of space travel.',
+          'Explore the world of SpaceX -\nrockets, launches, and the crew \nshaping the future of space travel.',
     ),
     OnBoarding(
       image: 'assets/images/Onboarding num2.png',

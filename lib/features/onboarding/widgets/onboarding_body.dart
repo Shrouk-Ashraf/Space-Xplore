@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:space_app/core/widgets/bottom_nav_bar.dart';
 
 import '../data/on_boarding_model.dart';
 import 'onboarding_body_widget.dart';
@@ -21,9 +22,7 @@ class _OnboardingBodyState extends State<OnboardingBody> {
         controller: nextPage,
         onPageChanged: (value) {
           pageNumber = value;
-          setState(() {
-            
-          });
+          setState(() {});
         },
         children: [
           OnBoardingBodyWidget(
@@ -38,7 +37,10 @@ class _OnboardingBodyState extends State<OnboardingBody> {
           OnBoardingBodyWidget(
             pageNumber: pageNumber,
             onBoarding: widget.items[1],
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const BottomNavBar()));
+            },
           ),
         ]);
   }
