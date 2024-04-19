@@ -31,8 +31,9 @@ class CustomGridContainer extends StatelessWidget {
             height: 110.h,
             width: double.infinity,
           ),
-          SizedBox(height: 10.h),
-          Center(
+          SizedBox(height: 8.h),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 8.w),
             child: Text(
               title,
               style: TextStyles.font12WhiteBold,
