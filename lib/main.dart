@@ -4,6 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:space_app/features/ships/ui/ships_view.dart';
 
 import 'package:space_app/features/onboarding/views/onboarding_screen.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:space_app/core/widgets/bottom_nav_bar.dart';
 
 
 void main() {
@@ -24,11 +26,17 @@ class SpaceApp extends StatelessWidget {
         title: "Space App",
         home: ShipsView(),
       ),
-
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Space App",
       home: OnboardingScreen(),
+
+    return const ScreenUtilInit(
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Space App',
+        home: OnBoardingScreen(),
+      ),
     );
   }
 }

@@ -38,9 +38,15 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
+
   cupertino_icons: ^1.0.6
   flutter_screenutil: ^5.9.0
   persistent_bottom_nav_bar: ^5.0.2
+
+  persistent_bottom_nav_bar: ^5.0.2
+  flutter_native_splash: ^2.4.0
+  flutter_screenutil: ^5.9.0
+
 
 dev_dependencies:
   flutter_lints: ^3.0.0
@@ -61,7 +67,6 @@ flutter:
     - assets/images/
   #   - images/a_dot_ham.jpeg
 
-
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
   # For details regarding adding assets from package dependencies, see
@@ -76,15 +81,20 @@ flutter:
       fonts:
         - asset: assets/fonts/Orbitron-Regular.ttf
 
+
     - family: Orienta
       fonts:
         - asset: assets/fonts/Orbitron-Regular.ttf
+
+
+    - family: Orienta
+      fonts:
+        - asset: assets/fonts/Orienta-Regular.ttf
 
     - family: Ubuntu
       fonts:
         - asset: assets/fonts/Ubuntu-Regular.ttf        
   
-       
         
   #         style: italic
   #   - family: Trajan Pro
