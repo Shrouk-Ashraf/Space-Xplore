@@ -1,9 +1,8 @@
-import 'package:equatable/equatable.dart';
 
 import 'payloads.dart';
 import 'thrust.dart';
 
-class SecondStage extends Equatable {
+class SecondStage   {
 	final Thrust? thrust;
 	final Payloads? payloads;
 	final bool? reusable;

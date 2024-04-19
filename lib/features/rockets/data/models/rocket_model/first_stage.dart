@@ -1,9 +1,8 @@
-import 'package:equatable/equatable.dart';
 
 import 'thrust_sea_level.dart';
 import 'thrust_vacuum.dart';
 
-class FirstStage extends Equatable {
+class FirstStage  {
 	final ThrustSeaLevel? thrustSeaLevel;
 	final ThrustVacuum? thrustVacuum;
 	final bool? reusable;

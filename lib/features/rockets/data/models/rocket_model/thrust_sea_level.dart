@@ -1,6 +1,5 @@
-import 'package:equatable/equatable.dart';
 
-class ThrustSeaLevel extends Equatable {
+class ThrustSeaLevel   {
 	final int? kN;
 	final int? lbf;
 

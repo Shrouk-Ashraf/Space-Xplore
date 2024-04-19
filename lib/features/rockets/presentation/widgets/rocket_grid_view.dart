@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:space_app/core/widgets/custom_grid_container.dart';
 
-import '../data/rocket_data.dart';
+import '../../data/rocket_data.dart';
 
 class RocketGridView extends StatelessWidget {
   const RocketGridView({super.key, });

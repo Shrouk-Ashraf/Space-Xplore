@@ -1,6 +1,5 @@
-import 'package:equatable/equatable.dart';
 
-class Diameter extends Equatable {
+class Diameter  {
 	final double? meters;
 	final double? feet;
 

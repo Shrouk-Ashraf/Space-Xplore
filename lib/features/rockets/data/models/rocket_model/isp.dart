@@ -1,6 +1,5 @@
-import 'package:equatable/equatable.dart';
 
-class Isp extends Equatable {
+class Isp   {
 	final int? seaLevel;
 	final int? vacuum;
 

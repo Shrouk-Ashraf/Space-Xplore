@@ -1,6 +1,5 @@
-import 'package:equatable/equatable.dart';
 
-class Height extends Equatable {
+class Height {
 	final double? meters;
 	final int? feet;
 

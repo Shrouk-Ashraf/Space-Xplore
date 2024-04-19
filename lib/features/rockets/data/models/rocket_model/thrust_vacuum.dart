@@ -1,6 +1,5 @@
-import 'package:equatable/equatable.dart';
 
-class ThrustVacuum extends Equatable {
+class ThrustVacuum   {
 	final int? kN;
 	final int? lbf;
 

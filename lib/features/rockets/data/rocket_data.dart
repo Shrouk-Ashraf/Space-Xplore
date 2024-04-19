@@ -9,6 +9,7 @@ List<RocketModel> rocketList = [
     flickrImages:
        [ 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/SpaceX_Demo-2_Launch_%28NHQ202005300044%29_%28cropped%29.jpg/330px-SpaceX_Demo-2_Launch_%28NHQ202005300044%29_%28cropped%29.jpg'],
     wikipedia: 'https://en.wikipedia.org/wiki/Falcon_9',
+    description: "The Falcon 1 was an expendable launch system privately developed and manufactured by SpaceX during 2006-2009. On 28 September 2008, Falcon 1 became the first privately-developed liquid-fuel launch vehicle to go into orbit around the Earth."
   ),
   const RocketModel(
     name: 'Falcon Heavy',

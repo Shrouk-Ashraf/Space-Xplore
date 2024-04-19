@@ -1,4 +1,3 @@
-import 'package:equatable/equatable.dart';
 
 import 'diameter.dart';
 import 'engines.dart';
@@ -9,7 +8,7 @@ import 'mass.dart';
 import 'payload_weight.dart';
 import 'second_stage.dart';
 
-class RocketModel extends Equatable {
+class RocketModel  {
 	final Height? height;
 	final Diameter? diameter;
 	final Mass? mass;

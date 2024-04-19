@@ -1,6 +1,5 @@
-import 'package:equatable/equatable.dart';
 
-class PayloadWeight extends Equatable {
+class PayloadWeight   {
 	final String? id;
 	final String? name;
 	final int? kg;

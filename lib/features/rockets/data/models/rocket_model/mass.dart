@@ -1,6 +1,5 @@
-import 'package:equatable/equatable.dart';
 
-class Mass extends Equatable {
+class Mass  {
 	final int? kg;
 	final int? lb;
 

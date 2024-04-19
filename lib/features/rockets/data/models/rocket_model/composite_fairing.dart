@@ -1,9 +1,8 @@
-import 'package:equatable/equatable.dart';
 
 import 'diameter.dart';
 import 'height.dart';
 
-class CompositeFairing extends Equatable {
+class CompositeFairing  {
 	final Height? height;
 	final Diameter? diameter;
 

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../core/theming/styles.dart';
-import '../../core/widgets/app_bar.dart';
-import '../../core/widgets/background.dart';
-import 'presentation/rocket_grid_view.dart';
+import '../../../../core/theming/styles.dart';
+import '../../../../core/widgets/app_bar.dart';
+import '../../../../core/widgets/background.dart';
+import '../widgets/rocket_grid_view.dart';
 
 class RocketsScreen extends StatelessWidget {
   const RocketsScreen({super.key});

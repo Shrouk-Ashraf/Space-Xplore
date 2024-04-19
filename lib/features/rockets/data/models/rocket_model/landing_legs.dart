@@ -1,6 +1,5 @@
-import 'package:equatable/equatable.dart';
 
-class LandingLegs extends Equatable {
+class LandingLegs  {
 	final int? number;
 	final dynamic material;
 

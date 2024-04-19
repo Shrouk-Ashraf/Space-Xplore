@@ -1,8 +1,7 @@
-import 'package:equatable/equatable.dart';
 
 import 'composite_fairing.dart';
 
-class Payloads extends Equatable {
+class Payloads   {
 	final CompositeFairing? compositeFairing;
 	final String? option1;
 
