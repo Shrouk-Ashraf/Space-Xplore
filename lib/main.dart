@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'features/rockets/presentation/screens/rocket_details_screen.dart';
 
+
+import 'package:space_app/features/onboarding/views/onboarding_screen.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:space_app/core/widgets/bottom_nav_bar.dart';
 
 
 void main() {
@@ -19,7 +24,11 @@ class SpaceApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Space App',
+
         home: RocketDetailsScreen(),
+
+        home: OnBoardingScreen(),
+
       ),
     );
   }
