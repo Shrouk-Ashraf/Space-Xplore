@@ -1,10 +1,10 @@
-import 'package:equatable/equatable.dart';
+
 
 import 'isp.dart';
 import 'thrust_sea_level.dart';
 import 'thrust_vacuum.dart';
 
-class Engines extends Equatable {
+class Engines  {
 	final Isp? isp;
 	final ThrustSeaLevel? thrustSeaLevel;
 	final ThrustVacuum? thrustVacuum;
