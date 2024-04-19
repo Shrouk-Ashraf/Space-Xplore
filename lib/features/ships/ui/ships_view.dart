@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:space_app/core/app_bar.dart';
 import 'package:space_app/core/helper/spacing.dart';
 import 'package:space_app/core/theming/styles.dart';
-import 'package:space_app/core/widgets/bacground.dart';
+import 'package:space_app/core/widgets/background.dart';
 import 'package:space_app/core/widgets/custom_grid_container.dart';
 import 'package:space_app/features/ships/data/testData.dart';
 
