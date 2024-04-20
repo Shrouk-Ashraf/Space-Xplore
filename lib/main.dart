@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:space_app/features/onboarding/views/onboarding_screen.dart';
+import 'package:space_app/features/onboarding/ui/onboarding_screen.dart';
 
 void main() {
   runApp(const SpaceApp());
