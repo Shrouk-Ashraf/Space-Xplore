@@ -1,9 +1,9 @@
-class OnBoarding {
+class OnBoardingModel {
   final String image;
   final String title;
   final String subTitle;
 
-  OnBoarding({
+  OnBoardingModel({
     required this.image,
     required this.title,
     required this.subTitle,

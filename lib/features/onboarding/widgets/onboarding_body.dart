@@ -5,7 +5,7 @@ import 'onboarding_body_widget.dart';
 
 class OnboardingBody extends StatefulWidget {
   const OnboardingBody({super.key, required this.items});
-  final List<OnBoarding> items;
+  final List<OnBoardingModel> items;
 
   @override
   State<OnboardingBody> createState() => _OnboardingBodyState();
@@ -21,9 +21,7 @@ class _OnboardingBodyState extends State<OnboardingBody> {
         controller: nextPage,
         onPageChanged: (value) {
           pageNumber = value;
-          setState(() {
-            
-          });
+          setState(() {});
         },
         children: [
           OnBoardingBodyWidget(
