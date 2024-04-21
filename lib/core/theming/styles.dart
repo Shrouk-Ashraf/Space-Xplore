@@ -32,7 +32,6 @@ class TextStyles {
     color: ColorsManager.white,
     fontSize: 12.sp,
     fontWeight: FontWeight.bold,
-    fontFamily: 'Orienta',
   );
 
   static TextStyle font15WhiteBold = TextStyle(

@@ -1,14 +1,16 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/theming/styles.dart';
 
 class CustomGridContainer extends StatelessWidget {
   const CustomGridContainer({
-    Key? key,
+    super.key,
     required this.title,
     required this.imageUrl,
-  }) : super(key: key);
+  });
 
   final String title;
   final String imageUrl;
@@ -22,16 +24,12 @@ class CustomGridContainer extends StatelessWidget {
         color: ColorsManager.semiTransparent,
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Expanded(
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(15.r),
-              child: Image.network(
-                imageUrl,
-                fit: BoxFit.cover,
-              ),
-            ),
+          Image.network(
+            imageUrl,
+            fit: BoxFit.fill,
+            height: 110.h,
+            width: double.infinity,
           ),
           SizedBox(height: 8.h),
           Padding(

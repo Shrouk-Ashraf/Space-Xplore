@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:space_app/core/widgets/app_bar.dart';
-import 'package:space_app/core/widgets/background.dart';
+import 'package:space_app/core/widgets/custom_app_bar.dart';
+import 'package:space_app/core/widgets/background_container.dart';
 
 class CompanyInfoScreen extends StatelessWidget {
   const CompanyInfoScreen({super.key});

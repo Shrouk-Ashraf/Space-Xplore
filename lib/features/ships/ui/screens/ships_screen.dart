@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:space_app/core/app_bar.dart';
 import 'package:space_app/core/helper/spacing.dart';
 import 'package:space_app/core/theming/styles.dart';
-import 'package:space_app/core/widgets/background.dart';
+import 'package:space_app/core/widgets/background_container.dart';
+import 'package:space_app/core/widgets/custom_app_bar.dart';
 import 'package:space_app/core/widgets/custom_grid_container.dart';
-import 'package:space_app/features/ships/ui/ship_details_screen.dart';
+import 'package:space_app/features/ships/ui/screens/ship_details_screen.dart';
 import 'package:space_app/features/ships/data/testData.dart';
 
 class ShipsScreen extends StatelessWidget {
@@ -26,36 +26,41 @@ class ShipsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: const CustomAppBar(
+        title: "SpaceX",
+      ),
       body: BackgroundContainer(
-        child: Column(
-          children: [
-            const CustomAppBar(),
-            verticalSpace(20.h),
-            Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: 12.w,
-              ),
-              child: Align(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  "All Ships",
-                  style: TextStyles.font18White500Weight,
-                ),
-              ),
-            ),
-            Expanded(
-              child: Padding(
+        child: SafeArea(
+          child: Column(
+            children: [
+              verticalSpace(10.h),
+              Padding(
                 padding: EdgeInsets.symmetric(
                   horizontal: 12.w,
                 ),
-                child: Container(
-                  child: GridView.builder(
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 2,
-                              mainAxisSpacing: 18,
-                              crossAxisSpacing: 15,
-                              childAspectRatio: .8),
+                child: Align(
+                  alignment: Alignment.topLeft,
+                  child: Text(
+                    "All Ships",
+                    style: TextStyles.font18White500Weight,
+                  ),
+                ),
+              ),
+              verticalSpace(20.h),
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 20.w,
+                  ),
+                  child: Container(
+                    child: GridView.builder(
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        childAspectRatio: 100.w / 110.h,
+                        crossAxisSpacing: 35.w,
+                        mainAxisSpacing: 30.h,
+                      ),
                       itemCount: dataOfShips.length,
                       itemBuilder: ((context, index) {
                         return GestureDetector(
@@ -70,11 +75,13 @@ class ShipsScreen extends StatelessWidget {
                             title: dataOfShips[index].title,
                           ),
                         );
-                      })),
+                      }),
+                    ),
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

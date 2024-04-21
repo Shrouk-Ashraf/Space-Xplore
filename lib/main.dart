@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import 'package:space_app/features/onboarding/screens/onboarding_screen.dart';
+import 'package:space_app/features/onboarding/ui/screens/onboarding_screen.dart';
 
 void main() {
   runApp(const SpaceApp());
@@ -12,10 +11,9 @@ class SpaceApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
+    return const ScreenUtilInit(
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(fontFamily: "Orienta"),
         home: OnboardingScreen(),
       ),
     );

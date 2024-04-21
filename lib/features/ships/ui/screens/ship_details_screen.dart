@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:space_app/core/helper/spacing.dart';
 import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/theming/styles.dart';
-import 'package:space_app/core/widgets/background.dart';
+import 'package:space_app/core/widgets/background_container.dart';
 
 class ShipDetailsScreen extends StatelessWidget {
   @override

@@ -1,12 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:space_app/core/theming/styles.dart';
 import 'package:space_app/core/widgets/background_container.dart';
 import 'package:space_app/core/widgets/custom_app_bar.dart';
-import 'package:space_app/features/launch/widgets/custom_card_with_image_in_left.dart';
-import 'package:space_app/features/launch/widgets/custom_card_with_image_in_top.dart';
+import 'package:space_app/features/launches/ui/widgets/custom_card_with_image_in_left.dart';
+import 'package:space_app/features/launches/ui/widgets/custom_card_with_image_in_top.dart';
 
 class LaunchesScreen extends StatelessWidget {
   const LaunchesScreen({super.key});
@@ -15,7 +13,9 @@ class LaunchesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: const CustomAppBar(),
+      appBar: const CustomAppBar(
+        title: "SpaceX",
+      ),
       body: BackgroundContainer(
         child: SafeArea(
           child: SingleChildScrollView(

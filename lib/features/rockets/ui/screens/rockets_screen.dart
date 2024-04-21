@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/theming/styles.dart';
-import '../../../../core/widgets/app_bar.dart';
-import '../../../../core/widgets/background.dart';
+import '../../../../core/widgets/custom_app_bar.dart';
+import '../../../../core/widgets/background_container.dart';
 import '../widgets/rocket_grid_view.dart';
 
 class RocketsScreen extends StatelessWidget {
@@ -12,7 +12,9 @@ class RocketsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: const CustomAppBar(),
+      appBar: const CustomAppBar(
+        title: "SpaceX",
+      ),
       body: BackgroundContainer(
         child: SafeArea(
           child: Padding(
