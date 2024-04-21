@@ -5,10 +5,11 @@ import 'package:space_app/core/helper/spacing.dart';
 import 'package:space_app/core/theming/styles.dart';
 import 'package:space_app/core/widgets/background.dart';
 import 'package:space_app/core/widgets/custom_grid_container.dart';
+import 'package:space_app/features/ship_details/ui/ship_details_screen.dart';
 import 'package:space_app/features/ships/data/testData.dart';
 
-class ShipsView extends StatelessWidget {
-  ShipsView({super.key});
+class ShipsScreen extends StatelessWidget {
+  ShipsScreen({super.key});
   List<TestMyData> dataOfShips = [
     TestMyData(
         imageUrl: "https://i.imgur.com/woCxpkj.jpg",
@@ -57,9 +58,17 @@ class ShipsView extends StatelessWidget {
                               childAspectRatio: .8),
                       itemCount: dataOfShips.length,
                       itemBuilder: ((context, index) {
-                        return CustomGridContainer(
-                          imageUrl: dataOfShips[index].imageUrl,
-                          title: dataOfShips[index].title,
+                        return GestureDetector(
+                          onTap: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return ShipDetailsScreen();
+                            }));
+                          },
+                          child: CustomGridContainer(
+                            imageUrl: dataOfShips[index].imageUrl,
+                            title: dataOfShips[index].title,
+                          ),
                         );
                       })),
                 ),

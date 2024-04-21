@@ -17,7 +17,7 @@ class SpaceApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: "Space App",
-        home: ShipsView(),
+        home: ShipsScreen(),
       ),
     );
   }
