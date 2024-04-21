@@ -9,8 +9,7 @@ import 'package:space_app/features/launches/launches_screen.dart';
 
 import 'package:space_app/features/rockets/presentation/screens/rockets_screen.dart';
 import 'package:space_app/features/rockets/rockets_screen.dart';
-
-import 'package:space_app/features/ships/ships_screen.dart';
+import 'package:space_app/features/ships/ui/ships_view.dart';
 
 class BottomNavBar extends StatelessWidget {
   const BottomNavBar({super.key});
@@ -20,7 +19,7 @@ class BottomNavBar extends StatelessWidget {
       const RocketsScreen(),
       const LaunchesScreen(),
       const CrewScreen(),
-      const ShipsScreen(),
+      ShipsScreen(),
       const CompanyInfoScreen(),
     ];
   }

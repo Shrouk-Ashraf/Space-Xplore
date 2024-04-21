@@ -17,7 +17,11 @@ class TextStyles {
     fontWeight: FontWeight.bold,
     fontFamily: 'Orbitron',
   );
-
+  static TextStyle font20WhiteBold = TextStyle(
+    color: ColorsManager.white,
+    fontSize: 20.sp,
+    fontWeight: FontWeight.bold,
+  );
   static TextStyle font10WhiteBold = TextStyle(
     color: ColorsManager.white,
     fontSize: 10.sp,
@@ -30,15 +34,28 @@ class TextStyles {
     fontWeight: FontWeight.bold,
     fontFamily: 'Orienta',
   );
+
   static TextStyle font15WhiteBold = TextStyle(
     color: ColorsManager.white,
     fontSize: 15.sp,
     fontWeight: FontWeight.bold,
     fontFamily: 'Orienta',
   );
+  static TextStyle font15Blue500Weight = TextStyle(
+    color: ColorsManager.blue,
+    fontSize: 15.sp,
+    fontWeight: FontWeight.w500,
+    fontFamily: 'Orienta',
+  );
   static TextStyle font10White500Weight = TextStyle(
     color: ColorsManager.white,
     fontSize: 10.sp,
+    fontWeight: FontWeight.w500,
+    fontFamily: 'Orienta',
+  );
+  static TextStyle font15White500Weight = TextStyle(
+    color: ColorsManager.white,
+    fontSize: 15.sp,
     fontWeight: FontWeight.w500,
     fontFamily: 'Orienta',
   );
