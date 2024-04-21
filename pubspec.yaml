@@ -28,15 +28,11 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-
   flutter:
     sdk: flutter
-  flutter_native_splash: ^2.4.0
-  flutter_screenutil: ^5.9.0
+
   flutter_svg: ^2.0.10+1
   intro_screen_onboarding_flutter: ^1.0.0
-
-  persistent_bottom_nav_bar: ^5.0.2
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -45,7 +41,6 @@ dependencies:
   flutter_native_splash: ^2.4.0
   introduction_screen: ^3.1.14
   lottie: ^3.1.0
-
 
 dev_dependencies:
   flutter_test:
@@ -91,12 +86,6 @@ flutter:
     - family: Ubuntu
       fonts:
         - asset: assets/fonts/Ubuntu-Regular.ttf
-    - family: Orienta
-      fonts:
-        - asset: assets/fonts/Orienta-Regular.ttf
-
-        - asset: assets/fonts/Ubuntu-Regular.ttf        
-  
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:
