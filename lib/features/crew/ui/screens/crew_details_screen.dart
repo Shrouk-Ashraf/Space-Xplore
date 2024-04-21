@@ -5,7 +5,7 @@ import 'package:space_app/core/theming/styles.dart';
 import 'package:space_app/core/widgets/app_bar.dart';
 import 'package:space_app/core/widgets/background.dart';
 import 'package:space_app/features/crew/data/crew_member_model.dart';
-import 'package:space_app/features/crew/presentation/widgets/crew_circle_image.dart';
+import 'package:space_app/features/crew/ui/widgets/crew_circle_image.dart';
 
 class CrewDetailsScreen extends StatelessWidget {
   const CrewDetailsScreen({
@@ -24,7 +24,7 @@ class CrewDetailsScreen extends StatelessWidget {
         child: SafeArea(
           child: Center(
             child: Container(
-              height: 320.h,
+              height: 370.h,
               width: 300.w,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8.r),
