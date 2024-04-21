@@ -9,7 +9,7 @@ class RocketsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: CustomAppBar(),
+      appBar: CustomAppBar(title: 'SpaceX'),
       body: BackgroundContainer(
         child: SafeArea(
           child: Placeholder(),

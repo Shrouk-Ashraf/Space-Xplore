@@ -12,11 +12,12 @@ class TextStyles {
     color: ColorsManager.grey,
   );
   static TextStyle font24WhiteBold = TextStyle(
-    color: ColorsManager.white,
+    color: Colors.white,
     fontSize: 24.sp,
     fontWeight: FontWeight.bold,
     fontFamily: 'Orbitron',
   );
+
   static TextStyle font10WhiteBold = TextStyle(
     color: ColorsManager.white,
     fontSize: 10.sp,
@@ -44,6 +45,14 @@ class TextStyles {
   static TextStyle font18White500Weight = TextStyle(
     color: ColorsManager.white,
     fontSize: 18.sp,
+    fontWeight: FontWeight.w500,
+    fontFamily: 'Orienta',
+  );
+  static TextStyle font11Blue500Weight = TextStyle(
+    color: ColorsManager.blue,
+    decorationColor: ColorsManager.blue,
+    decoration: TextDecoration.underline,
+    fontSize: 11.sp,
     fontWeight: FontWeight.w500,
     fontFamily: 'Orienta',
   );
