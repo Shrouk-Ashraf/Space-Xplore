@@ -15,7 +15,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       scrolledUnderElevation: 0,
       title: Text(
         'SpaceX',
-        style: TextStyles.font24WhiteBold,
+        style: TextStyles.font20WhiteBold,
       ),
     );
   }
