@@ -4,7 +4,7 @@ import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/theming/styles.dart';
 import 'package:space_app/features/company%20info/company_info_screen.dart';
-import 'package:space_app/features/crew/crew_screen.dart';
+import 'package:space_app/features/crew/presentation/screens/crew_screen.dart';
 import 'package:space_app/features/launches/launches_screen.dart';
 
 import 'package:space_app/features/rockets/presentation/screens/rockets_screen.dart';
