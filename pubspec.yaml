@@ -70,6 +70,7 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
+
     - family: Orbitron
       fonts:
         - asset: assets/fonts/Orbitron-Regular.ttf
@@ -79,8 +80,6 @@ flutter:
     - family: Ubuntu
       fonts:
         - asset: assets/fonts/Ubuntu-Regular.ttf        
-  
-        
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:
