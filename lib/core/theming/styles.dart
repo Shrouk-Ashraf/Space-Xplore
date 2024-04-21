@@ -17,4 +17,43 @@ class TextStyles {
     fontWeight: FontWeight.bold,
     fontFamily: 'Orbitron',
   );
+
+  static TextStyle font10WhiteBold = TextStyle(
+    color: ColorsManager.white,
+    fontSize: 10.sp,
+    fontWeight: FontWeight.bold,
+    fontFamily: 'Orienta',
+  );
+  static TextStyle font12WhiteBold = TextStyle(
+    color: ColorsManager.white,
+    fontSize: 12.sp,
+    fontWeight: FontWeight.bold,
+    fontFamily: 'Orienta',
+  );
+  static TextStyle font15WhiteBold = TextStyle(
+    color: ColorsManager.white,
+    fontSize: 15.sp,
+    fontWeight: FontWeight.bold,
+    fontFamily: 'Orienta',
+  );
+  static TextStyle font10White500Weight = TextStyle(
+    color: ColorsManager.white,
+    fontSize: 10.sp,
+    fontWeight: FontWeight.w500,
+    fontFamily: 'Orienta',
+  );
+  static TextStyle font18White500Weight = TextStyle(
+    color: ColorsManager.white,
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w500,
+    fontFamily: 'Orienta',
+  );
+  static TextStyle font11Blue500Weight = TextStyle(
+    color: ColorsManager.blue,
+    decorationColor: ColorsManager.blue,
+    decoration: TextDecoration.underline,
+    fontSize: 11.sp,
+    fontWeight: FontWeight.w500,
+    fontFamily: 'Orienta',
+  );
 }
