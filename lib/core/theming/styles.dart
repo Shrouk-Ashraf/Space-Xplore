@@ -39,4 +39,12 @@ class TextStyles {
     fontWeight: FontWeight.w500,
     fontFamily: 'Orienta',
   );
+  static TextStyle font11Blue500Weight = TextStyle(
+    color: ColorsManager.blue,
+    decorationColor: ColorsManager.blue,
+    decoration: TextDecoration.underline,
+    fontSize: 11.sp,
+    fontWeight: FontWeight.w500,
+    fontFamily: 'Orienta',
+  );
 }
