@@ -3,14 +3,10 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'features/rockets/ui/screens/rocket_details_screen.dart';
 
 
-import 'package:space_app/features/onboarding/views/onboarding_screen.dart';
 
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:space_app/features/onboarding/screens/onboarding_screen.dart';
 
 
 void main() {
