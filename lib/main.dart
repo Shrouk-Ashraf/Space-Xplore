@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'features/rockets/presentation/screens/rocket_details_screen.dart';
+import 'features/rockets/ui/screens/rocket_details_screen.dart';
 
 
 

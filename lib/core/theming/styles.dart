@@ -21,6 +21,12 @@ class TextStyles {
     fontWeight: FontWeight.bold,
     fontFamily: 'Orienta',
   );
+   static TextStyle font16WhiteRegular = TextStyle(
+    color: ColorsManager.white,
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w400,
+    fontFamily: 'Orienta',
+  );
   static TextStyle font15WhiteBold = TextStyle(
     color: ColorsManager.white,
     fontSize: 15.sp,

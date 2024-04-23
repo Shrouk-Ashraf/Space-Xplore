@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:space_app/core/widgets/background.dart';
+import 'package:space_app/features/rockets/ui/widgets/image_slider_widget.dart';
 
+import '../../../../core/widgets/app_bar.dart';
 import '../widgets/details_section.dart';
-import '../widgets/image_details_section.dart';
 
 class RocketDetailsScreen extends StatelessWidget {
   const RocketDetailsScreen({super.key});
@@ -12,12 +13,19 @@ class RocketDetailsScreen extends StatelessWidget {
     var screenHeight = MediaQuery.of(context).size.height;
     var screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
+       extendBodyBehindAppBar: true,
+      appBar: const CustomAppBar(),
       body: SafeArea(
         child: BackgroundContainer(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              ImageOfDetailsSection(screenHeight: screenHeight, screenWidth: screenWidth),
+              SizedBox(
+                height: screenHeight / 8,
+              ),
+              ImageSlider(
+                screenHeight: screenHeight,
+              ),
               DetailsSection(screenWidth: screenWidth),
             ],
           ),
@@ -26,5 +34,3 @@ class RocketDetailsScreen extends StatelessWidget {
     );
   }
 }
-
-

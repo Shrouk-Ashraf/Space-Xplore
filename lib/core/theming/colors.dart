@@ -7,4 +7,5 @@ class ColorsManager {
   static const Color black = Color(0xFF000000);
   static const Color transparent = Color(0x00FFFFFF);
   static Color semiTransparent = const Color(0xffc4c4c4).withOpacity(0.5);
+   static const Color linkColor = Color(0xff3EB8FF);
 }
