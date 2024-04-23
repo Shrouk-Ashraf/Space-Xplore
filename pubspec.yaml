@@ -36,12 +36,28 @@ dependencies:
   flutter_screenutil: ^5.9.0
   flutter_svg: ^2.0.10+1
   intro_screen_onboarding_flutter: ^1.0.0
+
   persistent_bottom_nav_bar: ^5.0.2
 
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  persistent_bottom_nav_bar: ^5.0.2
+  flutter_native_splash: ^2.4.0
+  introduction_screen: ^3.1.14
+  lottie: ^3.1.0
+
+
 dev_dependencies:
-  flutter_lints: ^3.0.0
   flutter_test:
     sdk: flutter
+
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^3.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -56,6 +72,7 @@ flutter:
   assets:
     - assets/images/
 
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
   # For details regarding adding assets from package dependencies, see
@@ -69,12 +86,18 @@ flutter:
     - family: Orbitron
       fonts:
         - asset: assets/fonts/Orbitron-Regular.ttf
+    - family: Orienta
+      fonts:
+        - asset: assets/fonts/Orienta-Regular.ttf
     - family: Ubuntu
       fonts:
         - asset: assets/fonts/Ubuntu-Regular.ttf
     - family: Orienta
       fonts:
         - asset: assets/fonts/Orienta-Regular.ttf
+
+        - asset: assets/fonts/Ubuntu-Regular.ttf        
+  
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:

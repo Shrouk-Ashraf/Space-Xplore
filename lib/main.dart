@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
+
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'features/rockets/ui/screens/rocket_details_screen.dart';
 
+
+import 'package:space_app/features/onboarding/views/onboarding_screen.dart';
+
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'package:space_app/features/onboarding/screens/onboarding_screen.dart';
 
 
 void main() {
@@ -15,11 +23,12 @@ class SpaceApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const ScreenUtilInit(
+    return ScreenUtilInit(
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Space App',
-        home: RocketDetailsScreen(),
+        theme: ThemeData(fontFamily: "Orienta"),
+        home: OnboardingScreen(),
+
       ),
     );
   }
