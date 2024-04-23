@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:space_app/core/widgets/background.dart';
 import 'package:space_app/features/rockets/ui/widgets/image_slider_widget.dart';
 
-import '../../../../core/widgets/app_bar.dart';
+import '../../../../core/widgets/background_container.dart';
+import '../../../../core/widgets/custom_app_bar.dart';
 import '../widgets/details_section.dart';
 
 class RocketDetailsScreen extends StatelessWidget {
