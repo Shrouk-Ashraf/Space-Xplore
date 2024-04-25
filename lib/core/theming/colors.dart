@@ -12,4 +12,5 @@ class ColorsManager {
   static const Color blue = Color(0xFF3EB8FF);
   static const Color lightTransparent = Color(0x42000000);
   static Color semiTransparent = const Color(0xffc4c4c4).withOpacity(0.5);
+ static const Color linkColor = Color(0xff3EB8FF);
 }

@@ -7,6 +7,12 @@ class TextStyles {
     fontSize: 18.sp,
     color: Colors.white,
   );
+   static TextStyle font16WhiteRegular = TextStyle(
+    color: ColorsManager.white,
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w400,
+    fontFamily: 'Orienta',
+  );
   static TextStyle font12GreyRegular = TextStyle(
     fontSize: 12.sp,
     color: ColorsManager.grey,

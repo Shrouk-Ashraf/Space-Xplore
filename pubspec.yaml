@@ -28,11 +28,12 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-
+  carousel_slider: ^4.2.1
   flutter:
     sdk: flutter
   flutter_svg: ^2.0.10+1
   intro_screen_onboarding_flutter: ^1.0.0
+
 
 
 
@@ -43,14 +44,13 @@ dependencies:
   persistent_bottom_nav_bar: ^5.0.2
 
   flutter_native_splash: ^2.4.0
+
   introduction_screen: ^3.1.14
   lottie: ^3.1.0
-
+  persistent_bottom_nav_bar: ^5.0.2
 
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -58,6 +58,8 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^3.0.0
+  flutter_test:
+    sdk: flutter
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -85,13 +87,9 @@ flutter:
     - family: Orbitron
       fonts:
         - asset: assets/fonts/Orbitron-Regular.ttf
-
-
     - family: Orienta
       fonts:
         - asset: assets/fonts/Orbitron-Regular.ttf
-
-
     - family: Orienta
       fonts:
         - asset: assets/fonts/Orienta-Regular.ttf
@@ -103,8 +101,7 @@ flutter:
       fonts:
         - asset: assets/fonts/Orienta-Regular.ttf
 
-        - asset: assets/fonts/Ubuntu-Regular.ttf        
-  
+        - asset: assets/fonts/Ubuntu-Regular.ttf
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:
