@@ -51,32 +51,34 @@ class ShipsScreen extends StatelessWidget {
               Expanded(
                 child: Padding(
                   padding: EdgeInsets.symmetric(
-                    horizontal: 20.w,
+                    horizontal: 35.w,
                   ),
-                  child: Container(
-                    child: GridView.builder(
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        childAspectRatio: 100.w / 110.h,
-                        crossAxisSpacing: 35.w,
-                        mainAxisSpacing: 30.h,
-                      ),
-                      itemCount: dataOfShips.length,
-                      itemBuilder: ((context, index) {
-                        return GestureDetector(
-                          onTap: () {
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (context) {
-                              return ShipDetailsScreen();
-                            }));
-                          },
-                          child: CustomGridContainer(
-                            imageUrl: dataOfShips[index].imageUrl,
-                            title: dataOfShips[index].title,
-                          ),
-                        );
-                      }),
+                  child: GridView.builder(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      childAspectRatio: 100.w / 120.h,
+                      crossAxisSpacing: 40.w,
+                      mainAxisSpacing: 35.h,
                     ),
+                    itemCount: dataOfShips.length,
+                    itemBuilder: ((context, index) {
+                      return GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return const ShipDetailsScreen();
+                              },
+                            ),
+                          );
+                        },
+                        child: CustomGridContainer(
+                          imageUrl: dataOfShips[index].imageUrl,
+                          title: dataOfShips[index].title,
+                        ),
+                      );
+                    }),
                   ),
                 ),
               ),

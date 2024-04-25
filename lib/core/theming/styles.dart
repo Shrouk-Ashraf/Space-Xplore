@@ -21,7 +21,7 @@ class TextStyles {
   static TextStyle font18WhiteRegular = TextStyle(
     fontSize: 18.sp,
     fontWeight: FontWeightManager.regular,
-    color: Colors.white,
+    color: ColorsManager.white,
   );
 
   // ------------------- Medium Fonts -------------------
@@ -82,7 +82,13 @@ class TextStyles {
     fontWeight: FontWeightManager.bold,
   );
   static TextStyle font24WhiteBold = TextStyle(
-    color: Colors.white,
+    color: ColorsManager.white,
+    fontSize: 24.sp,
+    fontWeight: FontWeightManager.bold,
+    fontFamily: Fonts.orbitronFont,
+  );
+  static TextStyle font24BlackBold = TextStyle(
+    color: ColorsManager.black,
     fontSize: 24.sp,
     fontWeight: FontWeightManager.bold,
     fontFamily: Fonts.orbitronFont,

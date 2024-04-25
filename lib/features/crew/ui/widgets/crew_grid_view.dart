@@ -18,8 +18,8 @@ class CrewGridView extends StatelessWidget {
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             childAspectRatio: 100.w / 120.h,
-            crossAxisSpacing: 35.w,
-            mainAxisSpacing: 30.h,
+            crossAxisSpacing: 40.w,
+            mainAxisSpacing: 35.h,
           ),
           children: [
             for (final member in crewList)

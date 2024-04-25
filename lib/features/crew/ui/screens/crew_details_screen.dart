@@ -5,7 +5,7 @@ import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/theming/styles.dart';
 import 'package:space_app/core/widgets/custom_app_bar.dart';
 import 'package:space_app/core/widgets/background_container.dart';
-import 'package:space_app/core/widgets/wikipedia_widget.dart';
+import 'package:space_app/core/widgets/wikipedia_link_text.dart';
 import 'package:space_app/features/crew/data/crew_member_model.dart';
 import 'package:space_app/features/crew/ui/widgets/crew_circle_image.dart';
 
@@ -38,15 +38,16 @@ class CrewDetailsScreen extends StatelessWidget {
                   children: [
                     CrewCircleImage(crewMemberImageUrl: crewMember.imageUrl),
                     verticalSpace(10),
-                    buildTextInRow(crewMember.name, TextStyles.font24WhiteBold),
+                    _buildTextInRow(
+                        crewMember.name, TextStyles.font24WhiteBold),
                     verticalSpace(10),
                     const Divider(color: ColorsManager.darkGrey),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        buildTextInRow('Agency', TextStyles.font15WhiteBold),
-                        buildTextInRow('Status', TextStyles.font15WhiteBold),
-                        buildTextInRow('Launches', TextStyles.font15WhiteBold),
+                        _buildTextInRow('Agency', TextStyles.font15WhiteBold),
+                        _buildTextInRow('Status', TextStyles.font15WhiteBold),
+                        _buildTextInRow('Launches', TextStyles.font15WhiteBold),
                       ],
                     ),
                     verticalSpace(5),
@@ -55,11 +56,11 @@ class CrewDetailsScreen extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          buildTextInRow(
+                          _buildTextInRow(
                               crewMember.agency, TextStyles.font10WhiteMedium),
-                          buildTextInRow(
+                          _buildTextInRow(
                               crewMember.status, TextStyles.font10WhiteMedium),
-                          buildTextInRow(
+                          _buildTextInRow(
                               'DemoSat', TextStyles.font10WhiteMedium),
                         ],
                       ),
@@ -68,7 +69,7 @@ class CrewDetailsScreen extends StatelessWidget {
                     Center(
                       child: GestureDetector(
                         onTap: () {},
-                        child: WikipediaLink(
+                        child: WikipediaLinkText(
                           wikipediaUrl: crewMember.wikipediaUrl,
                         ),
                       ),
@@ -83,7 +84,7 @@ class CrewDetailsScreen extends StatelessWidget {
     );
   }
 
-  Text buildTextInRow(String text, TextStyle textStyle) {
+  Text _buildTextInRow(String text, TextStyle textStyle) {
     return Text(
       text,
       style: textStyle,

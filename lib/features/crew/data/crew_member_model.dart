@@ -12,4 +12,14 @@ class CrewMemberModel {
     required this.imageUrl,
     required this.wikipediaUrl,
   });
+
+  factory CrewMemberModel.fromJson(Map<String, dynamic> json) {
+    return CrewMemberModel(
+      name: json["name"],
+      agency: json["agency"],
+      status: json["status"],
+      imageUrl: json["image"],
+      wikipediaUrl: json["wikipedia"],
+    );
+  }
 }

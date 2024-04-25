@@ -14,20 +14,20 @@ class RocketsScreen extends StatelessWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: const CustomAppBar(
-        title: 'Rocket Details',
+        title: 'SpaceX',
       ),
       body: BackgroundContainer(
         child: SafeArea(
           child: Padding(
             padding: EdgeInsets.symmetric(
-              horizontal: 16.w,
+              horizontal: 15.w,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(height: 10.h),
                 Text('Rockets', style: TextStyles.font18WhiteMedium),
-                SizedBox(height: 10.h),
+                SizedBox(height: 20.h),
                 const RocketGridView(),
               ],
             ),

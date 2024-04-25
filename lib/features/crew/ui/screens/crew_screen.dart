@@ -25,7 +25,7 @@ class CrewScreen extends StatelessWidget {
               children: [
                 verticalSpace(10),
                 Text('Crew', style: TextStyles.font18WhiteMedium),
-                verticalSpace(10),
+                verticalSpace(20),
                 const CrewGridView(),
               ],
             ),

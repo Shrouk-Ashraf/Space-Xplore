@@ -9,7 +9,7 @@ class ColorsManager {
   static const Color white = Color(0xFFffffff);
   static const Color red = Colors.red;
   static const Color black = Color(0xFF000000);
-  static const Color transparent = Color(0x00FFFFFF);
+  static Color shadowColor = const Color(0xff000000).withOpacity(0.25);
   static const Color blue = Color(0xFF3EB8FF); // to be removed
   static const Color lightTransparent = Color(0x42000000);
   static Color semiTransparent = const Color(0xffc4c4c4).withOpacity(0.2);

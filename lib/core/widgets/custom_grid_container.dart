@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:space_app/core/helpers/spacing.dart';
 import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/theming/styles.dart';
+import 'package:space_app/core/widgets/cached_image.dart';
 
 class CustomGridContainer extends StatelessWidget {
   const CustomGridContainer({
@@ -21,14 +22,25 @@ class CustomGridContainer extends StatelessWidget {
     return Container(
       clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            color: ColorsManager.shadowColor,
+            blurRadius: 15.r,
+            offset: Offset(10.w, 10.h),
+          ),
+          BoxShadow(
+            color: ColorsManager.shadowColor,
+            blurRadius: 15.r,
+            offset: Offset(10.w, 10.h),
+          ),
+        ],
         borderRadius: BorderRadius.circular(20.r),
         color: ColorsManager.semiTransparent,
       ),
       child: Column(
         children: [
-          Image.network(
-            imageUrl,
-            fit: BoxFit.fill,
+          CachedImage(
+            networkImageUrl: imageUrl,
             height: 120.h,
             width: double.infinity,
           ),

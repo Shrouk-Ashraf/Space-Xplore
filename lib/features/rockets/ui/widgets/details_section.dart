@@ -1,7 +1,7 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:space_app/core/helpers/spacing.dart';
 import 'package:space_app/core/theming/styles.dart';
-import '../../../../core/widgets/wikipedia_widget.dart';
+import '../../../../core/widgets/wikipedia_link_text.dart';
 import '../../data/rocket_data.dart';
 import 'details_section_text_widget.dart';
 import 'package:flutter/material.dart';
