@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:space_app/core/helpers/spacing.dart';
 import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/theming/styles.dart';
 import 'package:space_app/core/widgets/custom_app_bar.dart';
 import 'package:space_app/core/widgets/background_container.dart';
+import 'package:space_app/core/widgets/wikipedia_widget.dart';
 import 'package:space_app/features/crew/data/crew_member_model.dart';
 import 'package:space_app/features/crew/ui/widgets/crew_circle_image.dart';
 
@@ -45,27 +47,28 @@ class CrewDetailsScreen extends StatelessWidget {
                         buildTextInRow('Launches', TextStyles.font15WhiteBold),
                       ],
                     ),
-                    buildVerticalSpacing(5.h),
+                    verticalSpace(5.h),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 12.w),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          buildTextInRow(crewMember.agency,
-                              TextStyles.font10White500Weight),
-                          buildTextInRow(crewMember.status,
-                              TextStyles.font10White500Weight),
                           buildTextInRow(
-                              'DemoSat', TextStyles.font10White500Weight),
+                              crewMember.agency, TextStyles.font10WhiteMedium),
+                          buildTextInRow(
+                              crewMember.status, TextStyles.font10WhiteMedium),
+                          buildTextInRow(
+                              'DemoSat', TextStyles.font10WhiteMedium),
                         ],
                       ),
                     ),
-                    buildVerticalSpacing(20.h),
+                    verticalSpace(20.h),
                     Center(
                       child: GestureDetector(
                         onTap: () {},
-                        child: buildTextInRow(
-                            'Wikipedia', TextStyles.font11Blue500Weight),
+                        child: WikipediaLink(
+                          wikipediaUrl: crewMember.wikipediaUrl,
+                        ),
                       ),
                     ),
                   ],
@@ -77,9 +80,6 @@ class CrewDetailsScreen extends StatelessWidget {
       ),
     );
   }
-
-  SizedBox buildVerticalSpacing(double verticalHeight) =>
-      SizedBox(height: verticalHeight);
 
   Text buildTextInRow(String text, TextStyle textStyle) {
     return Text(

@@ -3,8 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/theming/styles.dart';
 import '../../../../core/widgets/background_container.dart';
 import '../../../../core/widgets/custom_app_bar.dart';
-import '../../../../core/widgets/custom_app_bar.dart';
-import '../../../../core/widgets/background_container.dart';
 
 import '../widgets/rocket_grid_view.dart';
 
@@ -15,10 +13,8 @@ class RocketsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: const CustomAppBar(title: 'Rocket Details',),
-
       appBar: const CustomAppBar(
-        title: "SpaceX",
+        title: 'Rocket Details',
       ),
       body: BackgroundContainer(
         child: SafeArea(
@@ -30,7 +26,7 @@ class RocketsScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(height: 10.h),
-                Text('Rockets', style: TextStyles.font18White500Weight),
+                Text('Rockets', style: TextStyles.font18WhiteMedium),
                 SizedBox(height: 10.h),
                 const RocketGridView(),
               ],

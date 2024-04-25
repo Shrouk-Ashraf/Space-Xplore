@@ -1,10 +1,11 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:space_app/core/helpers/spacing.dart';
 import 'package:space_app/core/theming/styles.dart';
 import '../../../../core/widgets/wikipedia_widget.dart';
 import '../../data/rocket_data.dart';
 import 'details_section_text_widget.dart';
 import 'package:flutter/material.dart';
-import '../../data/rocket_data.dart';
+
 class DetailsSection extends StatelessWidget {
   const DetailsSection({
     super.key,
@@ -27,96 +28,38 @@ class DetailsSection extends StatelessWidget {
             rocketList[0].name!,
             style: TextStyles.font24WhiteBold,
           ),
-          const SizedBox(
-            height: 10,
-          ),
+          verticalSpace(10.h),
           DetailsSectionTextWidget(
             title: "Description : ",
             subTitle: rocketList[0].description!,
           ),
-          const SizedBox(
-            height: 24,
-          ),
+          verticalSpace(24.h),
           DetailsSectionTextWidget(
             title: "Height : ",
             subTitle: "${rocketList[0].height!.meters} m",
           ),
-          const SizedBox(
-            height: 9,
-          ),
+          verticalSpace(9.h),
           DetailsSectionTextWidget(
             title: "Diameter : ",
             subTitle: "${rocketList[0].diameter!.meters} m",
           ),
-          const SizedBox(
-            height: 9,
-          ),
+          verticalSpace(9.h),
           DetailsSectionTextWidget(
             title: "Mass : ",
             subTitle: "${rocketList[0].mass!.kg} Kg",
           ),
-          const SizedBox(
-            height: 40,
-          ),
+          verticalSpace(40.h),
           DetailsSectionTextWidget(
             title: "Company : ",
             subTitle: "${rocketList[0].company}",
           ),
-          const SizedBox(
-            height: 9,
-          ),
+          verticalSpace(9.h),
           DetailsSectionTextWidget(
             title: "Country : ",
             subTitle: "${rocketList[0].country}",
           ),
-          const SizedBox(
-            height: 9,
-          ),
-          const WikipediaLink(),
-        ],
-      ),
-    );
-  }
-}
-
-            style: const TextStyle(
-                fontWeight: FontWeight.w900,
-                color: Colors.white,
-                fontSize: 30),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Text(
-            "Company : ${rocketList[0].company}",
-            style: const TextStyle(
-                fontWeight: FontWeight.w600,
-                color: Color(0xff3EB8FF),
-                fontSize: 20,
-                fontFamily: 'Orienta'),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Text(
-            rocketList[0].description!,
-            style: const TextStyle(
-              fontWeight: FontWeight.w400,
-              color: Colors.white,
-              fontSize: 16,
-            ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          const Text(
-            'Wikipedia',
-            style: TextStyle(
-                fontWeight: FontWeight.w600,
-                color: Color(0xff3EB8FF),
-                fontSize: 20,
-                fontFamily: 'Orienta'),
-          ),
+          verticalSpace(9.h),
+          // const WikipediaLink(),
         ],
       ),
     );

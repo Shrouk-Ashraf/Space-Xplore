@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:space_app/core/helper/spacing.dart';
+import 'package:space_app/core/helpers/spacing.dart';
 import 'package:space_app/core/theming/styles.dart';
 import 'package:space_app/core/widgets/background_container.dart';
 import 'package:space_app/core/widgets/custom_app_bar.dart';
@@ -43,7 +43,7 @@ class ShipsScreen extends StatelessWidget {
                   alignment: Alignment.topLeft,
                   child: Text(
                     "All Ships",
-                    style: TextStyles.font18White500Weight,
+                    style: TextStyles.font18WhiteMedium,
                   ),
                 ),
               ),
