@@ -1,11 +1,38 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/theming/styles.dart';
 import 'package:space_app/core/widgets/background_container.dart';
 import 'package:space_app/core/widgets/custom_app_bar.dart';
-import 'package:space_app/features/launches/ui/widgets/custom_card_with_image_in_left.dart';
-import 'package:space_app/features/launches/ui/widgets/custom_card_with_image_in_top.dart';
 
+
+const List<Map<String, String>> items = [
+  {
+    "image": "https://images2.imgbox.com/a9/9a/NXVkTZCE_o.png",
+    "name": "DemoSat",
+  },
+  {
+    "image": "https://images2.imgbox.com/94/f2/NN6Ph45r_o.png",
+    "name": "FalconSat",
+  },
+  {
+    "image": "https://images2.imgbox.com/ab/5a/Pequxd5d_o.png",
+    "name": "RazakSat",
+  },
+  {
+    "image": "https://images2.imgbox.com/a9/9a/NXVkTZCE_o.png",
+    "name": "DemoSat",
+  },
+  {
+    "image": "https://images2.imgbox.com/94/f2/NN6Ph45r_o.png",
+    "name": "FalconSat",
+  },
+  {
+    "image": "https://images2.imgbox.com/ab/5a/Pequxd5d_o.png",
+    "name": "RazakSat",
+  }
+];
 class LaunchesScreen extends StatelessWidget {
   const LaunchesScreen({super.key});
 
@@ -25,28 +52,7 @@ class LaunchesScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    "Upcoming Launches",
-                    style: TextStyles.font18WhiteRegular,
-                  ),
-                  SizedBox(
-                    height: 24.h,
-                  ),
-                  SizedBox(
-                    height: 160.h,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      shrinkWrap: true,
-                      itemCount: 10,
-                      itemBuilder: (context, indext) {
-                        return const Padding(
-                          padding: EdgeInsetsDirectional.only(end: 70.0),
-                          child: CustomCardWithImageInLeft(),
-                        );
-                      },
-                    ),
-                  ),
-                  SizedBox(height: 20.h),
+
                   Text(
                     "All Launches",
                     style: TextStyles.font18WhiteRegular,
@@ -60,19 +66,13 @@ class LaunchesScreen extends StatelessWidget {
                       // padding: EdgeInsets.symmetric(horizontal: 10),
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
-                        childAspectRatio: 55.w / 80.h,
-                        crossAxisSpacing: 30.w,
-                        mainAxisSpacing: 40.h,
+                        childAspectRatio: 100.w / 100.h,
+                        crossAxisSpacing: 35.w,
+                        mainAxisSpacing: 15.h,
                       ),
-                      itemCount: 4,
-                      itemBuilder: (context, indext) {
-                        return const CustomCardWithImageInTop(
-                          title: "DemoSat",
-                          subTitle:
-                              "Engine failure at 33 seconds and loss of vehicle",
-                          imageUrl:
-                              "https://images2.imgbox.com/94/f2/NN6Ph45r_o.png",
-                        );
+                      itemCount: items.length,
+                      itemBuilder: (context, index) {
+                        return  CustomCard(item:items[index]);
                       }),
                 ],
               ),
@@ -83,3 +83,68 @@ class LaunchesScreen extends StatelessWidget {
     );
   }
 }
+
+class CustomCard extends StatelessWidget {
+
+  final Map<String,String> item;
+  const CustomCard({super.key,required this.item});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      // margin: const EdgeInsets.symmetric(vertical: 30),
+      padding: const EdgeInsets.only(top:25,left: 25,right: 25),
+      decoration: BoxDecoration(
+        color: const Color(0xffFDFDFD).withOpacity(0.2),
+        borderRadius: BorderRadius.circular(20),
+        boxShadow: [
+          BoxShadow(
+            color: const Color(0xff000000).withOpacity(0.25),
+            blurRadius: 11.33,
+            offset: const Offset(13, 11),
+          ),
+          BoxShadow(
+            color: const Color(0xff000000).withOpacity(0.15),
+            blurRadius: 6,
+            offset: const Offset(-10, -13),
+          ),
+        ],
+        gradient: const LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+
+            ColorsManager.black,
+
+            ColorsManager.darkGrey,
+            Colors.grey,
+          ]
+        )
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Container(
+            height: 80.h,
+            width: 80.w,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: NetworkImage(
+                  item['image']!,
+                ),
+                fit: BoxFit.contain,
+              ),
+            ),
+          ),
+          SizedBox(height: 10,),
+          Text(
+            item['name']!,
+            style: TextStyles.font18WhiteRegular,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
