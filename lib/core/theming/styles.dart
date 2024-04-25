@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/theming/font_weight_manager.dart';
+import 'package:space_app/core/theming/fonts.dart';
 
 class TextStyles {
+  // TODO: font family to be added to all
   // ------------------- Regular fonts -------------------
   static TextStyle font12GreyRegular = TextStyle(
     fontSize: 12.sp,
@@ -14,7 +16,7 @@ class TextStyles {
     color: ColorsManager.white,
     fontSize: 16.sp,
     fontWeight: FontWeightManager.regular,
-    fontFamily: 'Orienta',
+    fontFamily: Fonts.orientaFont,
   );
   static TextStyle font18WhiteRegular = TextStyle(
     fontSize: 18.sp,
@@ -27,7 +29,7 @@ class TextStyles {
     color: ColorsManager.white,
     fontSize: 10.sp,
     fontWeight: FontWeightManager.medium,
-    fontFamily: 'Orienta',
+    fontFamily: Fonts.orientaFont,
   );
   static TextStyle font11BlueMedium = TextStyle(
     color: ColorsManager.blue,
@@ -35,25 +37,25 @@ class TextStyles {
     decoration: TextDecoration.underline,
     fontSize: 11.sp,
     fontWeight: FontWeightManager.medium,
-    fontFamily: 'Orienta',
+    fontFamily: Fonts.orientaFont,
   );
   static TextStyle font15WhiteMedium = TextStyle(
     color: ColorsManager.white,
     fontSize: 15.sp,
     fontWeight: FontWeightManager.medium,
-    fontFamily: 'Orienta',
+    fontFamily: Fonts.orientaFont,
   );
   static TextStyle font15BlueMedium = TextStyle(
     color: ColorsManager.blue,
     fontSize: 15.sp,
     fontWeight: FontWeightManager.medium,
-    fontFamily: 'Orienta',
+    fontFamily: Fonts.orientaFont,
   );
   static TextStyle font18WhiteMedium = TextStyle(
     color: ColorsManager.white,
     fontSize: 18.sp,
     fontWeight: FontWeightManager.medium,
-    fontFamily: 'Orienta',
+    fontFamily: Fonts.orientaFont,
   );
 
   //------------------- Bold fonts -------------------
@@ -61,7 +63,7 @@ class TextStyles {
     color: ColorsManager.white,
     fontSize: 10.sp,
     fontWeight: FontWeightManager.bold,
-    fontFamily: 'Orienta',
+    fontFamily: Fonts.orientaFont,
   );
   static TextStyle font12WhiteBold = TextStyle(
     color: ColorsManager.white,
@@ -72,7 +74,7 @@ class TextStyles {
     color: ColorsManager.white,
     fontSize: 15.sp,
     fontWeight: FontWeightManager.bold,
-    fontFamily: 'Orienta',
+    fontFamily: Fonts.orientaFont,
   );
   static TextStyle font20WhiteBold = TextStyle(
     color: ColorsManager.white,
@@ -83,6 +85,6 @@ class TextStyles {
     color: Colors.white,
     fontSize: 24.sp,
     fontWeight: FontWeightManager.bold,
-    fontFamily: 'Orbitron',
+    fontFamily: Fonts.orbitronFont,
   );
 }

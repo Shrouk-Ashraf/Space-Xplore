@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/theming/styles.dart';
-import 'package:space_app/features/company%20info/ui/company_info_screen.dart';
+import 'package:space_app/features/company%20info/ui/screens/company_info_screen.dart';
 import 'package:space_app/features/crew/ui/screens/crew_screen.dart';
 import 'package:space_app/features/launches/ui/screens/launches_screen.dart';
 import 'package:space_app/features/rockets/ui/screens/rockets_screen.dart';

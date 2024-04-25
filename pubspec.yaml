@@ -23,16 +23,17 @@ dependencies:
   persistent_bottom_nav_bar: ^5.0.2
 
 dev_dependencies:
-
   flutter_lints: ^3.0.0
   flutter_test:
     sdk: flutter
 
 flutter:
-
   uses-material-design: true
+  
   assets:
     - assets/images/
+    - assets/icons/
+    - assets/json/
 
   fonts:
     - family: Orbitron

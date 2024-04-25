@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:space_app/core/helpers/spacing.dart';
 import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/theming/styles.dart';
 
@@ -28,10 +29,10 @@ class CustomGridContainer extends StatelessWidget {
           Image.network(
             imageUrl,
             fit: BoxFit.fill,
-            height: 110.h,
+            height: 120.h,
             width: double.infinity,
           ),
-          SizedBox(height: 8.h),
+          verticalSpace(10),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 8.w),
             child: Text(

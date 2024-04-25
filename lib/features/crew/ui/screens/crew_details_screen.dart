@@ -26,7 +26,7 @@ class CrewDetailsScreen extends StatelessWidget {
         child: SafeArea(
           child: Center(
             child: Container(
-              height: 370.h,
+              height: 440.h,
               width: 300.w,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8.r),
@@ -37,7 +37,9 @@ class CrewDetailsScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     CrewCircleImage(crewMemberImageUrl: crewMember.imageUrl),
+                    verticalSpace(10),
                     buildTextInRow(crewMember.name, TextStyles.font24WhiteBold),
+                    verticalSpace(10),
                     const Divider(color: ColorsManager.darkGrey),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -47,7 +49,7 @@ class CrewDetailsScreen extends StatelessWidget {
                         buildTextInRow('Launches', TextStyles.font15WhiteBold),
                       ],
                     ),
-                    verticalSpace(5.h),
+                    verticalSpace(5),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 12.w),
                       child: Row(
@@ -62,7 +64,7 @@ class CrewDetailsScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    verticalSpace(20.h),
+                    verticalSpace(20),
                     Center(
                       child: GestureDetector(
                         onTap: () {},

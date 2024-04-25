@@ -17,7 +17,7 @@ class CrewGridView extends StatelessWidget {
         child: GridView(
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            childAspectRatio: 100.w / 110.h,
+            childAspectRatio: 100.w / 120.h,
             crossAxisSpacing: 35.w,
             mainAxisSpacing: 30.h,
           ),

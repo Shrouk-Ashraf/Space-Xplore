@@ -12,7 +12,7 @@ class CrewCircleImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 220.h,
+      height: 250.h,
       width: 230.w,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
