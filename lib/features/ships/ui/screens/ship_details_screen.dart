@@ -10,6 +10,24 @@ import 'package:space_app/features/ships/ui/widgets/titile_and_sub_title_info.da
 class ShipDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        title: Text(
+          "American champion",
+          style: TextStyles.font20WhiteBoldOrbitron,
+        ),
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back,
+            color: ColorsManager.white,
+          ),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      ),
       body: BackgroundContainer(
         child: SafeArea(
           child: Center(

@@ -9,6 +9,12 @@ class TextStyles {
     fontWeight: FontWeight.bold,
     fontFamily: 'Orbitron',
   );
+  static TextStyle font20WhiteBoldOrbitron = TextStyle(
+    color: ColorsManager.white,
+    fontSize: 20.sp,
+    fontWeight: FontWeight.bold,
+    fontFamily: 'Orbitron',
+  );
   static TextStyle font20WhiteBold = TextStyle(
     color: ColorsManager.white,
     fontSize: 20.sp,
