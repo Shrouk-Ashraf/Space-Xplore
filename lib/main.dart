@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:space_app/features/ships/ui/ships_view.dart';
+import 'package:space_app/features/ships/ui/screens/ships_view.dart';
 
 void main() {
   runApp(const SpaceApp());

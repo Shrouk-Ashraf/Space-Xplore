@@ -7,7 +7,7 @@ import 'package:space_app/features/company%20info/company_info_screen.dart';
 import 'package:space_app/features/crew/crew_screen.dart';
 import 'package:space_app/features/launches/launches_screen.dart';
 import 'package:space_app/features/rockets/rockets_screen.dart';
-import 'package:space_app/features/ships/ui/ships_view.dart';
+import 'package:space_app/features/ships/ui/screens/ships_view.dart';
 
 class BottomNavBar extends StatelessWidget {
   const BottomNavBar({super.key});

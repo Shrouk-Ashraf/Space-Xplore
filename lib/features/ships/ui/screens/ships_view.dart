@@ -5,7 +5,7 @@ import 'package:space_app/core/helper/spacing.dart';
 import 'package:space_app/core/theming/styles.dart';
 import 'package:space_app/core/widgets/background.dart';
 import 'package:space_app/core/widgets/custom_grid_container.dart';
-import 'package:space_app/features/ships/ui/ship_details_screen.dart';
+import 'package:space_app/features/ships/ui/screens/ship_details_screen.dart';
 import 'package:space_app/features/ships/data/testData.dart';
 
 class ShipsScreen extends StatelessWidget {
