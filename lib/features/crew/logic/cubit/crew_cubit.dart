@@ -15,18 +15,7 @@ class CrewCubit extends Cubit<CrewState> {
       final crewMembers = await _crewRepo.getAllCrew();
       emit(CrewLoadedState(crewMembers));
     } catch (e) {
-      // emit(CrewFailureState('Failed to fetch crew members: $e'));
-    }
-  }
-
-  Future<void> getCrewMemberById(String id) async {
-    try {
-      emit(CrewLoadingState());
-      final crewMember = await _crewRepo.getCrewMemberByID(crewMemberID: id);
-      emit(CrewLoadedState([crewMember]));
-    } catch (e) {
-      emit(CrewFailureState(
-          errorMessage: 'Failed to fetch crew member of ID $id: $e'));
+      emit(CrewFailureState(errorMessage: 'Failed to fetch crew members: $e'));
     }
   }
 }

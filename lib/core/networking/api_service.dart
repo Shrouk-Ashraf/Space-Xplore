@@ -11,7 +11,4 @@ abstract class ApiService {
 
   @GET("/crew")
   Future<List<CrewMemberModel>> getAllCrew();
-
-  @GET("/crew/{id}")
-  Future<CrewMemberModel> getCrewMemberById(@Path("id") String id);
 }

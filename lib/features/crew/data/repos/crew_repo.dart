@@ -7,9 +7,11 @@ class CrewRepo {
   CrewRepo(this.apiService);
 
   Future<List<CrewMemberModel>> getAllCrew() async {
-    final crewMembersList = await apiService.getAllCrew();
-    return crewMembersList;
+    try {
+      final crewMembersList = await apiService.getAllCrew();
+      return crewMembersList;
+    } catch (error) {
+      return [];
+    }
   }
-
-  getCrewMemberByID({required String crewMemberID}) {}
 }
