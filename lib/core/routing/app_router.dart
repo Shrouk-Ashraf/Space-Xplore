@@ -31,10 +31,6 @@ class AppRouter {
             child: const LaunchesScreen(),
           ),
         );
-      case Routes.launchDetailsScreen:
-        return MaterialPageRoute(
-          builder: (_) => const LaunchDetailsScreen(),
-        );
       case Routes.crewScreen:
         return MaterialPageRoute(
           builder: (_) => const CrewScreen(),

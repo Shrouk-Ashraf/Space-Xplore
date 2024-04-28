@@ -10,6 +10,7 @@ class ColorsManager {
   static const Color black = Color(0xFF000000);
   static const Color transparent = Color(0x00FFFFFF);
   static const Color blue = Color(0xFF3EB8FF);
+  static const Color lightBlue = Color(0xFFC8E7FC);
   static const Color lightTransparent = Color(0x42000000);
   static const Color cardColor = Color(0xffFDFDFD);
   static Color semiTransparent = const Color(0xffc4c4c4).withOpacity(0.5);

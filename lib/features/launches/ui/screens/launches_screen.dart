@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:space_app/core/routing/routes.dart';
+import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/theming/styles.dart';
 import 'package:space_app/core/widgets/background_container.dart';
 import 'package:space_app/core/widgets/custom_app_bar.dart';
 import 'package:space_app/features/launches/logic/cubit/launch_cubit.dart';
 import 'package:space_app/features/launches/logic/cubit/launch_state.dart';
+import 'package:space_app/features/launches/ui/screens/launch_details_screen.dart';
 import 'package:space_app/features/launches/ui/widgets/custom_card.dart';
 
 class LaunchesScreen extends StatefulWidget {
@@ -48,8 +49,10 @@ class _LaunchesScreenState extends State<LaunchesScreen> {
                     builder: (context, state) {
                       return state.mapOrNull(
                             loading: (value) {
-                              debugPrint("loading");
-                              return const CircularProgressIndicator();
+                              return const Center(
+                                  child: CircularProgressIndicator(
+                                color: ColorsManager.mainColor,
+                              ));
                             },
                             success: (allLaunches) {
                               var items = allLaunches.data;
@@ -61,7 +64,6 @@ class _LaunchesScreenState extends State<LaunchesScreen> {
                                 gridDelegate:
                                     SliverGridDelegateWithFixedCrossAxisCount(
                                   crossAxisCount: 2,
-                                  // childAspectRatio: 100.w / 100.h,
                                   crossAxisSpacing: 35.w,
                                   mainAxisSpacing: 15.h,
                                 ),
@@ -69,8 +71,12 @@ class _LaunchesScreenState extends State<LaunchesScreen> {
                                 itemBuilder: (context, index) {
                                   return GestureDetector(
                                     onTap: () {
-                                      Navigator.pushNamed(
-                                          context, Routes.launchesScreen);
+                                      Navigator.of(context).push(
+                                          MaterialPageRoute(builder: (context) {
+                                        return LaunchDetailsScreen(
+                                          item: items[index],
+                                        );
+                                      }));
                                     },
                                     child: CustomCard(
                                       item: items[index],

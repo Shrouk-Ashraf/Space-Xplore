@@ -33,10 +33,28 @@ class TextStyles {
     fontWeight: FontWeight.bold,
     fontFamily: 'Orienta',
   );
+  static TextStyle font11BlueMedium = TextStyle(
+    color: ColorsManager.blue,
+    decorationColor: ColorsManager.blue,
+    decoration: TextDecoration.underline,
+    fontSize: 11.sp,
+    fontWeight: FontWeight.w500,
+  );
+  static TextStyle font24BlackBold = TextStyle(
+    color: ColorsManager.black,
+    fontSize: 24.sp,
+    fontWeight: FontWeight.bold,
+  );
   static TextStyle font12WhiteBold = TextStyle(
     color: ColorsManager.white,
     fontSize: 12.sp,
     fontWeight: FontWeight.bold,
+  );
+
+  static TextStyle font13WhiteRegular = TextStyle(
+    color: ColorsManager.white,
+    fontSize: 13.sp,
+    fontWeight: FontWeight.normal,
   );
 
   static TextStyle font15WhiteBold = TextStyle(
@@ -51,6 +69,13 @@ class TextStyles {
     fontWeight: FontWeight.w500,
     fontFamily: 'Orienta',
   );
+
+  static TextStyle font14BlueRegular = TextStyle(
+    color: ColorsManager.blue,
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w500,
+  );
+
   static TextStyle font10White500Weight = TextStyle(
     color: ColorsManager.white,
     fontSize: 10.sp,
@@ -76,5 +101,9 @@ class TextStyles {
     fontSize: 11.sp,
     fontWeight: FontWeight.w500,
     fontFamily: 'Orienta',
+  );
+  static TextStyle font16LightBlueRegular = TextStyle(
+    color: ColorsManager.lightBlue,
+    fontSize: 16.sp,
   );
 }
