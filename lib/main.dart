@@ -1,37 +1,29 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:space_app/core/di/injection.dart';
-import 'package:space_app/core/networking/api_services.dart';
-import 'package:space_app/features/ships/data/repos/ships_repo_imple.dart';
-import 'package:space_app/features/ships/logic/ships/ships_cubit.dart';
-import 'package:space_app/features/ships/ui/screens/ships_screen.dart';
+import 'package:space_app/core/di/dependency_injection.dart';
+import 'package:space_app/core/routing/app_router.dart';
+import 'package:space_app/core/routing/routes.dart';
 
 void main() {
-  initGetIt();
-  Dio dio = Dio();
-  ApiServices apiServices = ApiServices(dio);
-  ShipsRepoImple imple = ShipsRepoImple(apiServices);
-  imple.getAllShips();
-  runApp(const SpaceApp());
+  setupGetIt();
+  runApp(SpaceApp(
+    appRouter: AppRouter(),
+  ));
 }
 
 class SpaceApp extends StatelessWidget {
-  const SpaceApp({super.key});
+  final AppRouter appRouter;
+  const SpaceApp({super.key, required this.appRouter});
 
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(375, 812),
+      designSize: const Size(375, 840),
       minTextAdapt: true,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: "Space App",
-        home: BlocProvider(
-          create: (context) => getIt<ShipsCubit>()..getAllShipsData(),
-          child: ShipsScreen(),
-        ),
+        initialRoute: Routes.onBoardingScreen,
+        onGenerateRoute: appRouter.generateRoute,
       ),
     );
   }

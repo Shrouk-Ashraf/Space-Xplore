@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:space_app/core/helper/spacing.dart';
+import 'package:space_app/core/helpers/spacing.dart';
 import 'package:space_app/core/theming/styles.dart';
 
-class TitileAndSubTitle extends StatelessWidget {
-  TitileAndSubTitle(
-      {Key? key, required this.title, required this.subTitle, this.textStyle})
-      : super(key: key);
+class TitleAndSubTitle extends StatelessWidget {
+  const TitleAndSubTitle(
+      {super.key, required this.title, required this.subTitle, this.textStyle});
 
   final String title, subTitle;
   final TextStyle? textStyle;
@@ -22,7 +21,7 @@ class TitileAndSubTitle extends StatelessWidget {
             overflow: TextOverflow.ellipsis,
           ),
         ),
-        horizantalSpace(8.w),
+        horizontalSpace(8.w),
         Flexible(
           flex: 2,
           child: Text(
