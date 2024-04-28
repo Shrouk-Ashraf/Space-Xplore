@@ -4,7 +4,8 @@ import 'package:space_app/core/helpers/spacing.dart';
 import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/theming/styles.dart';
 import 'package:space_app/core/widgets/background_container.dart';
-import 'package:space_app/features/ships/data/ship_model/ship_model.dart';
+import 'package:space_app/core/widgets/wikipedia_link_text.dart';
+import 'package:space_app/features/ships/data/models/ship_model.dart';
 import 'package:space_app/features/ships/ui/widgets/info_data_with_image.dart';
 import 'package:space_app/features/ships/ui/widgets/titile_and_sub_title_info.dart';
 
@@ -63,26 +64,24 @@ class ShipDetailsScreen extends StatelessWidget {
                         shipModel: singleShipModel,
                       ),
                       verticalSpace(10.h),
-                      TitileAndSubTitle(
+                      TitleAndSubTitle(
                         title: "Home port:",
                         subTitle: singleShipModel.homePort ?? "empty",
                       ),
                       verticalSpace(10.h),
-                      TitileAndSubTitle(
+                      TitleAndSubTitle(
                         title: "Year Built:",
-                        subTitle: singleShipModel.yearBuilt.toString() ?? "0",
+                        subTitle: singleShipModel.yearBuilt.toString(),
                       ),
                       verticalSpace(10.h),
-                      TitileAndSubTitle(
+                      TitleAndSubTitle(
                         title: "Weight:",
                         subTitle:
                             "${singleShipModel.weightKg?.toString() ?? ''} kg",
                       ),
                       verticalSpace(24.h),
-                      Text(
-                        "Wikipedia",
-                        style: TextStyles.font15Blue500Weight,
-                      ),
+                      if (singleShipModel.link != null)
+                        WikipediaLinkText(wikipediaUrl: singleShipModel.link!),
                       verticalSpace(24.h),
                       const Divider(color: ColorsManager.darkGrey),
                     ],

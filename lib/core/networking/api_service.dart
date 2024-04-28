@@ -5,7 +5,7 @@ import 'package:space_app/features/crew/data/models/crew_member_model.dart';
 import 'package:retrofit/http.dart';
 import 'package:space_app/features/launches/data/models/launch_response.dart';
 import 'package:space_app/features/rockets/data/models/rocket_model/rocket_model.dart';
-import 'package:space_app/features/ships/data/ship_model/ship_model.dart';
+import 'package:space_app/features/ships/data/models/ship_model.dart';
 part 'api_service.g.dart';
 
 @RestApi(baseUrl: ApiConstants.baseUrl)

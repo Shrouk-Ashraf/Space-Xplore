@@ -122,6 +122,12 @@ class TextStyles {
     fontWeight: FontWeightManager.bold,
     fontFamily: Fonts.orbitronFont,
   );
+  static TextStyle font24BlackBoldOrbitorn = TextStyle(
+    color: ColorsManager.black,
+    fontSize: 24.sp,
+    fontWeight: FontWeightManager.bold,
+    fontFamily: Fonts.orbitronFont,
+  );
   static TextStyle font15White500Weight = TextStyle(
     color: ColorsManager.white,
     fontSize: 15.sp,

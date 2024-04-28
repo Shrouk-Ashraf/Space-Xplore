@@ -5,7 +5,7 @@ import 'package:space_app/core/widgets/background_container.dart';
 import 'package:space_app/core/widgets/custom_app_bar.dart';
 import 'package:space_app/core/widgets/custom_error_widget.dart';
 import 'package:space_app/core/widgets/custom_loading_widget.dart';
-import 'package:space_app/features/ships/logic/ships/ships_cubit.dart';
+import 'package:space_app/features/ships/logic/ships_cubit.dart';
 import 'package:space_app/features/ships/ui/widgets/all_category_of_ships.dart';
 
 class ShipsScreen extends StatefulWidget {
@@ -39,10 +39,10 @@ class _ShipsScreenState extends State<ShipsScreen> {
                   return AllCategoryOfShips(
                     shipsModel: state.shipsData,
                   );
-                } else if (state is ShipsFaliure) {
+                } else if (state is ShipsFailure) {
                   return CustomErrorWidget(errorMessage: state.errorMessage);
                 } else {
-                  return const CutomLoadingWidget();
+                  return const CustomLoadingWidget();
                 }
               },
             ),

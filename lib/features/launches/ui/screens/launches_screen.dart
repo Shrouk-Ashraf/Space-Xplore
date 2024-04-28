@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:space_app/core/helpers/spacing.dart';
 import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/theming/styles.dart';
 import 'package:space_app/core/widgets/background_container.dart';
@@ -44,7 +45,7 @@ class _LaunchesScreenState extends State<LaunchesScreen> {
                     "All Launches",
                     style: TextStyles.font18WhiteRegular,
                   ),
-                  24.verticalSpace,
+                  verticalSpace(24),
                   BlocBuilder<LaunchCubit, LaunchState>(
                     builder: (context, state) {
                       return state.mapOrNull(

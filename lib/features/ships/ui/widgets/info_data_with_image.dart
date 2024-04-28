@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:space_app/core/helpers/spacing.dart';
 import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/theming/styles.dart';
-import 'package:space_app/features/ships/data/ship_model/ship_model.dart';
+import 'package:space_app/features/ships/data/models/ship_model.dart';
 import 'package:space_app/features/ships/ui/widgets/titile_and_sub_title_info.dart';
 
 class InfoDataWithImage extends StatelessWidget {
@@ -25,14 +25,14 @@ class InfoDataWithImage extends StatelessWidget {
                 style: TextStyles.font15WhiteBold,
               ),
               verticalSpace(10.h),
-              TitileAndSubTitle(
+              TitleAndSubTitle(
                 title: "Type:",
                 subTitle: shipModel.shipType ?? '_',
               ),
               verticalSpace(10.h),
-              TitileAndSubTitle(
+              TitleAndSubTitle(
                 title: "Status:",
-                subTitle: isActive(shipModel.active ?? true),
+                subTitle: isActive(shipModel.active!),
                 textStyle: isActive(shipModel.active!) == "Inactive"
                     ? TextStyles.font15White500Weight
                         .copyWith(color: ColorsManager.red)

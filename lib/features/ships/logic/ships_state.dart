@@ -12,8 +12,8 @@ final class ShipsSuccess extends ShipsState {
 
 final class ShipsLoading extends ShipsState {}
 
-final class ShipsFaliure extends ShipsState {
+final class ShipsFailure extends ShipsState {
   final String errorMessage;
 
-  ShipsFaliure({required this.errorMessage});
+  ShipsFailure({required this.errorMessage});
 }

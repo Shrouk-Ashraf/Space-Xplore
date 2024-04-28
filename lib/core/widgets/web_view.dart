@@ -44,7 +44,7 @@ class _WebViewState extends State<WebView> {
         centerTitle: false,
         title: Text(
           "SpaceX",
-          style: TextStyles.font24BlackBold,
+          style: TextStyles.font24BlackBoldOrbitorn,
         ),
       ),
       body: Padding(

@@ -1,4 +1,4 @@
-part of '../cubit/crew_cubit.dart';
+part of 'crew_cubit.dart';
 
 abstract class CrewState {}
 

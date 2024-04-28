@@ -6,7 +6,7 @@ import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/theming/styles.dart';
 import 'package:space_app/core/widgets/custom_app_bar.dart';
 import 'package:space_app/core/widgets/background_container.dart';
-import 'package:space_app/features/crew/logic/cubit/crew_cubit.dart';
+import 'package:space_app/features/crew/logic/crew_cubit.dart';
 import 'package:space_app/features/crew/ui/widgets/crew_grid_view.dart';
 
 class CrewScreen extends StatefulWidget {

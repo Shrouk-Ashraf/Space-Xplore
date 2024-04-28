@@ -5,12 +5,12 @@ part 'ship_model.g.dart';
 // TODO: Run the following command in the terminal whenever you make any changes to this file ==> dart run build_runner build
 @JsonSerializable()
 class ShipModel {
-  @JsonKey(name: 'ship_id')
+  @JsonKey(name: 'id')
   String? shipId;
-  @JsonKey(name: 'ship_name')
+  @JsonKey(name: 'name')
   String? shipName;
   dynamic shipModel;
-  @JsonKey(name: 'ship_type')
+  @JsonKey(name: 'type')
   String? shipType;
   List<String>? roles;
   bool? active;
@@ -19,7 +19,7 @@ class ShipModel {
   int? abs;
   int? shipModelClass;
   int? weightLbs;
-  @JsonKey(name: 'weight_kg')
+  @JsonKey(name: 'mass_kg')
   int? weightKg;
   @JsonKey(name: 'year_built')
   int? yearBuilt;
@@ -30,7 +30,7 @@ class ShipModel {
   dynamic courseDeg;
   dynamic successfulLandings;
   dynamic attemptedLandings;
-  String? url;
+  String? link;
   String? image;
 
   ShipModel({
@@ -53,7 +53,7 @@ class ShipModel {
     this.courseDeg,
     this.successfulLandings,
     this.attemptedLandings,
-    this.url,
+    this.link,
     this.image,
   });
 

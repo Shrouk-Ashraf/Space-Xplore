@@ -5,9 +5,9 @@ import 'package:space_app/core/networking/dio_factory.dart';
 import 'package:space_app/features/launches/data/repos/launch_repo.dart';
 import 'package:space_app/features/launches/logic/cubit/launch_cubit.dart';
 import 'package:space_app/features/crew/data/repos/crew_repo.dart';
-import 'package:space_app/features/crew/logic/cubit/crew_cubit.dart';
-import 'package:space_app/features/ships/data/repos/ships_repo_imple.dart';
-import 'package:space_app/features/ships/logic/ships/ships_cubit.dart';
+import 'package:space_app/features/crew/logic/crew_cubit.dart';
+import 'package:space_app/features/ships/data/repos/ships_repo.dart';
+import 'package:space_app/features/ships/logic/ships_cubit.dart';
 
 final getIt = GetIt.instance;
 
@@ -26,5 +26,5 @@ Future<void> setupGetIt() async {
 
   // ships
   getIt.registerLazySingleton<ShipsCubit>(() => ShipsCubit(getIt()));
-  getIt.registerLazySingleton<ShipsRepoImple>(() => ShipsRepoImple(getIt()));
+  getIt.registerLazySingleton<ShipsRepo>(() => ShipsRepo(getIt()));
 }

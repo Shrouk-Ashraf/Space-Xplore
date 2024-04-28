@@ -48,7 +48,7 @@ class DetailsSection extends StatelessWidget {
             title: "Mass : ",
             subTitle: "${rocketList[0].mass!.kg} Kg",
           ),
-          verticalSpace(40.h),
+          verticalSpace(24),
           DetailsSectionTextWidget(
             title: "Company : ",
             subTitle: "${rocketList[0].company}",
@@ -58,9 +58,7 @@ class DetailsSection extends StatelessWidget {
             title: "Country : ",
             subTitle: "${rocketList[0].country}",
           ),
-          const SizedBox(
-            height: 9,
-          ),
+          verticalSpace(10),
           WikipediaLinkText(
             wikipediaUrl: rocketList[0].wikipedia!,
           ),

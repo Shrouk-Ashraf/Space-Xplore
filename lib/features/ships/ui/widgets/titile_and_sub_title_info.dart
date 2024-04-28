@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:space_app/core/helpers/spacing.dart';
 import 'package:space_app/core/theming/styles.dart';
 
-class TitileAndSubTitle extends StatelessWidget {
-  const TitileAndSubTitle(
+class TitleAndSubTitle extends StatelessWidget {
+  const TitleAndSubTitle(
       {super.key, required this.title, required this.subTitle, this.textStyle});
 
   final String title, subTitle;

@@ -1,13 +1,12 @@
 import 'package:dio/dio.dart';
 
-abstract class Faliure {
+abstract class Failure {
   final String errorMessage;
-  Faliure({required this.errorMessage});
+  Failure({required this.errorMessage});
 }
 
-class ServerFailure extends Faliure {
-  ServerFailure({required String errorMessage})
-      : super(errorMessage: errorMessage);
+class ServerFailure extends Failure {
+  ServerFailure({required super.errorMessage});
 
   factory ServerFailure.fromDioException(DioException dioException) {
     switch (dioException.type) {
@@ -16,17 +15,17 @@ class ServerFailure extends Faliure {
       case DioExceptionType.sendTimeout:
         return ServerFailure(errorMessage: 'Send timeout with ApiServer');
       case DioExceptionType.receiveTimeout:
-        return ServerFailure(errorMessage: 'Recive timeout with ApiServer');
+        return ServerFailure(errorMessage: 'Receive timeout with ApiServer');
       case DioExceptionType.badCertificate:
         return ServerFailure(errorMessage: 'Bad certificate error!');
       case DioExceptionType.badResponse:
         return ServerFailure.fromResponse(
             dioException.response!.statusCode!, dioException.response!.data);
       case DioExceptionType.cancel:
-        return ServerFailure(errorMessage: 'Requist error canseld');
+        return ServerFailure(errorMessage: 'Request error canceled');
       case DioExceptionType.connectionError:
         if (dioException.message!.contains('SocketException')) {
-          return ServerFailure(errorMessage: 'No Interner Connection');
+          return ServerFailure(errorMessage: 'No Internet Connection');
         }
       case DioExceptionType.unknown:
         return ServerFailure(errorMessage: 'Unexpected error with ApiServer');
