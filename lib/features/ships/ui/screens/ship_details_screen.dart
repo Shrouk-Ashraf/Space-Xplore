@@ -4,10 +4,13 @@ import 'package:space_app/core/helper/spacing.dart';
 import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/theming/styles.dart';
 import 'package:space_app/core/widgets/background.dart';
+import 'package:space_app/features/ships/data/ship_model/ship_model.dart';
 import 'package:space_app/features/ships/ui/widgets/info_data_with_image.dart';
 import 'package:space_app/features/ships/ui/widgets/titile_and_sub_title_info.dart';
 
 class ShipDetailsScreen extends StatelessWidget {
+  ShipDetailsScreen({required this.singleShipModel});
+  final ShipModel? singleShipModel;
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -15,7 +18,7 @@ class ShipDetailsScreen extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         title: Text(
-          "American champion",
+          singleShipModel!.shipName!,
           style: TextStyles.font20WhiteBoldOrbitron,
         ),
         leading: IconButton(
@@ -53,21 +56,24 @@ class ShipDetailsScreen extends StatelessWidget {
                     verticalSpace(24.h),
                     const Divider(color: ColorsManager.darkGrey),
                     verticalSpace(12.h),
-                    const InfoDataWithImage(),
+                    InfoDataWithImage(
+                      shipModel: singleShipModel!,
+                    ),
                     verticalSpace(10.h),
                     TitileAndSubTitle(
                       title: "Home port:",
-                      subTitle: "port of los Angles",
+                      subTitle: singleShipModel?.homePort ?? "empty",
                     ),
                     verticalSpace(10.h),
                     TitileAndSubTitle(
                       title: "Year Built:",
-                      subTitle: "1976",
+                      subTitle: singleShipModel?.yearBuilt.toString() ?? "0",
                     ),
                     verticalSpace(10.h),
                     TitileAndSubTitle(
                       title: "Weight:",
-                      subTitle: "(266,712 kg)",
+                      subTitle:
+                          "${singleShipModel?.weightKg?.toString() ?? ''} kg",
                     ),
                     verticalSpace(24.h),
                     Text(

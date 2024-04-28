@@ -39,6 +39,7 @@ class CustomGridContainer extends StatelessWidget {
               alignment: Alignment.center,
               child: Text(
                 title,
+                textAlign: TextAlign.center,
                 style: TextStyles.font12WhiteBold,
                 overflow: TextOverflow.ellipsis,
                 maxLines: 2,

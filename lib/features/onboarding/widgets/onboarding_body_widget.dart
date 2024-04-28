@@ -7,11 +7,12 @@ class OnBoardingBodyWidget extends StatelessWidget {
   const OnBoardingBodyWidget({
     super.key,
     required this.onBoarding,
-    required this.onPressed, required this.pageNumber,
+    required this.onPressed,
+    required this.pageNumber,
   });
   final OnBoarding onBoarding;
   final void Function() onPressed;
-  final  int pageNumber;
+  final int pageNumber;
 
   @override
   Widget build(BuildContext context) {
@@ -57,9 +58,11 @@ class OnBoardingBodyWidget extends StatelessWidget {
                 child: Image.asset('assets/images/button next.png'),
               ),
             ),
-             Padding(
+            Padding(
               padding: const EdgeInsets.only(right: 10),
-              child: DotIndIndcator(pageNumber: pageNumber,),
+              child: DotIndIndcator(
+                pageNumber: pageNumber,
+              ),
             ),
             const SizedBox(
               height: 68,

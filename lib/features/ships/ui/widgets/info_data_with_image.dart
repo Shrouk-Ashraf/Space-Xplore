@@ -3,50 +3,62 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:space_app/core/helper/spacing.dart';
 import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/theming/styles.dart';
+import 'package:space_app/features/ships/data/ship_model/ship_model.dart';
 import 'package:space_app/features/ships/ui/widgets/titile_and_sub_title_info.dart';
 
 class InfoDataWithImage extends StatelessWidget {
-  const InfoDataWithImage({super.key});
+  const InfoDataWithImage({Key? key, required this.shipModel})
+      : super(key: key);
+  final ShipModel shipModel;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Flexible(
+        Expanded(
           flex: 2,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "American champion",
+                shipModel.shipName!,
                 style: TextStyles.font15WhiteBold,
               ),
               verticalSpace(10.h),
               TitileAndSubTitle(
                 title: "Type:",
-                subTitle: "Tug",
+                subTitle: shipModel.shipType!,
               ),
               verticalSpace(10.h),
               TitileAndSubTitle(
                 title: "Status:",
-                subTitle: "Stopped",
-                textStyle: TextStyles.font15White500Weight
-                    .copyWith(color: ColorsManager.red),
+                subTitle: isActive(shipModel.active!),
+                textStyle: isActive(shipModel.active!) == "Inactive"
+                    ? TextStyles.font15White500Weight
+                        .copyWith(color: ColorsManager.red)
+                    : TextStyles.font15White500Weight
+                        .copyWith(color: Colors.green),
               ),
             ],
           ),
         ),
-        Flexible(
-          flex: 1,
+        Container(
+          width: 90.w,
+          height: 90.h,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(4.r),
             child: Image.network(
-              'https://i.imgur.com/woCxpkj.jpg',
+              shipModel.image ?? "https://i.imgur.com/woCxpkj.jpg",
+              fit: BoxFit.cover,
             ),
           ),
         ),
       ],
     );
+  }
+
+  String isActive(bool state) {
+    return state ? "Active" : "Inactive";
   }
 }

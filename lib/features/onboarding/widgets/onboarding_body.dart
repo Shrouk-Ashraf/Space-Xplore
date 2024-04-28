@@ -21,9 +21,7 @@ class _OnboardingBodyState extends State<OnboardingBody> {
         controller: nextPage,
         onPageChanged: (value) {
           pageNumber = value;
-          setState(() {
-            
-          });
+          setState(() {});
         },
         children: [
           OnBoardingBodyWidget(
