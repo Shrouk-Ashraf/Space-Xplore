@@ -57,8 +57,10 @@ class DetailsSection extends StatelessWidget {
             title: "Country : ",
             subTitle: "${rocketList[0].country}",
           ),
-          verticalSpace(9.h),
-          // const WikipediaLink(),
+          const SizedBox(
+            height: 9,
+          ),
+          const WikipediaLink(),
         ],
       ),
     );
