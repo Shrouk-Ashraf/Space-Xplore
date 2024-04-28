@@ -7,11 +7,9 @@ class WikipediaLinkText extends StatelessWidget {
   const WikipediaLinkText({
     super.key,
     required this.wikipediaUrl,
-    required this.text,
   });
 
   final String wikipediaUrl;
-  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +22,7 @@ class WikipediaLinkText extends StatelessWidget {
         );
       },
       child: Text(
-        text,
+        'Wikipedia',
         style: TextStyles.font11BlueMedium,
       ),
     );

@@ -4,6 +4,8 @@ import 'package:space_app/core/networking/api_service.dart';
 import 'package:space_app/core/networking/dio_factory.dart';
 import 'package:space_app/features/launches/data/repos/launch_repo.dart';
 import 'package:space_app/features/launches/logic/cubit/launch_cubit.dart';
+import 'package:space_app/features/crew/data/repos/crew_repo.dart';
+import 'package:space_app/features/crew/logic/cubit/crew_cubit.dart';
 
 final getIt = GetIt.instance;
 
@@ -15,4 +17,6 @@ Future<void> setupGetIt() async {
   //Launch
   getIt.registerLazySingleton(() => LaunchRepo(getIt()));
   getIt.registerLazySingleton(() => LaunchCubit(getIt()));
+  getIt.registerLazySingleton<CrewRepo>(() => CrewRepo(getIt()));
+  getIt.registerFactory<CrewCubit>(() => CrewCubit(getIt()));
 }

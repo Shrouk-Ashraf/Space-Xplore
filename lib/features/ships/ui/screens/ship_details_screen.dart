@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:space_app/core/helper/spacing.dart';
+import 'package:space_app/core/helpers/spacing.dart';
 import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/theming/styles.dart';
 import 'package:space_app/core/widgets/background_container.dart';
 
 class ShipDetailsScreen extends StatelessWidget {
+  const ShipDetailsScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,19 +39,19 @@ class ShipDetailsScreen extends StatelessWidget {
                     verticalSpace(12.h),
                     Text(
                       "American champion",
-                      style: TextStyles.font15WhiteBold,
+                      style: TextStyles.font16WhiteBold,
                     ),
                     verticalSpace(10.h),
                     Row(
                       children: [
                         Text(
                           "Home port:",
-                          style: TextStyles.font15WhiteBold,
+                          style: TextStyles.font16WhiteBold,
                         ),
-                        horizantalSpace(8.w),
+                        horizontalSpace(8.w),
                         Text(
                           "port of los Angles",
-                          style: TextStyles.font15White500Weight,
+                          style: TextStyles.font15WhiteMedium,
                         ),
                       ],
                     ),
@@ -58,12 +60,12 @@ class ShipDetailsScreen extends StatelessWidget {
                       children: [
                         Text(
                           "Type:",
-                          style: TextStyles.font15WhiteBold,
+                          style: TextStyles.font16WhiteBold,
                         ),
-                        horizantalSpace(8.w),
+                        horizontalSpace(8.w),
                         Text(
                           "Tug",
-                          style: TextStyles.font15White500Weight,
+                          style: TextStyles.font15WhiteMedium,
                         ),
                       ],
                     ),
@@ -72,12 +74,12 @@ class ShipDetailsScreen extends StatelessWidget {
                       children: [
                         Text(
                           "Status:",
-                          style: TextStyles.font15WhiteBold,
+                          style: TextStyles.font16WhiteBold,
                         ),
-                        horizantalSpace(8.w),
+                        horizontalSpace(8.w),
                         Text(
                           "Stopped",
-                          style: TextStyles.font15White500Weight
+                          style: TextStyles.font15WhiteMedium
                               .copyWith(color: ColorsManager.red),
                         ),
                       ],
@@ -87,12 +89,12 @@ class ShipDetailsScreen extends StatelessWidget {
                       children: [
                         Text(
                           "Year Built:",
-                          style: TextStyles.font15WhiteBold,
+                          style: TextStyles.font16WhiteBold,
                         ),
-                        horizantalSpace(8.w),
+                        horizontalSpace(8.w),
                         Text(
                           "1976",
-                          style: TextStyles.font15White500Weight,
+                          style: TextStyles.font15WhiteMedium,
                         ),
                       ],
                     ),
@@ -101,19 +103,19 @@ class ShipDetailsScreen extends StatelessWidget {
                       children: [
                         Text(
                           "Weight:",
-                          style: TextStyles.font15WhiteBold,
+                          style: TextStyles.font16WhiteBold,
                         ),
-                        horizantalSpace(8.w),
+                        horizontalSpace(8.w),
                         Text(
                           "(266,712 kg)",
-                          style: TextStyles.font15White500Weight,
+                          style: TextStyles.font15WhiteMedium,
                         ),
                       ],
                     ),
                     verticalSpace(24.h),
                     Text(
                       "Wikipedia",
-                      style: TextStyles.font15Blue500Weight,
+                      style: TextStyles.font15BlueMedium,
                     ),
                     verticalSpace(24.h),
                     const Divider(color: ColorsManager.darkGrey),

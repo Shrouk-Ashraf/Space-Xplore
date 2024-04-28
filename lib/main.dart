@@ -18,11 +18,9 @@ class SpaceApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
+      designSize: const Size(375, 840),
       minTextAdapt: true,
       child: MaterialApp(
-        theme: ThemeData(
-          scaffoldBackgroundColor: Colors.black,
-        ),
         debugShowCheckedModeBanner: false,
         initialRoute: Routes.onBoardingScreen,
         onGenerateRoute: appRouter.generateRoute,

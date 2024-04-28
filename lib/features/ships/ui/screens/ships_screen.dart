@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:space_app/core/helper/spacing.dart';
+import 'package:space_app/core/helpers/spacing.dart';
 import 'package:space_app/core/theming/styles.dart';
 import 'package:space_app/core/widgets/background_container.dart';
 import 'package:space_app/core/widgets/custom_app_bar.dart';
@@ -43,7 +43,7 @@ class ShipsScreen extends StatelessWidget {
                   alignment: Alignment.topLeft,
                   child: Text(
                     "All Ships",
-                    style: TextStyles.font18White500Weight,
+                    style: TextStyles.font18WhiteMedium,
                   ),
                 ),
               ),
@@ -51,32 +51,34 @@ class ShipsScreen extends StatelessWidget {
               Expanded(
                 child: Padding(
                   padding: EdgeInsets.symmetric(
-                    horizontal: 20.w,
+                    horizontal: 35.w,
                   ),
-                  child: Container(
-                    child: GridView.builder(
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        childAspectRatio: 100.w / 110.h,
-                        crossAxisSpacing: 35.w,
-                        mainAxisSpacing: 30.h,
-                      ),
-                      itemCount: dataOfShips.length,
-                      itemBuilder: ((context, index) {
-                        return GestureDetector(
-                          onTap: () {
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (context) {
-                              return ShipDetailsScreen();
-                            }));
-                          },
-                          child: CustomGridContainer(
-                            imageUrl: dataOfShips[index].imageUrl,
-                            title: dataOfShips[index].title,
-                          ),
-                        );
-                      }),
+                  child: GridView.builder(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      childAspectRatio: 100.w / 120.h,
+                      crossAxisSpacing: 40.w,
+                      mainAxisSpacing: 35.h,
                     ),
+                    itemCount: dataOfShips.length,
+                    itemBuilder: ((context, index) {
+                      return GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return const ShipDetailsScreen();
+                              },
+                            ),
+                          );
+                        },
+                        child: CustomGridContainer(
+                          imageUrl: dataOfShips[index].imageUrl,
+                          title: dataOfShips[index].title,
+                        ),
+                      );
+                    }),
                   ),
                 ),
               ),

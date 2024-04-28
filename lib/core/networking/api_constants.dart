@@ -3,6 +3,7 @@ class ApiConstants {
 
   //Launches
   static const String allLaunches = "launches";
+  static const String crew = "crew";
 }
 
 class ApiErrors {
