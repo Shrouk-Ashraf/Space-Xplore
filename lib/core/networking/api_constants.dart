@@ -1,9 +1,9 @@
 class ApiConstants {
   static const String baseUrl = "https://api.spacexdata.com/v4/";
 
-  //Launches
   static const String allLaunches = "launches";
   static const String crew = "crew";
+  static const String ships = "ships";
 }
 
 class ApiErrors {

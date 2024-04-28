@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:space_app/core/helper/spacing.dart';
+import 'package:space_app/core/helpers/spacing.dart';
 import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/theming/styles.dart';
 import 'package:space_app/features/ships/data/ship_model/ship_model.dart';
 import 'package:space_app/features/ships/ui/widgets/titile_and_sub_title_info.dart';
 
 class InfoDataWithImage extends StatelessWidget {
-  const InfoDataWithImage({Key? key, required this.shipModel})
-      : super(key: key);
+  const InfoDataWithImage({super.key, required this.shipModel});
   final ShipModel shipModel;
 
   @override
@@ -43,7 +42,7 @@ class InfoDataWithImage extends StatelessWidget {
             ],
           ),
         ),
-        Container(
+        SizedBox(
           width: 90.w,
           height: 90.h,
           child: ClipRRect(

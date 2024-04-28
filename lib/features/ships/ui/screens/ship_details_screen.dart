@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:space_app/core/helper/spacing.dart';
+import 'package:space_app/core/helpers/spacing.dart';
 import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/theming/styles.dart';
-import 'package:space_app/core/widgets/background.dart';
+import 'package:space_app/core/widgets/background_container.dart';
 import 'package:space_app/features/ships/data/ship_model/ship_model.dart';
 import 'package:space_app/features/ships/ui/widgets/info_data_with_image.dart';
 import 'package:space_app/features/ships/ui/widgets/titile_and_sub_title_info.dart';
@@ -11,6 +11,7 @@ import 'package:space_app/features/ships/ui/widgets/titile_and_sub_title_info.da
 class ShipDetailsScreen extends StatelessWidget {
   const ShipDetailsScreen({super.key, required this.singleShipModel});
   final ShipModel? singleShipModel;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

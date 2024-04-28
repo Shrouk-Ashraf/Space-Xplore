@@ -11,7 +11,7 @@ import 'package:space_app/features/crew/ui/screens/crew_screen.dart';
 import 'package:space_app/features/launches/logic/cubit/launch_cubit.dart';
 import 'package:space_app/features/launches/ui/screens/launches_screen.dart';
 import 'package:space_app/features/rockets/ui/screens/rockets_screen.dart';
-
+import 'package:space_app/features/ships/logic/ships/ships_cubit.dart';
 import 'package:space_app/features/ships/ui/screens/ships_screen.dart';
 
 class BottomNavBar extends StatelessWidget {
@@ -28,7 +28,10 @@ class BottomNavBar extends StatelessWidget {
         create: (context) => getIt<CrewCubit>(),
         child: const CrewScreen(),
       ),
-      ShipsScreen(),
+      BlocProvider(
+        create: (context) => getIt<ShipsCubit>(),
+        child: const ShipsScreen(),
+      ),
       const CompanyInfoScreen(),
     ];
   }

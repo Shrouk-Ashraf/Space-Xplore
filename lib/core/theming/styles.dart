@@ -18,6 +18,10 @@ class TextStyles {
     fontWeight: FontWeightManager.regular,
     fontFamily: Fonts.orientaFont,
   );
+  static TextStyle font16LightBlueRegular = TextStyle(
+    color: ColorsManager.lightBlue,
+    fontSize: 16.sp,
+  );
   static TextStyle font18WhiteRegular = TextStyle(
     fontSize: 18.sp,
     fontWeight: FontWeightManager.regular,
@@ -36,6 +40,12 @@ class TextStyles {
     decorationColor: ColorsManager.blue,
     decoration: TextDecoration.underline,
     fontSize: 11.sp,
+    fontWeight: FontWeightManager.medium,
+    fontFamily: Fonts.orientaFont,
+  );
+  static TextStyle font18WhiteMedium = TextStyle(
+    color: ColorsManager.white,
+    fontSize: 18.sp,
     fontWeight: FontWeightManager.medium,
     fontFamily: Fonts.orientaFont,
   );
@@ -76,6 +86,12 @@ class TextStyles {
     fontWeight: FontWeightManager.bold,
     fontFamily: Fonts.orientaFont,
   );
+  static TextStyle font16WhiteBold = TextStyle(
+    color: ColorsManager.white,
+    fontSize: 16.sp,
+    fontWeight: FontWeightManager.bold,
+    fontFamily: Fonts.orientaFont,
+  );
 
   static TextStyle font14BlueRegular = TextStyle(
     color: ColorsManager.blue,
@@ -94,20 +110,34 @@ class TextStyles {
     fontWeight: FontWeightManager.bold,
     fontFamily: Fonts.orbitronFont,
   );
+  static TextStyle font20WhiteBoldOrbitron = TextStyle(
+    color: ColorsManager.white,
+    fontSize: 20.sp,
+    fontWeight: FontWeight.bold,
+    fontFamily: 'Orbitron',
+  );
   static TextStyle font24WhiteBold = TextStyle(
     color: ColorsManager.white,
     fontSize: 24.sp,
     fontWeight: FontWeightManager.bold,
     fontFamily: Fonts.orbitronFont,
   );
-  static TextStyle font16LightBlueRegular = TextStyle(
-    color: ColorsManager.lightBlue,
-    fontSize: 16.sp,
-  );
-  static TextStyle font20WhiteBoldOrbitron = TextStyle(
+  static TextStyle font15White500Weight = TextStyle(
     color: ColorsManager.white,
-    fontSize: 20.sp,
-    fontWeight: FontWeight.bold,
-    fontFamily: 'Orbitron',
+    fontSize: 15.sp,
+    fontWeight: FontWeight.w500,
+    fontFamily: 'Orienta',
+  );
+  static TextStyle font18White500Weight = TextStyle(
+    color: ColorsManager.white,
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w500,
+    fontFamily: 'Orienta',
+  );
+  static TextStyle font15Blue500Weight = TextStyle(
+    color: ColorsManager.blue,
+    fontSize: 15.sp,
+    fontWeight: FontWeight.w500,
+    fontFamily: 'Orienta',
   );
 }

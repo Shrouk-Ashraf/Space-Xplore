@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:space_app/core/helper/spacing.dart';
+import 'package:space_app/core/helpers/spacing.dart';
 import 'package:space_app/core/theming/styles.dart';
-import 'package:space_app/core/widgets/app_bar.dart';
+import 'package:space_app/core/widgets/custom_app_bar.dart';
 import 'package:space_app/core/widgets/custom_grid_container.dart';
 import 'package:space_app/features/ships/data/ship_model/ship_model.dart';
 import 'package:space_app/features/ships/ui/screens/ship_details_screen.dart';
@@ -14,8 +14,9 @@ class AllCategoryOfShips extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const CustomAppBar(),
-        verticalSpace(20.h),
+        const CustomAppBar(
+          title: 'SpaceX',
+        ),
         Padding(
           padding: EdgeInsets.symmetric(
             horizontal: 12.w,

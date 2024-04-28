@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:space_app/core/helper/spacing.dart';
+import 'package:space_app/core/helpers/spacing.dart';
 import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/theming/styles.dart';
 import 'package:space_app/core/widgets/background_container.dart';
@@ -80,7 +80,6 @@ class LaunchDetailsScreen extends StatelessWidget {
                   GestureDetector(
                     onTap: () {},
                     child: WikipediaLinkText(
-                      text: "Article",
                       wikipediaUrl: item.links.article!,
                     ),
                   ),
@@ -88,7 +87,6 @@ class LaunchDetailsScreen extends StatelessWidget {
                   GestureDetector(
                     onTap: () {},
                     child: WikipediaLinkText(
-                      text: "wikipedia",
                       wikipediaUrl: item.links.wikipedia!,
                     ),
                   ),
