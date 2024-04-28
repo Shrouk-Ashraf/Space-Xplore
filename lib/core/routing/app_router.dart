@@ -7,7 +7,7 @@ import 'package:space_app/features/onboarding/ui/screens/onboarding_screen.dart'
 import 'package:space_app/features/rockets/ui/screens/rockets_screen.dart';
 import 'package:space_app/features/ships/ui/screens/ships_screen.dart';
 
-// TODO: to be edited 
+// TODO: to be edited
 class AppRouter {
   Route generateRoute(RouteSettings settings) {
     // final arguments = settings.arguments;

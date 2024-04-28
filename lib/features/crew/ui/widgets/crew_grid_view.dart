@@ -1,19 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:space_app/features/crew/data/crew_data.dart';
 import 'package:space_app/core/widgets/custom_grid_container.dart';
+import 'package:space_app/features/crew/data/models/crew_member_model.dart';
 import 'package:space_app/features/crew/ui/screens/crew_details_screen.dart';
 
 class CrewGridView extends StatelessWidget {
-  const CrewGridView({super.key});
+  const CrewGridView({super.key, required this.crewList});
 
-  // should have a list returned from API, for now import crew list from crew dummy data
+  final List<CrewMemberModel> crewList;
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20.w),
+        padding: EdgeInsets.only(
+          left: 20.w,
+          right: 20.w,
+          bottom: 50.w,
+        ),
         child: GridView(
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,

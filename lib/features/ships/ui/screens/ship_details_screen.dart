@@ -39,14 +39,14 @@ class ShipDetailsScreen extends StatelessWidget {
                     verticalSpace(12.h),
                     Text(
                       "American champion",
-                      style: TextStyles.font15WhiteBold,
+                      style: TextStyles.font16WhiteBold,
                     ),
                     verticalSpace(10.h),
                     Row(
                       children: [
                         Text(
                           "Home port:",
-                          style: TextStyles.font15WhiteBold,
+                          style: TextStyles.font16WhiteBold,
                         ),
                         horizontalSpace(8.w),
                         Text(
@@ -60,7 +60,7 @@ class ShipDetailsScreen extends StatelessWidget {
                       children: [
                         Text(
                           "Type:",
-                          style: TextStyles.font15WhiteBold,
+                          style: TextStyles.font16WhiteBold,
                         ),
                         horizontalSpace(8.w),
                         Text(
@@ -74,7 +74,7 @@ class ShipDetailsScreen extends StatelessWidget {
                       children: [
                         Text(
                           "Status:",
-                          style: TextStyles.font15WhiteBold,
+                          style: TextStyles.font16WhiteBold,
                         ),
                         horizontalSpace(8.w),
                         Text(
@@ -89,7 +89,7 @@ class ShipDetailsScreen extends StatelessWidget {
                       children: [
                         Text(
                           "Year Built:",
-                          style: TextStyles.font15WhiteBold,
+                          style: TextStyles.font16WhiteBold,
                         ),
                         horizontalSpace(8.w),
                         Text(
@@ -103,7 +103,7 @@ class ShipDetailsScreen extends StatelessWidget {
                       children: [
                         Text(
                           "Weight:",
-                          style: TextStyles.font15WhiteBold,
+                          style: TextStyles.font16WhiteBold,
                         ),
                         horizontalSpace(8.w),
                         Text(

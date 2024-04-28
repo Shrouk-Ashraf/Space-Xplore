@@ -70,9 +70,9 @@ class TextStyles {
     fontSize: 12.sp,
     fontWeight: FontWeightManager.bold,
   );
-  static TextStyle font15WhiteBold = TextStyle(
+  static TextStyle font16WhiteBold = TextStyle(
     color: ColorsManager.white,
-    fontSize: 15.sp,
+    fontSize: 16.sp,
     fontWeight: FontWeightManager.bold,
     fontFamily: Fonts.orientaFont,
   );
@@ -80,6 +80,12 @@ class TextStyles {
     color: ColorsManager.white,
     fontSize: 20.sp,
     fontWeight: FontWeightManager.bold,
+  );
+  static TextStyle font19WhiteBold = TextStyle(
+    color: ColorsManager.white,
+    fontSize: 19.sp,
+    fontWeight: FontWeightManager.bold,
+    fontFamily: Fonts.orbitronFont,
   );
   static TextStyle font24WhiteBold = TextStyle(
     color: ColorsManager.white,
