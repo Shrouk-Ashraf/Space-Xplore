@@ -21,18 +21,18 @@ class InfoDataWithImage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                shipModel.shipName!,
+                shipModel.shipName ?? 'name of ships error',
                 style: TextStyles.font15WhiteBold,
               ),
               verticalSpace(10.h),
               TitileAndSubTitle(
                 title: "Type:",
-                subTitle: shipModel.shipType!,
+                subTitle: shipModel.shipType ?? '_',
               ),
               verticalSpace(10.h),
               TitileAndSubTitle(
                 title: "Status:",
-                subTitle: isActive(shipModel.active!),
+                subTitle: isActive(shipModel.active ?? true),
                 textStyle: isActive(shipModel.active!) == "Inactive"
                     ? TextStyles.font15White500Weight
                         .copyWith(color: ColorsManager.red)

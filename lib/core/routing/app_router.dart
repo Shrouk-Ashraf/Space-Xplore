@@ -5,7 +5,6 @@ import 'package:space_app/core/routing/routes.dart';
 import 'package:space_app/features/company%20info/ui/screens/company_info_screen.dart';
 import 'package:space_app/features/crew/ui/screens/crew_screen.dart';
 import 'package:space_app/features/launches/logic/cubit/launch_cubit.dart';
-import 'package:space_app/features/launches/ui/screens/launch_details_screen.dart';
 import 'package:space_app/features/launches/ui/screens/launches_screen.dart';
 import 'package:space_app/features/onboarding/ui/screens/onboarding_screen.dart';
 import 'package:space_app/features/rockets/ui/screens/rockets_screen.dart';
@@ -37,7 +36,7 @@ class AppRouter {
         );
       case Routes.shipsScreen:
         return MaterialPageRoute(
-          builder: (_) => ShipsScreen(),
+          builder: (_) => const ShipsScreen(),
         );
       case Routes.companyInfoScreen:
         return MaterialPageRoute(

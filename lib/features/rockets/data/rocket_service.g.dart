@@ -34,7 +34,7 @@ class _RocketService implements RocketService {
     )
             .compose(
               _dio.options,
-              'rockets/',
+              'rockets',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -63,7 +63,7 @@ class _RocketService implements RocketService {
     )
             .compose(
               _dio.options,
-              'rockets//${id}',
+              'rockets/${id}',
               queryParameters: queryParameters,
               data: _data,
             )
