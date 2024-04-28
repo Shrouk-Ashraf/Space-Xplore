@@ -11,6 +11,7 @@ import 'package:space_app/features/ships/ui/widgets/titile_and_sub_title_info.da
 class ShipDetailsScreen extends StatelessWidget {
   ShipDetailsScreen({required this.singleShipModel});
   final ShipModel? singleShipModel;
+
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,

@@ -6,7 +6,7 @@ import 'package:space_app/core/di/injection.dart';
 import 'package:space_app/core/networking/api_services.dart';
 import 'package:space_app/features/ships/data/repos/ships_repo_imple.dart';
 import 'package:space_app/features/ships/logic/ships/ships_cubit.dart';
-import 'package:space_app/features/ships/ui/screens/ships_view.dart';
+import 'package:space_app/features/ships/ui/screens/ships_screen.dart';
 
 void main() {
   initGetIt();
