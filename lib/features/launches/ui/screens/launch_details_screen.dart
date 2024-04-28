@@ -72,17 +72,18 @@ class LaunchDetailsScreen extends StatelessWidget {
                             : "False",
                   ),
                   verticalSpace(20),
-                  CustomTextSpan(
-                    textTitle: "Failures: ",
-                    textDescription: item.failures[0].reason,
-                  ),
-                  verticalSpace(20),
-                  GestureDetector(
-                    onTap: () {},
-                    child: WikipediaLinkText(
-                      wikipediaUrl: item.links.article!,
+                  if (item.failures.isNotEmpty)
+                    CustomTextSpan(
+                      textTitle: "Failures: ",
+                      textDescription: item.failures[0].reason,
                     ),
-                  ),
+                  // verticalSpace(20),
+                  // GestureDetector(
+                  //   onTap: () {},
+                  //   child: WikipediaLinkText(
+                  //     wikipediaUrl: item.links.article!,
+                  //   ),
+                  // ),
                   verticalSpace(20),
                   GestureDetector(
                     onTap: () {},
