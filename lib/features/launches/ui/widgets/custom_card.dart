@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/theming/styles.dart';
+import 'package:space_app/features/launches/data/models/launch_response.dart';
 
 class CustomCard extends StatelessWidget {
-  final Map<String, String> item;
+  final LaunchResponse item;
   const CustomCard({super.key, required this.item});
 
   @override
@@ -17,12 +18,12 @@ class CustomCard extends StatelessWidget {
           boxShadow: [
             BoxShadow(
               color: ColorsManager.black.withOpacity(0.25),
-              blurRadius: 11.33,
+              blurRadius: 11.33.r,
               offset: const Offset(13, 11),
             ),
             BoxShadow(
               color: ColorsManager.black.withOpacity(0.15),
-              blurRadius: 6,
+              blurRadius: 6.r,
               offset: const Offset(-10, -13),
             ),
           ],
@@ -44,7 +45,7 @@ class CustomCard extends StatelessWidget {
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: NetworkImage(
-                  item['image']!,
+                  item.links.patch.small!,
                 ),
                 fit: BoxFit.contain,
               ),
@@ -52,7 +53,8 @@ class CustomCard extends StatelessWidget {
           ),
           10.verticalSpace,
           Text(
-            item['name']!,
+            item.name,
+            overflow: TextOverflow.ellipsis,
             style: TextStyles.font16WhiteRegular,
           ),
         ],

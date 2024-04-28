@@ -1,39 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:space_app/core/routing/routes.dart';
 import 'package:space_app/core/theming/styles.dart';
 import 'package:space_app/core/widgets/background_container.dart';
 import 'package:space_app/core/widgets/custom_app_bar.dart';
+import 'package:space_app/features/launches/logic/cubit/launch_cubit.dart';
+import 'package:space_app/features/launches/logic/cubit/launch_state.dart';
 import 'package:space_app/features/launches/ui/widgets/custom_card.dart';
 
-const List<Map<String, String>> items = [
-  {
-    "image": "https://images2.imgbox.com/a9/9a/NXVkTZCE_o.png",
-    "name": "DemoSat",
-  },
-  {
-    "image": "https://images2.imgbox.com/94/f2/NN6Ph45r_o.png",
-    "name": "FalconSat",
-  },
-  {
-    "image": "https://images2.imgbox.com/ab/5a/Pequxd5d_o.png",
-    "name": "RazakSat",
-  },
-  {
-    "image": "https://images2.imgbox.com/a9/9a/NXVkTZCE_o.png",
-    "name": "DemoSat",
-  },
-  {
-    "image": "https://images2.imgbox.com/94/f2/NN6Ph45r_o.png",
-    "name": "FalconSat",
-  },
-  {
-    "image": "https://images2.imgbox.com/ab/5a/Pequxd5d_o.png",
-    "name": "RazakSat",
-  }
-];
-
-class LaunchesScreen extends StatelessWidget {
+class LaunchesScreen extends StatefulWidget {
   const LaunchesScreen({super.key});
+
+  @override
+  State<LaunchesScreen> createState() => _LaunchesScreenState();
+}
+
+class _LaunchesScreenState extends State<LaunchesScreen> {
+  @override
+  void initState() {
+    context.read<LaunchCubit>().emitGetAllLaunchesStates();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -56,20 +44,49 @@ class LaunchesScreen extends StatelessWidget {
                     style: TextStyles.font18WhiteRegular,
                   ),
                   24.verticalSpace,
-                  GridView.builder(
-                    physics: const NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      childAspectRatio: 100.w / 100.h,
-                      crossAxisSpacing: 35.w,
-                      mainAxisSpacing: 15.h,
-                    ),
-                    itemCount: items.length,
-                    itemBuilder: (context, index) {
-                      return CustomCard(
-                        item: items[index],
-                      );
+                  BlocBuilder<LaunchCubit, LaunchState>(
+                    builder: (context, state) {
+                      return state.mapOrNull(
+                            loading: (value) {
+                              debugPrint("loading");
+                              return const CircularProgressIndicator();
+                            },
+                            success: (allLaunches) {
+                              var items = allLaunches.data;
+                              debugPrint("items response is ${items.length}");
+                              debugPrint("success");
+                              return GridView.builder(
+                                physics: const NeverScrollableScrollPhysics(),
+                                shrinkWrap: true,
+                                gridDelegate:
+                                    SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 2,
+                                  // childAspectRatio: 100.w / 100.h,
+                                  crossAxisSpacing: 35.w,
+                                  mainAxisSpacing: 15.h,
+                                ),
+                                itemCount: items.length,
+                                itemBuilder: (context, index) {
+                                  return GestureDetector(
+                                    onTap: () {
+                                      Navigator.pushNamed(
+                                          context, Routes.launchesScreen);
+                                    },
+                                    child: CustomCard(
+                                      item: items[index],
+                                    ),
+                                  );
+                                },
+                              );
+                            },
+                            error: (error) {
+                              debugPrint("error");
+                              return Center(
+                                child: Text(error.error),
+                              );
+                            },
+                          ) ??
+                          const SizedBox();
                     },
                   ),
                 ],
