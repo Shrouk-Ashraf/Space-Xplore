@@ -47,7 +47,7 @@ class CrewDetailsScreen extends StatelessWidget {
                     Row(
                       children: [
                         _buildColumn('Agency', crewMember.agency),
-                        horizontalSpace(15),
+                        horizontalSpace(20),
                         _buildColumn('Status', crewMember.status),
                         horizontalSpace(20),
                         _buildColumn('Launches', 'DemoSat'),

@@ -26,14 +26,4 @@ class CrewMemberModel {
       _$CrewMemberModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$CrewMemberModelToJson(this);
-
-  // factory CrewMemberModel.fromJson(Map<String, dynamic> json) {
-  //   return CrewMemberModel(
-  //     name: json["name"],
-  //     agency: json["agency"],
-  //     status: json["status"],
-  //     imageUrl: json["image"],
-  //     wikipediaUrl: json["wikipedia"],
-  //   );
-  // }
 }

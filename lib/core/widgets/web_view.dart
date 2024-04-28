@@ -41,6 +41,7 @@ class _WebViewState extends State<WebView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: false,
         title: Text(
           "SpaceX",
           style: TextStyles.font24BlackBold,
