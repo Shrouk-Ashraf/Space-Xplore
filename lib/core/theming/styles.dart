@@ -39,7 +39,6 @@ class TextStyles {
     fontWeight: FontWeightManager.medium,
     fontFamily: Fonts.orientaFont,
   );
-
   static TextStyle font20WhiteBold = TextStyle(
     color: ColorsManager.white,
     fontSize: 18.sp,
@@ -104,5 +103,11 @@ class TextStyles {
   static TextStyle font16LightBlueRegular = TextStyle(
     color: ColorsManager.lightBlue,
     fontSize: 16.sp,
+  );
+  static TextStyle font20WhiteBoldOrbitron = TextStyle(
+    color: ColorsManager.white,
+    fontSize: 20.sp,
+    fontWeight: FontWeight.bold,
+    fontFamily: 'Orbitron',
   );
 }

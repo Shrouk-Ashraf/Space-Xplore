@@ -11,11 +11,14 @@ environment:
 dependencies:
   bloc: ^8.1.4
   build_runner: ^2.4.9
-  cached_network_image: ^3.3.1
+  cupertino_icons: ^1.0.6
   dio: ^5.4.3+1
-  easy_localization: ^3.0.6
+  either_dart: ^1.0.0
   flutter:
     sdk: flutter
+  flutter_bloc: ^8.1.5
+  flutter_native_splash: ^2.4.0
+  flutter_screenutil: ^5.9.0
   flutter_bloc: ^8.1.5
   flutter_native_splash: ^2.4.0
   flutter_screenutil: ^5.9.0
