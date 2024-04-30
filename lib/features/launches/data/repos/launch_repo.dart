@@ -1,20 +1,23 @@
-import 'package:space_app/core/networking/api_error_handler.dart';
-import 'package:space_app/core/networking/api_result.dart';
+import 'package:dio/dio.dart';
+import 'package:either_dart/either.dart';
 import 'package:space_app/core/networking/api_service.dart';
+import 'package:space_app/core/networking/server_failure.dart';
 import 'package:space_app/features/launches/data/models/launch_response.dart';
 
 class LaunchRepo {
-  final ApiService _apiService;
-  LaunchRepo(this._apiService);
+  final ApiService apiService;
+  LaunchRepo(this.apiService);
 
-  Future<ApiResult<List<LaunchResponse>>> getAllLaunches() async {
+  Future<Either<Failure, List<LaunchResponse>>> getAllLaunches() async {
     try {
-      final response = await _apiService.getAllLaunches();
-      return ApiResult.success(response);
-    } catch (error) {
-      return ApiResult.failure(
-        ErrorHandler.handle(error),
-      );
+      final launchesList = await apiService.getAllLaunches();
+      return Right(launchesList);
+    } catch (e) {
+      if (e is DioException) {
+        return Left(ServerFailure.fromDioException(e));
+      } else {
+        return Left(ServerFailure(errorMessage: e.toString()));
+      }
     }
   }
 }
