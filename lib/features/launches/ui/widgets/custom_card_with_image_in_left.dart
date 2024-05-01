@@ -57,7 +57,6 @@ class CustomCardWithImageInLeft extends StatelessWidget {
         Positioned(
           top: 80,
           left: 160,
-          // bottom: 0,
           child: Image.network(
             "https://images2.imgbox.com/94/f2/NN6Ph45r_o.png",
             height: 100,

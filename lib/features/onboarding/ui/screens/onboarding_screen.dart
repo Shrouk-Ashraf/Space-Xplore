@@ -10,7 +10,7 @@ class OnboardingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xff080D13),
+      backgroundColor: ColorsManager.darkBlue,
       body: SafeArea(
         child: IntroductionScreen(
           globalBackgroundColor: ColorsManager.backgroundColor,
@@ -19,19 +19,20 @@ class OnboardingScreen extends StatelessWidget {
           pages: [
             CustomPageView.generateCustomPageView(
                 context: context,
-                image: 'assets/images/onboarding_screen1.json',
+                image: 'assets/json/onboarding_screen1.json',
                 title: 'Welcome to SpaceX',
                 body:
                     'Explore the world of SpaceX rockets, launches, and the crew shaping the future of space travel.'),
             CustomPageView.generateCustomPageView(
                 context: context,
-                image: 'assets/images/onboarding_screen2.json',
+                image: 'assets/json/onboarding_screen2.json',
                 title: 'Unleash Your Inner Space Explorer',
                 body:
                     'Stay informed with the latest SpaceX news and updates - all at your fingertips!'),
           ],
           doneStyle: const ButtonStyle(
-              padding: MaterialStatePropertyAll(EdgeInsets.zero)),
+            padding: MaterialStatePropertyAll(EdgeInsets.zero),
+          ),
           showNextButton: false,
           done: const Align(
             alignment: Alignment.centerRight,

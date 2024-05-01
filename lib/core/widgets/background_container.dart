@@ -15,7 +15,7 @@ class BackgroundContainer extends StatelessWidget {
       width: double.infinity,
       decoration: const BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('assets/images/background_image.png'),
+          image: AssetImage('assets/images/small_background.png'),
           fit: BoxFit.fill,
         ),
       ),
