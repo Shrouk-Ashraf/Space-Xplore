@@ -1,13 +1,13 @@
 import 'package:dio/dio.dart';
 import 'package:either_dart/either.dart';
-import 'package:space_app/core/errors/faliure.dart';
-import 'package:space_app/core/networking/api_services.dart';
-import 'package:space_app/features/ships/data/ship_model/ship_model.dart';
+import 'package:space_app/core/networking/api_service.dart';
+import 'package:space_app/core/networking/server_failure.dart';
+import 'package:space_app/features/ships/data/models/ship_model.dart';
 
 class ShipsRepoImple {
-  ApiServices apiServices;
+  ApiService apiServices;
   ShipsRepoImple(this.apiServices);
-  Future<Either<Faliure, List<ShipModel>>> getAllShips() async {
+  Future<Either<Failure, List<ShipModel>>> getAllShips() async {
     try {
       var response = await apiServices.getAllShips();
       response
