@@ -1,14 +1,18 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:space_app/core/helpers/spacing.dart';
 import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/theming/styles.dart';
+import 'package:space_app/core/widgets/cached_image.dart';
 
 class CustomGridContainer extends StatelessWidget {
   const CustomGridContainer({
-    Key? key,
+    super.key,
     required this.title,
     required this.imageUrl,
-  }) : super(key: key);
+  });
 
   final String title;
   final String imageUrl;
@@ -18,32 +22,36 @@ class CustomGridContainer extends StatelessWidget {
     return Container(
       clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            color: ColorsManager.shadowColor,
+            blurRadius: 10.r,
+            offset: Offset(5.w, 5.h),
+          ),
+          BoxShadow(
+            color: ColorsManager.shadowColor,
+            blurRadius: 10.r,
+            offset: Offset(5.w, 5.h),
+          ),
+        ],
         borderRadius: BorderRadius.circular(20.r),
         color: ColorsManager.semiTransparent,
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Expanded(
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(15.r),
-              child: Image.network(
-                imageUrl,
-                fit: BoxFit.cover,
-              ),
-            ),
+          CachedImage(
+            networkImageUrl: imageUrl,
+            height: 120.h,
+            width: double.infinity,
           ),
+          verticalSpace(10),
           Padding(
-            padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 10.w),
-            child: Align(
-              alignment: Alignment.center,
-              child: Text(
-                title,
-                textAlign: TextAlign.center,
-                style: TextStyles.font12WhiteBold,
-                overflow: TextOverflow.ellipsis,
-                maxLines: 2,
-              ),
+            padding: EdgeInsets.symmetric(horizontal: 8.w),
+            child: Text(
+              title,
+              style: TextStyles.font12WhiteBold,
+              overflow: TextOverflow.ellipsis,
+              maxLines: 1,
             ),
           ),
         ],

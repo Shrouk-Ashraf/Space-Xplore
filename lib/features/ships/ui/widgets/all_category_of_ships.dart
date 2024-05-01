@@ -1,24 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:space_app/core/helper/spacing.dart';
 import 'package:space_app/core/theming/styles.dart';
-import 'package:space_app/core/widgets/app_bar.dart';
 import 'package:space_app/core/widgets/custom_grid_container.dart';
-import 'package:space_app/features/ships/data/ship_model/ship_model.dart';
+import 'package:space_app/features/ships/data/models/ship_model.dart';
 import 'package:space_app/features/ships/ui/screens/ship_details_screen.dart';
 
 class AllCategoryOfShips extends StatelessWidget {
   const AllCategoryOfShips({super.key, required this.shipsModel});
-  final List<ShipModel>? shipsModel;
+  final List<ShipModel> shipsModel;
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const CustomAppBar(),
-        verticalSpace(20.h),
         Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: 12.w,
+          padding: EdgeInsets.only(
+            top: 10.h,
+            left: 5.w,
+            bottom: 18.w,
           ),
           child: Align(
             alignment: Alignment.topLeft,
@@ -30,18 +29,20 @@ class AllCategoryOfShips extends StatelessWidget {
         ),
         Expanded(
           child: Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: 12.w,
+            padding: EdgeInsets.only(
+              left: 20.w,
+              right: 20.w,
+              bottom: 50.w,
             ),
             child: Container(
               child: GridView.builder(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    mainAxisSpacing: 18,
-                    crossAxisSpacing: 15,
-                    childAspectRatio: .8,
+                    childAspectRatio: 100.w / 120.h,
+                    crossAxisSpacing: 40.w,
+                    mainAxisSpacing: 35.h,
                   ),
-                  itemCount: shipsModel!.length,
+                  itemCount: shipsModel.length,
                   itemBuilder: ((context, index) {
                     return GestureDetector(
                       onTap: () {
@@ -50,16 +51,16 @@ class AllCategoryOfShips extends StatelessWidget {
                           MaterialPageRoute(
                             builder: (context) {
                               return ShipDetailsScreen(
-                                singleShipModel: shipsModel![index],
+                                singleShipModel: shipsModel[index],
                               );
                             },
                           ),
                         );
                       },
                       child: CustomGridContainer(
-                        imageUrl: shipsModel![index].image ??
+                        imageUrl: shipsModel[index].image ??
                             "https://i.imgur.com/woCxpkj.jpg",
-                        title: shipsModel![index].shipName ??
+                        title: shipsModel[index].shipName ??
                             "name of ships error ",
                       ),
                     );
