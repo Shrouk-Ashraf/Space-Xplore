@@ -1,3 +1,4 @@
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -6,6 +7,7 @@ import 'package:space_app/core/di/dependency_injection.dart';
 import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/theming/styles.dart';
 import 'package:space_app/features/company%20info/ui/screens/company_info_screen.dart';
+import 'package:space_app/features/connectivity/screens/no_internet_screen.dart';
 import 'package:space_app/features/crew/logic/crew_cubit.dart';
 import 'package:space_app/features/crew/ui/screens/crew_screen.dart';
 import 'package:space_app/features/launches/logic/cubit/launch_cubit.dart';
@@ -61,28 +63,38 @@ class BottomNavBar extends StatelessWidget {
     PersistentTabController controller =
         PersistentTabController(initialIndex: 0);
 
-    return PersistentTabView(
-      context,
-      controller: controller,
-      screens: _buildScreens(),
-      items: _buildNavBarsItems(),
-      backgroundColor: ColorsManager.black,
-      decoration: NavBarDecoration(
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(25.r),
-          topRight: Radius.circular(25.r),
-        ),
-      ),
-      itemAnimationProperties: const ItemAnimationProperties(
-        duration: Duration(milliseconds: 200),
-        curve: Curves.ease,
-      ),
-      screenTransitionAnimation: const ScreenTransitionAnimation(
-        animateTabTransition: true,
-        curve: Curves.ease,
-        duration: Duration(milliseconds: 200),
-      ),
-      navBarStyle: NavBarStyle.style1,
+    return StreamBuilder(
+      stream: Connectivity().onConnectivityChanged,
+      builder: (context, snapshot) {
+        final connectivityResult = snapshot.data;
+        if (connectivityResult!.contains(ConnectivityResult.none)) {
+          return const NoInternetScreen();
+        } else {
+          return PersistentTabView(
+            context,
+            controller: controller,
+            screens: _buildScreens(),
+            items: _buildNavBarsItems(),
+            backgroundColor: ColorsManager.black,
+            decoration: NavBarDecoration(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(25.r),
+                topRight: Radius.circular(25.r),
+              ),
+            ),
+            itemAnimationProperties: const ItemAnimationProperties(
+              duration: Duration(milliseconds: 200),
+              curve: Curves.ease,
+            ),
+            screenTransitionAnimation: const ScreenTransitionAnimation(
+              animateTabTransition: true,
+              curve: Curves.ease,
+              duration: Duration(milliseconds: 200),
+            ),
+            navBarStyle: NavBarStyle.style1,
+          );
+        }
+      },
     );
   }
 }
