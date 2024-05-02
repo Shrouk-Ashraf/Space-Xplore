@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:space_app/core/helpers/spacing.dart';
 import 'package:space_app/core/theming/styles.dart';
 import 'package:space_app/core/widgets/background_container.dart';
 import 'package:space_app/core/widgets/custom_app_bar.dart';
@@ -48,7 +47,6 @@ class _LaunchesScreenState extends State<LaunchesScreen> {
                   "All Launches",
                   style: TextStyles.font18WhiteRegular,
                 ),
-                verticalSpace(24),
                 AllLaunchesBody(scrollController: _scrollController),
               ],
             ),
@@ -63,8 +61,6 @@ class _LaunchesScreenState extends State<LaunchesScreen> {
     final currentScrollPosition = _scrollController.position.pixels;
 
     if (currentScrollPosition >= maxScrollExtent) {
-      print('Scroll controller is at the end');
-
       context.read<LaunchCubit>().getAllLaunches();
     }
   }
