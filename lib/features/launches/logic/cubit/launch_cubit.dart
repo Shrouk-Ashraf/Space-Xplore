@@ -30,4 +30,13 @@ class LaunchCubit extends Cubit<LaunchState> {
       }
     });
   }
+
+  void getOneLaunch({required int id}) async {
+    final result = await _launchRepo.getOneLaunch(id: id);
+    result.fold((failure) {
+      emit(GetOneLaunchFailure(errorMessage: failure.errorMessage));
+    }, (successData) {
+      emit(GetOneLaunchSuccess(launchData: successData));
+    });
+  }
 }

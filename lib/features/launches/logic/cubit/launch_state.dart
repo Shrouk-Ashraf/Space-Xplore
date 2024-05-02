@@ -18,6 +18,20 @@ final class GetAllLaunchesFailure extends LaunchState {
   GetAllLaunchesFailure({required this.errorMessage});
 }
 
+final class GetOneLaunchSuccess extends LaunchState {
+  final LaunchResponse launchData;
+
+  GetOneLaunchSuccess({required this.launchData});
+}
+
+final class GetOneLaunchLoading extends LaunchState {}
+
+final class GetOneLaunchFailure extends LaunchState {
+  final String errorMessage;
+
+  GetOneLaunchFailure({required this.errorMessage});
+}
+
 final class LoadingMoreLaunches extends LaunchState {}
 
 final class NoMoreLaunches extends LaunchState {}
