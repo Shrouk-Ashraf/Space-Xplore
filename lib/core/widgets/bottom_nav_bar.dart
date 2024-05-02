@@ -66,7 +66,7 @@ class BottomNavBar extends StatelessWidget {
       controller: controller,
       screens: _buildScreens(),
       items: _buildNavBarsItems(),
-      backgroundColor: ColorsManager.black,
+      backgroundColor: ColorsManager.semiBlack,
       decoration: NavBarDecoration(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(25.r),

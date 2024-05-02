@@ -4,7 +4,7 @@ import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/theming/styles.dart';
 import 'package:space_app/core/widgets/background_container.dart';
 import 'package:space_app/core/widgets/custom_app_bar.dart';
-import 'package:space_app/core/widgets/wikipedia_link_text.dart';
+import 'package:space_app/core/widgets/link_text.dart';
 import 'package:space_app/features/launches/data/models/launch_response.dart';
 import 'package:intl/intl.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
@@ -77,18 +77,20 @@ class LaunchDetailsScreen extends StatelessWidget {
                       textTitle: "Failures: ",
                       textDescription: item.failures[0].reason,
                     ),
-                  // verticalSpace(20),
-                  // GestureDetector(
-                  //   onTap: () {},
-                  //   child: WikipediaLinkText(
-                  //     wikipediaUrl: item.links.article!,
-                  //   ),
-                  // ),
                   verticalSpace(20),
                   GestureDetector(
                     onTap: () {},
-                    child: WikipediaLinkText(
-                      wikipediaUrl: item.links.wikipedia!,
+                    child: LinkText(
+                      linkUrl: item.links.article!,
+                      linkName: 'Article',
+                    ),
+                  ),
+                  verticalSpace(20),
+                  GestureDetector(
+                    onTap: () {},
+                    child: LinkText(
+                      linkUrl: item.links.wikipedia!,
+                      linkName: 'Wikipedia',
                     ),
                   ),
                 ],

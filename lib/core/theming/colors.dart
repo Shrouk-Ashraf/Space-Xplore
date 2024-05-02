@@ -16,4 +16,5 @@ class ColorsManager {
   static const Color cardColor = Color(0xffFDFDFD);
   static Color semiTransparent = const Color(0xffc4c4c4).withOpacity(0.2);
   static const Color linkColor = Color(0xff3EB8FF); // to be removed
+  static Color semiBlack = const Color(0xff080D13).withOpacity(0.4);
 }

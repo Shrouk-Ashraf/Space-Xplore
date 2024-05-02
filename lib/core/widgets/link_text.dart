@@ -3,13 +3,15 @@ import 'package:space_app/core/widgets/web_view.dart';
 
 import '../theming/styles.dart';
 
-class WikipediaLinkText extends StatelessWidget {
-  const WikipediaLinkText({
+class LinkText extends StatelessWidget {
+  const LinkText({
     super.key,
-    required this.wikipediaUrl,
+    required this.linkUrl,
+    required this.linkName,
   });
 
-  final String wikipediaUrl;
+  final String linkUrl;
+  final String linkName;
 
   @override
   Widget build(BuildContext context) {
@@ -17,12 +19,12 @@ class WikipediaLinkText extends StatelessWidget {
       onTap: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (context) => WebView(webViewUrl: wikipediaUrl),
+            builder: (context) => WebView(webViewUrl: linkUrl),
           ),
         );
       },
       child: Text(
-        'Wikipedia',
+        linkName,
         style: TextStyles.font11BlueMedium,
       ),
     );
