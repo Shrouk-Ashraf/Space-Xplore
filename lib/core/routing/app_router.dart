@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:space_app/core/di/dependency_injection.dart';
 import 'package:space_app/core/routing/routes.dart';
+import 'package:space_app/core/widgets/bottom_nav_bar.dart';
 import 'package:space_app/features/company%20info/ui/screens/company_info_screen.dart';
 import 'package:space_app/features/crew/ui/screens/crew_screen.dart';
 import 'package:space_app/features/launches/logic/cubit/launch_cubit.dart';
@@ -41,6 +42,10 @@ class AppRouter {
       case Routes.companyInfoScreen:
         return MaterialPageRoute(
           builder: (_) => const CompanyInfoScreen(),
+        );
+      case Routes.bottomNavBar:
+        return MaterialPageRoute(
+          builder: (_) => const BottomNavBar(),
         );
       default:
         return MaterialPageRoute(

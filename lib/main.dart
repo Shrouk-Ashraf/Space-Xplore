@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:space_app/core/di/dependency_injection.dart';
 import 'package:space_app/core/routing/app_router.dart';
 import 'package:space_app/core/routing/routes.dart';
 
-void main() {
+int? isViewd;
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   setupGetIt();
+  SharedPreferences preferences = await SharedPreferences.getInstance();
+  isViewd = preferences.getInt("onboardingKey");
   runApp(SpaceApp(
     appRouter: AppRouter(),
   ));
@@ -22,7 +27,8 @@ class SpaceApp extends StatelessWidget {
       minTextAdapt: true,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: Routes.onBoardingScreen,
+        initialRoute:
+            isViewd != 0 ? Routes.onBoardingScreen : Routes.bottomNavBar,
         onGenerateRoute: appRouter.generateRoute,
       ),
     );
