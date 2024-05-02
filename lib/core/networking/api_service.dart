@@ -4,6 +4,7 @@ import 'package:space_app/core/networking/api_constants.dart';
 import 'package:space_app/features/crew/data/models/crew_member_model.dart';
 import 'package:retrofit/http.dart';
 import 'package:space_app/features/launches/data/models/launch_response.dart';
+import 'package:space_app/features/launches/data/models/query_launch_response.dart';
 import 'package:space_app/features/rockets/data/models/rocket_model/rocket_model.dart';
 import 'package:space_app/features/ships/data/models/ship_model.dart';
 part 'api_service.g.dart';
@@ -16,8 +17,8 @@ abstract class ApiService {
   @GET(ApiConstants.crew)
   Future<List<CrewMemberModel>> getAllCrew();
 
-  @GET(ApiConstants.allLaunches)
-  Future<List<LaunchResponse>> getAllLaunches();
+  @POST(ApiConstants.allLaunches)
+  Future<QueryLaunchResponse> getAllLaunches(@Body() body);
 
   @GET(ApiConstants.ships)
   Future<List<ShipModel>> getAllShips();

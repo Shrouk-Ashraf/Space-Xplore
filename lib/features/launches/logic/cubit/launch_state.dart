@@ -1,12 +1,23 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:space_app/features/launches/data/models/launch_response.dart';
 
-part 'launch_state.freezed.dart';
+sealed class LaunchState {}
 
-@freezed
-class LaunchState<T> with _$LaunchState<T> {
-  const factory LaunchState.initial() = _Initial;
-  const factory LaunchState.loading() = Loading;
-  const factory LaunchState.success(List<LaunchResponse> data) = Success<T>;
-  const factory LaunchState.error({required String error}) = Error;
+final class LaunchInitial extends LaunchState {}
+
+final class GetAllLaunchesSuccess extends LaunchState {
+  final List<LaunchResponse> launchesData;
+
+  GetAllLaunchesSuccess({required this.launchesData});
 }
+
+final class GetAllLaunchesLoading extends LaunchState {}
+
+final class GetAllLaunchesFailure extends LaunchState {
+  final String errorMessage;
+
+  GetAllLaunchesFailure({required this.errorMessage});
+}
+
+final class LoadingMoreLaunches extends LaunchState {}
+
+final class NoMoreLaunches extends LaunchState {}

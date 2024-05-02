@@ -3,13 +3,14 @@ import 'package:space_app/core/widgets/web_view.dart';
 
 import '../theming/styles.dart';
 
-class WikipediaLinkText extends StatelessWidget {
-  const WikipediaLinkText({
+class LinkText extends StatelessWidget {
+  final String wikipediaUrl;
+  final String text;
+  const LinkText({
     super.key,
     required this.wikipediaUrl,
+    required this.text,
   });
-
-  final String wikipediaUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +23,8 @@ class WikipediaLinkText extends StatelessWidget {
         );
       },
       child: Text(
-        'Wikipedia',
-        style: TextStyles.font11BlueMedium,
+        text,
+        style: TextStyles.font13BlueMedium,
       ),
     );
   }

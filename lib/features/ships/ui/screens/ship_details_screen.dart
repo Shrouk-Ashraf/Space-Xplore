@@ -4,7 +4,7 @@ import 'package:space_app/core/helpers/spacing.dart';
 import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/theming/styles.dart';
 import 'package:space_app/core/widgets/background_container.dart';
-import 'package:space_app/core/widgets/wikipedia_link_text.dart';
+import 'package:space_app/core/widgets/link_text.dart';
 import 'package:space_app/features/ships/data/models/ship_model.dart';
 import 'package:space_app/features/ships/ui/widgets/info_data_with_image.dart';
 import 'package:space_app/features/ships/ui/widgets/titile_and_sub_title_info.dart';
@@ -81,7 +81,9 @@ class ShipDetailsScreen extends StatelessWidget {
                       ),
                       verticalSpace(24.h),
                       if (singleShipModel.link != null)
-                        WikipediaLinkText(wikipediaUrl: singleShipModel.link!),
+                        LinkText(
+                            text: "Wikipedia",
+                            wikipediaUrl: singleShipModel.link!),
                       verticalSpace(24.h),
                       const Divider(color: ColorsManager.darkGrey),
                     ],
