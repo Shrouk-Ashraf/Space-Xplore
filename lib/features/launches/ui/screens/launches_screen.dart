@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:space_app/core/helpers/spacing.dart';
-import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/theming/styles.dart';
 import 'package:space_app/core/widgets/background_container.dart';
 import 'package:space_app/core/widgets/custom_app_bar.dart';
 import 'package:space_app/features/launches/logic/cubit/launch_cubit.dart';
-import 'package:space_app/features/launches/logic/cubit/launch_state.dart';
-import 'package:space_app/features/launches/ui/screens/launch_details_screen.dart';
-import 'package:space_app/features/launches/ui/widgets/custom_card.dart';
+import 'package:space_app/features/launches/ui/widgets/all_launches_body.dart';
 
 class LaunchesScreen extends StatefulWidget {
   const LaunchesScreen({super.key});
@@ -19,10 +14,18 @@ class LaunchesScreen extends StatefulWidget {
 }
 
 class _LaunchesScreenState extends State<LaunchesScreen> {
+  final _scrollController = ScrollController();
   @override
   void initState() {
-    context.read<LaunchCubit>().emitGetAllLaunchesStates();
     super.initState();
+    context.read<LaunchCubit>().getAllLaunches();
+    _scrollController.addListener(_scrollListener);
+  }
+
+  @override
+  void dispose() {
+    _scrollController.removeListener(_scrollListener);
+    super.dispose();
   }
 
   @override
@@ -34,74 +37,31 @@ class _LaunchesScreenState extends State<LaunchesScreen> {
       ),
       body: BackgroundContainer(
         child: SafeArea(
-          child: SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsetsDirectional.only(
-                  top: 13, bottom: 13, start: 16, end: 16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "All Launches",
-                    style: TextStyles.font18WhiteRegular,
-                  ),
-                  verticalSpace(24),
-                  BlocBuilder<LaunchCubit, LaunchState>(
-                    builder: (context, state) {
-                      return state.mapOrNull(
-                            loading: (value) {
-                              return const Center(
-                                  child: CircularProgressIndicator(
-                                color: ColorsManager.mainColor,
-                              ));
-                            },
-                            success: (allLaunches) {
-                              var items = allLaunches.data;
-                              debugPrint("items response is ${items.length}");
-                              debugPrint("success");
-                              return GridView.builder(
-                                physics: const NeverScrollableScrollPhysics(),
-                                shrinkWrap: true,
-                                gridDelegate:
-                                    SliverGridDelegateWithFixedCrossAxisCount(
-                                  crossAxisCount: 2,
-                                  crossAxisSpacing: 35.w,
-                                  mainAxisSpacing: 15.h,
-                                ),
-                                itemCount: items.length,
-                                itemBuilder: (context, index) {
-                                  return GestureDetector(
-                                    onTap: () {
-                                      Navigator.of(context).push(
-                                          MaterialPageRoute(builder: (context) {
-                                        return LaunchDetailsScreen(
-                                          item: items[index],
-                                        );
-                                      }));
-                                    },
-                                    child: CustomCard(
-                                      item: items[index],
-                                    ),
-                                  );
-                                },
-                              );
-                            },
-                            error: (error) {
-                              debugPrint("error");
-                              return Center(
-                                child: Text(error.error),
-                              );
-                            },
-                          ) ??
-                          const SizedBox();
-                    },
-                  ),
-                ],
-              ),
+          child: Padding(
+            padding: const EdgeInsetsDirectional.only(
+                top: 13, bottom: 0, start: 16, end: 16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "All Launches",
+                  style: TextStyles.font18WhiteRegular,
+                ),
+                AllLaunchesBody(scrollController: _scrollController),
+              ],
             ),
           ),
         ),
       ),
     );
+  }
+
+  void _scrollListener() {
+    final maxScrollExtent = _scrollController.position.maxScrollExtent;
+    final currentScrollPosition = _scrollController.position.pixels;
+
+    if (currentScrollPosition >= maxScrollExtent) {
+      context.read<LaunchCubit>().getAllLaunches();
+    }
   }
 }

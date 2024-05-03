@@ -6,7 +6,7 @@ import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/theming/styles.dart';
 import 'package:space_app/core/widgets/custom_app_bar.dart';
 import 'package:space_app/core/widgets/background_container.dart';
-import 'package:space_app/core/widgets/wikipedia_link_text.dart';
+import 'package:space_app/core/widgets/link_text.dart';
 import 'package:space_app/features/crew/data/models/crew_member_model.dart';
 import 'package:space_app/features/crew/ui/widgets/crew_circle_image.dart';
 
@@ -54,7 +54,8 @@ class CrewDetailsScreen extends StatelessWidget {
                       ],
                     ),
                     verticalSpace(25),
-                    WikipediaLinkText(
+                    LinkText(
+                      text: "Wikipedia",
                       wikipediaUrl: crewMember.wikipediaUrl,
                     )
                   ],

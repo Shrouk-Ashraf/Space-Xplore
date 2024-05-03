@@ -43,6 +43,14 @@ class TextStyles {
     fontWeight: FontWeightManager.medium,
     fontFamily: Fonts.orientaFont,
   );
+  static TextStyle font13BlueMedium = TextStyle(
+    color: ColorsManager.blue,
+    decorationColor: ColorsManager.blue,
+    decoration: TextDecoration.underline,
+    fontSize: 13.sp,
+    fontWeight: FontWeightManager.medium,
+    fontFamily: Fonts.orientaFont,
+  );
   static TextStyle font18WhiteMedium = TextStyle(
     color: ColorsManager.white,
     fontSize: 18.sp,
@@ -77,6 +85,12 @@ class TextStyles {
   static TextStyle font13WhiteRegular = TextStyle(
     color: ColorsManager.white,
     fontSize: 13.sp,
+    fontWeight: FontWeight.normal,
+  );
+
+  static TextStyle font14WhiteRegular = TextStyle(
+    color: ColorsManager.white,
+    fontSize: 14.sp,
     fontWeight: FontWeight.normal,
   );
 

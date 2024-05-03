@@ -32,40 +32,38 @@ class AllCategoryOfShips extends StatelessWidget {
             padding: EdgeInsets.only(
               left: 20.w,
               right: 20.w,
-              bottom: 50.w,
+              bottom: 20.w,
             ),
-            child: Container(
-              child: GridView.builder(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    childAspectRatio: 100.w / 120.h,
-                    crossAxisSpacing: 40.w,
-                    mainAxisSpacing: 35.h,
-                  ),
-                  itemCount: shipsModel.length,
-                  itemBuilder: ((context, index) {
-                    return GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return ShipDetailsScreen(
-                                singleShipModel: shipsModel[index],
-                              );
-                            },
-                          ),
-                        );
-                      },
-                      child: CustomGridContainer(
-                        imageUrl: shipsModel[index].image ??
-                            "https://i.imgur.com/woCxpkj.jpg",
-                        title: shipsModel[index].shipName ??
-                            "name of ships error ",
-                      ),
-                    );
-                  })),
-            ),
+            child: GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  childAspectRatio: 100.w / 120.h,
+                  crossAxisSpacing: 40.w,
+                  mainAxisSpacing: 35.h,
+                ),
+                itemCount: shipsModel.length,
+                itemBuilder: ((context, index) {
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return ShipDetailsScreen(
+                              singleShipModel: shipsModel[index],
+                            );
+                          },
+                        ),
+                      );
+                    },
+                    child: CustomGridContainer(
+                      imageUrl: shipsModel[index].image ??
+                          "https://i.imgur.com/woCxpkj.jpg",
+                      title:
+                          shipsModel[index].shipName ?? "name of ships error ",
+                    ),
+                  );
+                })),
           ),
         ),
       ],
