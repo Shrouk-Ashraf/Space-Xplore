@@ -17,9 +17,7 @@ class LaunchDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: CustomAppBar(
-        title: item.name,
-      ),
+      appBar: const CustomAppBar(),
       body: BackgroundContainer(
         child: SafeArea(
           child: Padding(
@@ -29,24 +27,35 @@ class LaunchDetailsScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  YoutubePlayer(
-                    controller: YoutubePlayerController(
-                      initialVideoId: item.links.youtubeId!,
-                      flags: const YoutubePlayerFlags(
-                        autoPlay: false,
+                  if (item.links.youtubeId != null)
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(16),
+                      child: YoutubePlayer(
+                        controller: YoutubePlayerController(
+                          initialVideoId: item.links.youtubeId!,
+                          flags: const YoutubePlayerFlags(
+                            autoPlay: false,
+                          ),
+                        ),
+                        showVideoProgressIndicator: true,
+                        progressIndicatorColor: ColorsManager.mainColor,
+                        progressColors: const ProgressBarColors(
+                          playedColor: ColorsManager.mainColor,
+                          handleColor: ColorsManager.mainColor,
+                        ),
                       ),
                     ),
-                    showVideoProgressIndicator: true,
-                    progressIndicatorColor: ColorsManager.mainColor,
-                    progressColors: const ProgressBarColors(
-                      playedColor: ColorsManager.mainColor,
-                      handleColor: ColorsManager.mainColor,
+                  verticalSpace(30),
+                  Center(
+                    child: Text(
+                      item.name,
+                      style: TextStyles.font24WhiteBold,
                     ),
                   ),
-                  verticalSpace(20),
+                  verticalSpace(25),
                   CustomTextSpan(
                     textTitle: "Details: ",
-                    textDescription: item.details,
+                    textDescription: item.details ?? "-",
                   ),
                   verticalSpace(20),
                   Row(
@@ -66,7 +75,7 @@ class LaunchDetailsScreen extends StatelessWidget {
                   CustomTextSpan(
                     textTitle: "Success: ",
                     textDescription: item.success == null
-                        ? "_"
+                        ? "-"
                         : item.success!
                             ? "True"
                             : "False",
@@ -75,7 +84,7 @@ class LaunchDetailsScreen extends StatelessWidget {
                   if (item.failures.isNotEmpty)
                     CustomTextSpan(
                       textTitle: "Failures: ",
-                      textDescription: item.failures[0].reason,
+                      textDescription: item.failures[0].reason ?? "-",
                     ),
                   verticalSpace(20),
                   GestureDetector(
@@ -98,34 +107,6 @@ class LaunchDetailsScreen extends StatelessWidget {
             ),
           ),
         ),
-      ),
-    );
-  }
-}
-
-class CustomTextSpan extends StatelessWidget {
-  final String textTitle;
-  final String? textDescription;
-  const CustomTextSpan({
-    super.key,
-    required this.textTitle,
-    required this.textDescription,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Text.rich(
-      TextSpan(
-        children: [
-          TextSpan(
-            text: textTitle,
-            style: TextStyles.font16LightBlueRegular,
-          ),
-          TextSpan(
-            text: textDescription,
-            style: TextStyles.font13WhiteRegular,
-          ),
-        ],
       ),
     );
   }
