@@ -50,20 +50,20 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<List<LaunchResponse>> getAllLaunches() async {
+  Future<QueryLaunchResponse> getAllLaunches(dynamic body) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
-    final _result = await _dio
-        .fetch<List<dynamic>>(_setStreamType<List<LaunchResponse>>(Options(
-      method: 'GET',
+    final _data = body;
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<QueryLaunchResponse>(Options(
+      method: 'POST',
       headers: _headers,
       extra: _extra,
     )
             .compose(
               _dio.options,
-              'launches',
+              'launches/query',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -72,9 +72,34 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    var value = _result.data!
-        .map((dynamic i) => LaunchResponse.fromJson(i as Map<String, dynamic>))
-        .toList();
+    final value = QueryLaunchResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<LaunchResponse> getOneLaunch({required int id}) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<LaunchResponse>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'launches/${id}',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = LaunchResponse.fromJson(_result.data!);
     return value;
   }
 
@@ -133,6 +158,33 @@ class _ApiService implements ApiService {
     var value = _result.data!
         .map((dynamic i) => RocketModel.fromJson(i as Map<String, dynamic>))
         .toList();
+    return value;
+  }
+
+  @override
+  Future<RocketModel> getRocket(String id) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<RocketModel>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'rockets/${id}',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = RocketModel.fromJson(_result.data!);
     return value;
   }
 
