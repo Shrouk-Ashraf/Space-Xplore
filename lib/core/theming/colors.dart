@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class ColorsManager {
   static const Color backgroundColor = Color(0xff080D13);
-  static const Color mainColor = Color(0xff3EB8FF); // to be removed
+  static const Color mainColor =
+      Color(0xff3EB8FF); // to be removed // to be removed
   static const grey = Color(0xFF808284);
   static const Color darkGrey = Color(0xFF383A3D);
   static const Color darkBlue = Color(0xff080D13);

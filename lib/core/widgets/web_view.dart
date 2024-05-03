@@ -23,18 +23,7 @@ class _WebViewState extends State<WebView> {
   @override
   void initState() {
     super.initState();
-    _controller = WebViewController()
-      ..setJavaScriptMode(JavaScriptMode.disabled)
-      ..loadRequest(Uri.parse(widget.webViewUrl))
-      ..setNavigationDelegate(
-        NavigationDelegate(
-          onPageFinished: (url) {
-            setState(() {
-              _isLoading = false;
-            });
-          },
-        ),
-      );
+    initializeWebViewController();
   }
 
   @override
@@ -60,5 +49,20 @@ class _WebViewState extends State<WebView> {
               ),
       ),
     );
+  }
+
+  WebViewController initializeWebViewController() {
+    return _controller = WebViewController()
+      ..setJavaScriptMode(JavaScriptMode.disabled)
+      ..loadRequest(Uri.parse(widget.webViewUrl))
+      ..setNavigationDelegate(
+        NavigationDelegate(
+          onPageFinished: (url) {
+            setState(() {
+              _isLoading = false;
+            });
+          },
+        ),
+      );
   }
 }

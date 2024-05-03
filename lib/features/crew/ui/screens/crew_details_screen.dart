@@ -1,10 +1,13 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:space_app/core/helpers/spacing.dart';
 import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/theming/styles.dart';
 import 'package:space_app/core/widgets/custom_app_bar.dart';
 import 'package:space_app/core/widgets/background_container.dart';
-import 'package:space_app/features/crew/data/crew_member_model.dart';
+import 'package:space_app/core/widgets/link_text.dart';
+import 'package:space_app/features/crew/data/models/crew_member_model.dart';
 import 'package:space_app/features/crew/ui/widgets/crew_circle_image.dart';
 
 class CrewDetailsScreen extends StatelessWidget {
@@ -24,50 +27,37 @@ class CrewDetailsScreen extends StatelessWidget {
         child: SafeArea(
           child: Center(
             child: Container(
-              height: 320.h,
+              height: 450.h,
               width: 300.w,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8.r),
                 color: ColorsManager.lightTransparent,
               ),
               child: Padding(
-                padding: EdgeInsets.all(16.w),
+                padding: EdgeInsets.all(15.w),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     CrewCircleImage(crewMemberImageUrl: crewMember.imageUrl),
-                    buildTextInRow(crewMember.name, TextStyles.font24WhiteBold),
+                    verticalSpace(10),
+                    _buildTextInRow(
+                        crewMember.name, TextStyles.font19WhiteBold),
+                    verticalSpace(10),
                     const Divider(color: ColorsManager.darkGrey),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        buildTextInRow('Agency', TextStyles.font15WhiteBold),
-                        buildTextInRow('Status', TextStyles.font15WhiteBold),
-                        buildTextInRow('Launches', TextStyles.font15WhiteBold),
+                        _buildColumn('Agency', crewMember.agency),
+                        horizontalSpace(20),
+                        _buildColumn('Status', crewMember.status),
+                        horizontalSpace(20),
+                        _buildColumn('Launches', 'DemoSat'),
                       ],
                     ),
-                    buildVerticalSpacing(5.h),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 12.w),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          buildTextInRow(crewMember.agency,
-                              TextStyles.font10White500Weight),
-                          buildTextInRow(crewMember.status,
-                              TextStyles.font10White500Weight),
-                          buildTextInRow(
-                              'DemoSat', TextStyles.font10White500Weight),
-                        ],
-                      ),
-                    ),
-                    buildVerticalSpacing(20.h),
-                    Center(
-                      child: GestureDetector(
-                        onTap: () {},
-                        child: buildTextInRow(
-                            'Wikipedia', TextStyles.font11Blue500Weight),
-                      ),
-                    ),
+                    verticalSpace(25),
+                    LinkText(
+                      text: "Wikipedia",
+                      wikipediaUrl: crewMember.wikipediaUrl,
+                    )
                   ],
                 ),
               ),
@@ -78,10 +68,19 @@ class CrewDetailsScreen extends StatelessWidget {
     );
   }
 
-  SizedBox buildVerticalSpacing(double verticalHeight) =>
-      SizedBox(height: verticalHeight);
+  Widget _buildColumn(String title, String content) {
+    return Expanded(
+      child: Column(
+        children: [
+          _buildTextInRow(title, TextStyles.font16WhiteBold),
+          verticalSpace(10),
+          _buildTextInRow(content, TextStyles.font10WhiteMedium),
+        ],
+      ),
+    );
+  }
 
-  Text buildTextInRow(String text, TextStyle textStyle) {
+  Text _buildTextInRow(String text, TextStyle textStyle) {
     return Text(
       text,
       style: textStyle,

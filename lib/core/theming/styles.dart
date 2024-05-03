@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/theming/font_weight_manager.dart';
 import 'package:space_app/core/theming/fonts.dart';
+import 'package:space_app/core/theming/font_weight_manager.dart';
+import 'package:space_app/core/theming/fonts.dart';
 
 class TextStyles {
   // TODO: font family to be added to all
@@ -14,14 +16,17 @@ class TextStyles {
   );
   static TextStyle font16WhiteRegular = TextStyle(
     color: ColorsManager.white,
-    fontSize: 16.sp,
-    fontWeight: FontWeightManager.regular,
+    fontSize: 10.sp,
+    fontWeight: FontWeightManager.medium,
     fontFamily: Fonts.orientaFont,
   );
   static TextStyle font16LightBlueRegular = TextStyle(
     color: ColorsManager.lightBlue,
     fontSize: 16.sp,
+    fontWeight: FontWeightManager.regular,
+    fontFamily: Fonts.orientaFont,
   );
+
   static TextStyle font18WhiteRegular = TextStyle(
     fontSize: 18.sp,
     fontWeight: FontWeightManager.regular,
@@ -40,6 +45,14 @@ class TextStyles {
     decorationColor: ColorsManager.blue,
     decoration: TextDecoration.underline,
     fontSize: 11.sp,
+    fontWeight: FontWeightManager.medium,
+    fontFamily: Fonts.orientaFont,
+  );
+  static TextStyle font13BlueMedium = TextStyle(
+    color: ColorsManager.blue,
+    decorationColor: ColorsManager.blue,
+    decoration: TextDecoration.underline,
+    fontSize: 13.sp,
     fontWeight: FontWeightManager.medium,
     fontFamily: Fonts.orientaFont,
   );
@@ -77,6 +90,12 @@ class TextStyles {
   static TextStyle font13WhiteRegular = TextStyle(
     color: ColorsManager.white,
     fontSize: 13.sp,
+    fontWeight: FontWeight.normal,
+  );
+
+  static TextStyle font14WhiteRegular = TextStyle(
+    color: ColorsManager.white,
+    fontSize: 14.sp,
     fontWeight: FontWeight.normal,
   );
 
@@ -128,6 +147,7 @@ class TextStyles {
     fontWeight: FontWeightManager.bold,
     fontFamily: Fonts.orbitronFont,
   );
+
   static TextStyle font15White500Weight = TextStyle(
     color: ColorsManager.white,
     fontSize: 15.sp,
@@ -142,7 +162,9 @@ class TextStyles {
   );
   static TextStyle font15Blue500Weight = TextStyle(
     color: ColorsManager.blue,
-    fontSize: 15.sp,
+    decorationColor: ColorsManager.blue,
+    decoration: TextDecoration.underline,
+    fontSize: 11.sp,
     fontWeight: FontWeight.w500,
     fontFamily: 'Orienta',
   );

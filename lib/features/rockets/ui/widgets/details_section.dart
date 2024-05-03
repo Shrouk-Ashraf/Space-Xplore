@@ -51,6 +51,7 @@ class DetailsSection extends StatelessWidget {
             subTitle: "${rocket.mass.kg} Kg",
           ),
           verticalSpace(24),
+          verticalSpace(24),
           DetailsSectionTextWidget(
             title: "Company : ",
             subTitle: rocket.company,
