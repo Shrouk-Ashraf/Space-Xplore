@@ -13,20 +13,17 @@
 
 ## How to use
 - Clone Repository: Clone this GitHub repository to your local machine with the following command
-```git clone```
+ - ```git clone```
 - Install Dependencies: Run the following command in your terminal to install all necessary dependencies
-```flutter pub get```
+ - ```flutter pub get```
 - Launch App: Run the following command to launch the app on your preferred emulator or physical device
-```flutter run```
+ - ```flutter run```
 
 ## Frameworks
 - [Flutter](https://flutter.dev): An open-source UI software development kit created by Google used to develop cross-platform applications.
 
 ## APIs used
-- [SpaceX](https://github.com/r-spacex/SpaceX-API/tree/master/docs#rspacex-api-docs): The official SpaceX API v4 was used which provides access to a wealth of data related to SpaceX missions, rockets, crew members, ships, and more.
-
-## Acknowledgements
-- [SpaceX](https://www.spacex.com): A private aerospace manufacturer and space transportation company founded by Elon Musk in 2002. SpaceX is known for its ambitious missions to revolutionize space travel and exploration.
+- [SpaceX API](https://github.com/r-spacex/SpaceX-API/tree/master/docs#rspacex-api-docs): The official SpaceX API v4 was used which provides access to a wealth of data related to SpaceX missions, rockets, crew members, ships, and more.
 
 ## Contributors
 - Space Xplorer is made possible by the contributions of the following developers: [Shrouk Ashraf](https://github.com/Shrouk-Ashraf), [Nada Mohammed](https://github.com/nadaamohhamed), [Islam Ashraf](https://github.com/islamashraf2003), [Abdelrahman Sobhy](https://github.com/abdarahmann).
