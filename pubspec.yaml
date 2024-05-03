@@ -7,37 +7,63 @@ version: 1.0.0+1
 
 environment:
   sdk: '>=3.3.1 <4.0.0'
-  # TODO: comments to be added fo the file
+
 dependencies:
-  bloc: ^8.1.4
-  build_runner: ^2.4.9
-  cached_network_image: ^3.3.1
-  carousel_slider: ^4.2.1
-  cupertino_icons: ^1.0.6
-  dio: ^5.4.3+1
-  either_dart: ^1.0.0
+  # Flutter SDK
   flutter:
     sdk: flutter
+
+  # Bloc State Management
+  bloc: ^8.1.4
   flutter_bloc: ^8.1.5
-  flutter_launcher_icons: ^0.13.1
-  flutter_native_splash: ^2.4.0
-  flutter_screenutil: ^5.9.0
-  flutter_svg: ^2.0.10+1
-  freezed: ^2.5.2
-  freezed_annotation: ^2.4.1
-  get_it: ^7.7.0
-  intl: ^0.18.1
-  intro_screen_onboarding_flutter: ^1.0.0
-  introduction_screen: ^3.1.14
-  json_annotation: ^4.9.0
-  json_serializable: ^6.8.0
-  lottie: ^3.1.0
-  persistent_bottom_nav_bar: ^5.0.2
-  pretty_dio_logger: ^1.3.1
+
+  # HTTP Requests
+  dio: ^5.4.3+1
   retrofit: ^4.1.0
   retrofit_generator: ^8.1.0
-  webview_flutter: ^4.7.0
+
+  # Dependency Injection
+  get_it: ^7.7.0
+
+  # JSON Serialization
+  json_annotation: ^4.9.0
+  json_serializable: ^6.8.0
+
+  # Data Serialization
+  freezed: ^2.5.2
+  freezed_annotation: ^2.4.1
+
+  # Utilities
+  either_dart: ^1.0.0
+  intl: ^0.18.1
+  pretty_dio_logger: ^1.3.1
+
+  # Code generation
+  build_runner: ^2.4.9
+
+  # Responsive
+  flutter_screenutil: ^5.9.0
+
+  # Icons
+  cupertino_icons: ^1.0.6
+
+  # UI Components
+  flutter_svg: ^2.0.10+1
+  lottie: ^3.1.0
+  persistent_bottom_nav_bar: ^5.0.2
+  carousel_slider: ^4.2.1
   youtube_player_flutter: ^9.0.1
+  webview_flutter: ^4.7.0
+
+  # Image Caching
+  cached_network_image: ^3.3.1
+
+  # Splash Screen
+  flutter_native_splash: ^2.4.0
+
+  # Onboarding Screen
+  intro_screen_onboarding_flutter: ^1.0.0
+  introduction_screen: ^3.1.14
 
 dev_dependencies:
   flutter_lints: ^3.0.0
@@ -51,12 +77,14 @@ flutter_icons:
 
 flutter:
   uses-material-design: true
-
+  
+  # assets
   assets:
     - assets/images/
     - assets/icons/
     - assets/json/
 
+  # fonts
   fonts:
     - family: Orbitron
       fonts:

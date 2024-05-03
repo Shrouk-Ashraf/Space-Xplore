@@ -15,9 +15,7 @@ class RocketDetailsScreen extends StatelessWidget {
     var screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: const CustomAppBar(
-        title: 'Rocket Details',
-      ),
+      appBar: const CustomAppBar(),
       body: BackgroundContainer(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

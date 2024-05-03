@@ -4,6 +4,7 @@ import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/theming/styles.dart';
 import 'package:space_app/core/widgets/background_container.dart';
 import 'package:space_app/core/widgets/custom_app_bar.dart';
+import 'package:space_app/core/widgets/custom_text_span.dart';
 import 'package:space_app/core/widgets/link_text.dart';
 import 'package:space_app/features/launches/data/models/launch_response.dart';
 import 'package:intl/intl.dart';

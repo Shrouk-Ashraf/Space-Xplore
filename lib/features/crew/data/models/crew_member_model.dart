@@ -14,6 +14,8 @@ class CrewMemberModel {
   final String imageUrl;
   @JsonKey(name: 'wikipedia')
   final String wikipediaUrl;
+  @JsonKey(name: 'launches')
+  final List<String> launches;
 
   CrewMemberModel({
     required this.name,
@@ -21,6 +23,7 @@ class CrewMemberModel {
     required this.status,
     required this.imageUrl,
     required this.wikipediaUrl,
+    required this.launches,
   });
   factory CrewMemberModel.fromJson(Map<String, dynamic> json) =>
       _$CrewMemberModelFromJson(json);

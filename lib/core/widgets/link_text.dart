@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/widgets/web_view.dart';
 
 import '../theming/styles.dart';
@@ -18,8 +19,19 @@ class LinkText extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (context) => WebView(webViewUrl: linkUrl),
+          PageRouteBuilder(
+            transitionDuration: const Duration(milliseconds: 500),
+            pageBuilder: (context, animation, secondaryAnimation) =>
+                ScaleTransition(
+              scale: Tween<double>(
+                begin: 0.0, // Starting scale
+                end: 1.0, // Ending scale
+              ).animate(animation),
+              child: WebView(
+                webViewUrl: linkUrl,
+                appBarColor: ColorsManager.white,
+              ),
+            ),
           ),
         );
       },

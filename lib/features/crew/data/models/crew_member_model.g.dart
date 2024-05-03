@@ -13,6 +13,8 @@ CrewMemberModel _$CrewMemberModelFromJson(Map<String, dynamic> json) =>
       status: json['status'] as String,
       imageUrl: json['image'] as String,
       wikipediaUrl: json['wikipedia'] as String,
+      launches:
+          (json['launches'] as List<dynamic>).map((e) => e as String).toList(),
     );
 
 Map<String, dynamic> _$CrewMemberModelToJson(CrewMemberModel instance) =>
@@ -22,4 +24,5 @@ Map<String, dynamic> _$CrewMemberModelToJson(CrewMemberModel instance) =>
       'status': instance.status,
       'image': instance.imageUrl,
       'wikipedia': instance.wikipediaUrl,
+      'launches': instance.launches,
     };

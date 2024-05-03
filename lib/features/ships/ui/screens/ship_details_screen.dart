@@ -18,8 +18,7 @@ class ShipDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: CustomAppBar(
-          title: singleShipModel.shipName ?? 'name of ships error'),
+      appBar: const CustomAppBar(),
       body: BackgroundContainer(
         child: SafeArea(
           child: Center(

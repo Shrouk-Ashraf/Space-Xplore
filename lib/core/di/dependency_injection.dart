@@ -16,15 +16,15 @@ Future<void> setupGetIt() async {
   Dio dio = DioFactory.getDio();
   getIt.registerLazySingleton(() => ApiService(dio));
 
-  // Launch
+  // Launches
   getIt.registerLazySingleton(() => LaunchRepo(getIt()));
   getIt.registerLazySingleton(() => LaunchCubit(getIt()));
 
   // crew
   getIt.registerLazySingleton<CrewRepo>(() => CrewRepo(getIt()));
-  getIt.registerFactory<CrewCubit>(() => CrewCubit(getIt()));
+  getIt.registerLazySingleton<CrewCubit>(() => CrewCubit(getIt()));
 
   // ships
-  getIt.registerLazySingleton<ShipsCubit>(() => ShipsCubit(getIt()));
   getIt.registerLazySingleton<ShipsRepo>(() => ShipsRepo(getIt()));
+  getIt.registerLazySingleton<ShipsCubit>(() => ShipsCubit(getIt()));
 }
