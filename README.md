@@ -12,11 +12,11 @@
 - **Company Information:** Access information about SpaceX company, including its history, founders, and many more. Learn about the company's vision for space exploration.
 
 ## How to use
-- Clone Repository: Clone this GitHub repository to your local machine with the following command
+1. Clone Repository: Clone this GitHub repository to your local machine with the following command
  - ```git clone```
-- Install Dependencies: Run the following command in your terminal to install all necessary dependencies
+2. Install Dependencies: Run the following command in your terminal to install all necessary dependencies
  - ```flutter pub get```
-- Launch App: Run the following command to launch the app on your preferred emulator or physical device
+3. Launch App: Run the following command to launch the app on your preferred emulator or physical device
  - ```flutter run```
 
 ## Frameworks
