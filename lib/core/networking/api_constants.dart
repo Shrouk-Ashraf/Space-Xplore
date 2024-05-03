@@ -1,13 +1,16 @@
 class ApiConstants {
   static const String baseUrl = "https://api.spacexdata.com/v4/";
-  static const String rockets = "rockets/";
+
+  static const String allLaunches = "launches";
+  static const String crew = "crew";
+  static const String ships = "ships";
+  static const String rockets = "rockets";
 }
 
 class ApiErrors {
   static const String badRequestError = "badRequestError";
   static const String noContent = "noContent";
   static const String forbiddenError = "forbiddenError";
-  static const String unauthorizedError = "unauthorizedError";
   static const String notFoundError = "notFoundError";
   static const String conflictError = "conflictError";
   static const String internalServerError = "internalServerError";

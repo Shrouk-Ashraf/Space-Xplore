@@ -1,76 +1,69 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:space_app/core/helpers/spacing.dart';
 import 'package:space_app/core/theming/styles.dart';
-import '../../../../core/widgets/wikipedia_widget.dart';
-import '../../data/rocket_data.dart';
+import 'package:space_app/core/widgets/wikipedia_link_text.dart';
+import 'package:space_app/features/rockets/data/models/rocket_model/rocket_model.dart';
 import 'details_section_text_widget.dart';
+import 'package:flutter/material.dart';
+
 class DetailsSection extends StatelessWidget {
   const DetailsSection({
     super.key,
-    required this.screenWidth,
+    required this.rocket,
   });
 
-  final double screenWidth;
+  final RocketModel rocket;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(
-        horizontal: screenWidth / 20,
-        vertical: 20,
+        horizontal: 16.w,
+        vertical: 20.h,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            rocketList[0].name!,
-            style: TextStyles.font24WhiteBold,
+          Center(
+            child: Text(
+              rocket.name,
+              style: TextStyles.font24WhiteBold,
+            ),
           ),
-          const SizedBox(
-            height: 10,
-          ),
+          verticalSpace(10),
           DetailsSectionTextWidget(
             title: "Description : ",
-            subTitle: rocketList[0].description!,
+            subTitle: rocket.description,
           ),
-          const SizedBox(
-            height: 24,
-          ),
+          verticalSpace(24),
           DetailsSectionTextWidget(
             title: "Height : ",
-            subTitle: "${rocketList[0].height!.meters} m",
+            subTitle: "${rocket.height.meters} m",
           ),
-          const SizedBox(
-            height: 9,
-          ),
+          verticalSpace(9),
           DetailsSectionTextWidget(
             title: "Diameter : ",
-            subTitle: "${rocketList[0].diameter!.meters} m",
+            subTitle: "${rocket.diameter.meters} m",
           ),
-          const SizedBox(
-            height: 9,
-          ),
+          verticalSpace(9),
           DetailsSectionTextWidget(
             title: "Mass : ",
-            subTitle: "${rocketList[0].mass!.kg} Kg",
+            subTitle: "${rocket.mass.kg} Kg",
           ),
-          const SizedBox(
-            height: 40,
-          ),
+          verticalSpace(24),
           DetailsSectionTextWidget(
             title: "Company : ",
-            subTitle: "${rocketList[0].company}",
+            subTitle: rocket.company,
           ),
-          const SizedBox(
-            height: 9,
-          ),
+          verticalSpace(9),
           DetailsSectionTextWidget(
             title: "Country : ",
-            subTitle: "${rocketList[0].country}",
+            subTitle: rocket.country,
           ),
-          const SizedBox(
-            height: 9,
+          verticalSpace(10),
+          WikipediaLinkText(
+            wikipediaUrl: rocket.wikipedia,
           ),
-          const WikipediaLink(),
         ],
       ),
     );

@@ -2,42 +2,51 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:space_app/core/widgets/custom_grid_container.dart';
-import 'package:space_app/features/rockets/ui/screens/rocket_details_screen.dart';
 
-import '../../data/rocket_data.dart';
+import '../../data/models/rocket_model/rocket_model.dart';
+import '../screens/rocket_details_screen.dart';
 
 class RocketGridView extends StatelessWidget {
   const RocketGridView({
     super.key,
+    required this.rockets,
   });
 
-  // should have a list returned from API, for now import crew list from crew dummy data
-
+  final List<RocketModel> rockets;
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: GridView(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          childAspectRatio: 100.w / 110.h,
-          crossAxisSpacing: 60.w,
-          mainAxisSpacing: 30.h,
+      child: Padding(
+        padding: EdgeInsets.only(
+          left: 20.w,
+          right: 20.w,
+          bottom: 50.w,
         ),
-        children: [
-          for (final rocket in rocketList)
-            GestureDetector(
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => RocketDetailsScreen()));
-              },
-              child: CustomGridContainer(
-                title: rocket.name!,
-                imageUrl: rocket.flickrImages![0],
+        child: GridView(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            childAspectRatio: 100.w / 120.h,
+            crossAxisSpacing: 40.w,
+            mainAxisSpacing: 35.h,
+          ),
+          children: [
+            for (final rocket in rockets)
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => RocketDetailsScreen(
+                                rocketModel: rocket,
+                              )));
+                },
+                child: CustomGridContainer(
+                  title: rocket.name,
+                  imageUrl: rocket.flickrImages[0],
+                ),
               ),
-            ),
-        ],
+          ],
+        ),
       ),
     );
   }

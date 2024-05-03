@@ -1,14 +1,15 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:space_app/features/rockets/data/rocket_data.dart';
 
 class ImageSlider extends StatefulWidget {
-  const ImageSlider({super.key, required this.screenHeight});
-  final double screenHeight;
+  const ImageSlider({super.key, required this.images, });
+ 
+  final List<String> images;
 
   @override
   State<ImageSlider> createState() => _ImageSliderState();
 }
+
 
 class _ImageSliderState extends State<ImageSlider> {
   int _currentPage = 0;
@@ -18,11 +19,11 @@ class _ImageSliderState extends State<ImageSlider> {
     return Column(
       children: [
         CarouselSlider(
-          items: rocketList[0]
-              .flickrImages!
+          items: 
+             widget.images 
               .map(
                 (e) => Container(
-                  height: widget.screenHeight / 4,
+                 
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     image: DecorationImage(
@@ -36,7 +37,6 @@ class _ImageSliderState extends State<ImageSlider> {
               )
               .toList(),
           options: CarouselOptions(
-            height: widget.screenHeight / 4,
             initialPage: 0,
             autoPlay: true,
             autoPlayInterval: const Duration(seconds: 3),
@@ -49,18 +49,18 @@ class _ImageSliderState extends State<ImageSlider> {
             },
           ),
         ),
-        buildeCarouselIndicator(currentPage: _currentPage)
+        buildeCarouselIndicator(currentPage: _currentPage,images: widget.images)
       ],
     );
   }
 
 }
 
-  buildeCarouselIndicator({required int currentPage}) {
+  buildeCarouselIndicator({required int currentPage,required List<String> images}) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        for (int i = 0; i < rocketList[0].flickrImages!.length; i++)
+        for (int i = 0; i < images.length; i++)
           Container(
             height: i == currentPage ? 7 : 5,
             width: i == currentPage ? 7 : 5,

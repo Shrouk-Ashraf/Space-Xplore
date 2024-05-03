@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
+import 'package:space_app/core/di/dependency_injection.dart';
 import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/theming/styles.dart';
-import 'package:space_app/features/company%20info/ui/company_info_screen.dart';
+import 'package:space_app/features/company%20info/ui/screens/company_info_screen.dart';
+import 'package:space_app/features/crew/logic/crew_cubit.dart';
 import 'package:space_app/features/crew/ui/screens/crew_screen.dart';
+import 'package:space_app/features/launches/logic/cubit/launch_cubit.dart';
 import 'package:space_app/features/launches/ui/screens/launches_screen.dart';
+import 'package:space_app/features/rockets/logic/all_rockets_cubit/rockets_cubit.dart';
 import 'package:space_app/features/rockets/ui/screens/rockets_screen.dart';
-
+import 'package:space_app/features/ships/logic/ships_cubit.dart';
 import 'package:space_app/features/ships/ui/screens/ships_screen.dart';
 
 class BottomNavBar extends StatelessWidget {
@@ -15,10 +20,22 @@ class BottomNavBar extends StatelessWidget {
 
   List<Widget> _buildScreens() {
     return [
-      const RocketsScreen(),
-      const LaunchesScreen(),
-      const CrewScreen(),
-      ShipsScreen(),
+      BlocProvider(
+        create: (context) => getIt<RocketsCubit>(),
+     child: const RocketsScreen(),  
+      ),
+      BlocProvider(
+        create: (context) => getIt<LaunchCubit>(),
+        child: const LaunchesScreen(),
+      ),
+      BlocProvider(
+        create: (context) => getIt<CrewCubit>(),
+        child: const CrewScreen(),
+      ),
+      BlocProvider(
+        create: (context) => getIt<ShipsCubit>(),
+        child: const ShipsScreen(),
+      ),
       const CompanyInfoScreen(),
     ];
   }
@@ -59,9 +76,6 @@ class BottomNavBar extends StatelessWidget {
           topLeft: Radius.circular(25.r),
           topRight: Radius.circular(25.r),
         ),
-      ),
-      margin: EdgeInsets.only(
-        top: 30.h,
       ),
       itemAnimationProperties: const ItemAnimationProperties(
         duration: Duration(milliseconds: 200),
