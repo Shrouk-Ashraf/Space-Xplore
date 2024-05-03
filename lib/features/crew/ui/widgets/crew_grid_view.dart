@@ -16,7 +16,7 @@ class CrewGridView extends StatelessWidget {
         padding: EdgeInsets.only(
           left: 20.w,
           right: 20.w,
-          bottom: 50.w,
+          bottom: 20.w,
         ),
         child: GridView(
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

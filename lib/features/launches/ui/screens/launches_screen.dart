@@ -39,7 +39,7 @@ class _LaunchesScreenState extends State<LaunchesScreen> {
         child: SafeArea(
           child: Padding(
             padding: const EdgeInsetsDirectional.only(
-                top: 13, bottom: 13, start: 16, end: 16),
+                top: 13, bottom: 0, start: 16, end: 16),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

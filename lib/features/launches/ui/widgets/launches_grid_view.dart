@@ -17,37 +17,32 @@ class LaunchesGridView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(
-          vertical: 14,
+      child: GridView.builder(
+        controller: _scrollController,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          crossAxisSpacing: 35.w,
+          mainAxisSpacing: 15.h,
         ),
-        child: GridView.builder(
-          controller: _scrollController,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            crossAxisSpacing: 35.w,
-            mainAxisSpacing: 15.h,
-          ),
-          itemCount: allLaunches.length,
-          itemBuilder: (context, index) {
-            return GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return LaunchDetailsScreen(
-                        item: allLaunches[index],
-                      );
-                    },
-                  ),
-                );
-              },
-              child: CustomCard(
-                item: allLaunches[index],
-              ),
-            );
-          },
-        ),
+        itemCount: allLaunches.length,
+        itemBuilder: (context, index) {
+          return GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return LaunchDetailsScreen(
+                      item: allLaunches[index],
+                    );
+                  },
+                ),
+              );
+            },
+            child: CustomCard(
+              item: allLaunches[index],
+            ),
+          );
+        },
       ),
     );
   }
