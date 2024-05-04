@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:space_app/core/widgets/background_container.dart';
 import 'package:space_app/core/widgets/custom_app_bar.dart';
-import 'package:space_app/core/widgets/custom_error_widget.dart';
 import 'package:space_app/core/widgets/custom_loading_widget.dart';
+import 'package:space_app/core/widgets/failed_request_column.dart';
 import 'package:space_app/features/ships/logic/ships_cubit.dart';
 import 'package:space_app/features/ships/ui/widgets/all_category_of_ships.dart';
 
@@ -19,6 +19,10 @@ class _ShipsScreenState extends State<ShipsScreen> {
   @override
   void initState() {
     super.initState();
+    _fetchData();
+  }
+
+  void _fetchData() {
     BlocProvider.of<ShipsCubit>(context).getAllShipsData();
   }
 
@@ -40,7 +44,9 @@ class _ShipsScreenState extends State<ShipsScreen> {
                     shipsModel: state.shipsData,
                   );
                 } else if (state is ShipsFailure) {
-                  return CustomErrorWidget(errorMessage: state.errorMessage);
+                  return FailedRequestColumn(
+                    fetchData: _fetchData,
+                  );
                 } else {
                   return const CustomLoadingWidget();
                 }

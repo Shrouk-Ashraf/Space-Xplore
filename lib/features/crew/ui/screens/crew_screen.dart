@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:space_app/core/helpers/spacing.dart';
-import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/theming/styles.dart';
 import 'package:space_app/core/widgets/custom_app_bar.dart';
 import 'package:space_app/core/widgets/background_container.dart';
+import 'package:space_app/core/widgets/custom_loading_widget.dart';
+import 'package:space_app/core/widgets/failed_request_column.dart';
 import 'package:space_app/features/crew/logic/crew_cubit.dart';
 import 'package:space_app/features/crew/ui/widgets/crew_grid_view.dart';
 
@@ -20,7 +21,7 @@ class _CrewScreenState extends State<CrewScreen> {
   @override
   void initState() {
     super.initState();
-    BlocProvider.of<CrewCubit>(context).getAllCrew();
+    _fetchData();
   }
 
   @override
@@ -37,11 +38,7 @@ class _CrewScreenState extends State<CrewScreen> {
             child: BlocBuilder<CrewCubit, CrewState>(
               builder: (context, state) {
                 if (state is CrewLoadingState) {
-                  return const Center(
-                    child: CircularProgressIndicator(
-                      color: ColorsManager.blue,
-                    ),
-                  );
+                  return const CustomLoadingWidget();
                 } else if (state is CrewLoadedState) {
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -55,11 +52,8 @@ class _CrewScreenState extends State<CrewScreen> {
                     ],
                   );
                 } else {
-                  return Center(
-                    child: Text(
-                      'Oops there was an error, try again.',
-                      style: TextStyles.font20WhiteBold,
-                    ),
+                  return FailedRequestColumn(
+                    fetchData: _fetchData,
                   );
                 }
               },
@@ -68,5 +62,9 @@ class _CrewScreenState extends State<CrewScreen> {
         ),
       ),
     );
+  }
+
+  void _fetchData() {
+    BlocProvider.of<CrewCubit>(context).getAllCrew();
   }
 }

@@ -70,28 +70,38 @@ class BottomNavBar extends StatelessWidget {
     PersistentTabController controller =
         PersistentTabController(initialIndex: 0);
 
-    return PersistentTabView(
-      context,
-      controller: controller,
-      screens: _buildScreens(),
-      items: _buildNavBarsItems(),
-      backgroundColor: ColorsManager.black,
-      decoration: NavBarDecoration(
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(25.r),
-          topRight: Radius.circular(25.r),
-        ),
-      ),
-      itemAnimationProperties: const ItemAnimationProperties(
-        duration: Duration(milliseconds: 200),
-        curve: Curves.ease,
-      ),
-      screenTransitionAnimation: const ScreenTransitionAnimation(
-        animateTabTransition: true,
-        curve: Curves.ease,
-        duration: Duration(milliseconds: 200),
-      ),
-      navBarStyle: NavBarStyle.style1,
+    return StreamBuilder(
+      stream: Connectivity().onConnectivityChanged,
+      builder: (context, AsyncSnapshot<ConnectivityResult> snapshot) {
+        final connectivityResult = snapshot.data;
+        if (connectivityResult == ConnectivityResult.none) {
+          return const NoInternetScreen();
+        } else {
+          return PersistentTabView(
+            context,
+            controller: controller,
+            screens: _buildScreens(),
+            items: _buildNavBarsItems(),
+            backgroundColor: ColorsManager.black,
+            decoration: NavBarDecoration(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(25.r),
+                topRight: Radius.circular(25.r),
+              ),
+            ),
+            itemAnimationProperties: const ItemAnimationProperties(
+              duration: Duration(milliseconds: 200),
+              curve: Curves.ease,
+            ),
+            screenTransitionAnimation: const ScreenTransitionAnimation(
+              animateTabTransition: true,
+              curve: Curves.ease,
+              duration: Duration(milliseconds: 200),
+            ),
+            navBarStyle: NavBarStyle.style1,
+          );
+        }
+      },
     );
   }
 }
