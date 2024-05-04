@@ -1,4 +1,3 @@
-import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
@@ -6,27 +5,35 @@ import 'package:space_app/core/helpers/spacing.dart';
 import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/theming/styles.dart';
 
-class NoInternetColumn extends StatelessWidget {
-  const NoInternetColumn({super.key});
+class FailedRequestColumn extends StatelessWidget {
+  const FailedRequestColumn({
+    super.key,
+    required this.fetchData,
+  });
+
+  final void Function() fetchData;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Lottie.asset(
-          'assets/json/no_internet.json',
-          fit: BoxFit.fill,
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 18.w),
+          child: Lottie.asset(
+            'assets/json/failed_request.json',
+            fit: BoxFit.fill,
+          ),
         ),
         Text(
           'Whoops!',
           style: TextStyles.font24WhiteBold,
         ),
-        verticalSpace(10),
+        verticalSpace(15),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.w),
           child: Text(
-            'Failed to connect to Space Xplore, please check your device\'s network connection.',
+            'Failed to fetch data from the server since it\'s currently unable to handle requests, please try again later.',
             style: TextStyles.font12WhiteBold,
             textAlign: TextAlign.center,
           ),
@@ -34,9 +41,7 @@ class NoInternetColumn extends StatelessWidget {
         verticalSpace(35),
         ElevatedButton.icon(
           label: const Text('Retry'),
-          onPressed: () {
-            Connectivity().checkConnectivity();
-          },
+          onPressed: fetchData,
           icon: const Icon(Icons.refresh),
           style: ElevatedButton.styleFrom(
             backgroundColor: ColorsManager.blue,

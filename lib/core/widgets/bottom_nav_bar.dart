@@ -1,4 +1,3 @@
-import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -6,12 +5,14 @@ import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:space_app/core/di/dependency_injection.dart';
 import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/theming/styles.dart';
+import 'package:space_app/core/widgets/custom_loading_widget.dart';
 import 'package:space_app/features/company%20info/ui/screens/company_info_screen.dart';
-import 'package:space_app/features/connectivity/screens/no_internet_screen.dart';
 import 'package:space_app/features/crew/logic/crew_cubit.dart';
 import 'package:space_app/features/crew/ui/screens/crew_screen.dart';
 import 'package:space_app/features/launches/logic/cubit/launch_cubit.dart';
 import 'package:space_app/features/launches/ui/screens/launches_screen.dart';
+import 'package:space_app/features/no%20internet/ui/screens/no_internet_screen.dart';
+import 'package:flutter_offline/flutter_offline.dart';
 import 'package:space_app/features/rockets/ui/screens/rockets_screen.dart';
 import 'package:space_app/features/ships/logic/ships_cubit.dart';
 import 'package:space_app/features/ships/ui/screens/ships_screen.dart';
@@ -63,13 +64,14 @@ class BottomNavBar extends StatelessWidget {
     PersistentTabController controller =
         PersistentTabController(initialIndex: 0);
 
-    return StreamBuilder(
-      stream: Connectivity().onConnectivityChanged,
-      builder: (context, snapshot) {
-        final connectivityResult = snapshot.data;
-        if (connectivityResult!.contains(ConnectivityResult.none)) {
-          return const NoInternetScreen();
-        } else {
+    return OfflineBuilder(
+      connectivityBuilder: (
+        BuildContext context,
+        ConnectivityResult connectivity,
+        Widget child,
+      ) {
+        final bool connected = connectivity != ConnectivityResult.none;
+        if (connected) {
           return PersistentTabView(
             context,
             controller: controller,
@@ -93,8 +95,11 @@ class BottomNavBar extends StatelessWidget {
             ),
             navBarStyle: NavBarStyle.style1,
           );
+        } else {
+          return const NoInternetScreen();
         }
       },
+      child: const CustomLoadingWidget(),
     );
   }
 }
