@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/features/launches/data/models/launch_response.dart';
 import 'package:space_app/features/launches/logic/cubit/launch_cubit.dart';
@@ -9,10 +11,7 @@ import 'package:space_app/features/launches/ui/widgets/launches_grid_view.dart';
 class AllLaunchesBody extends StatelessWidget {
   const AllLaunchesBody({
     super.key,
-    required ScrollController scrollController,
-  }) : _scrollController = scrollController;
-
-  final ScrollController _scrollController;
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -34,12 +33,12 @@ class AllLaunchesBody extends StatelessWidget {
                   : Column(
                       children: [
                         LaunchesGridView(
-                          scrollController: _scrollController,
                           allLaunches: allLaunches,
                         ),
                         state is LoadingMoreLaunches
-                            ? const Center(
-                                child: CircularProgressIndicator(
+                            ? Center(
+                                child: SpinKitThreeBounce(
+                                  size: 30.sp,
                                   color: ColorsManager.mainColor,
                                 ),
                               )
