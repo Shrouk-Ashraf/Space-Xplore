@@ -45,7 +45,7 @@ class _CrewDetailsScreenState extends State<CrewDetailsScreen> {
           child: Center(
             child: Container(
               height: 490.h,
-              width: 300.w,
+              width: 320.w,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8.r),
                 color: ColorsManager.lightTransparent,
@@ -120,9 +120,13 @@ class _CrewDetailsScreenState extends State<CrewDetailsScreen> {
     );
   }
 
+  String _convertFirstLetterToCapital(String text) {
+    return text[0].toUpperCase() + text.substring(1);
+  }
+
   Text _buildTextInRow(String text, TextStyle textStyle) {
     return Text(
-      text,
+      _convertFirstLetterToCapital(text),
       style: textStyle,
       overflow: TextOverflow.ellipsis,
       maxLines: 3,
