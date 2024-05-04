@@ -14,6 +14,12 @@ class TextStyles {
     fontWeight: FontWeightManager.regular,
     color: ColorsManager.grey,
   );
+  static TextStyle font14LightGreyRegularUbuntu = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeightManager.regular,
+    color: ColorsManager.lightGrey,
+    fontFamily: Fonts.ubuntuFont,
+  );
   static TextStyle font16WhiteRegular = TextStyle(
     color: ColorsManager.white,
     fontSize: 10.sp,
@@ -47,6 +53,13 @@ class TextStyles {
     fontSize: 11.sp,
     fontWeight: FontWeightManager.medium,
     fontFamily: Fonts.orientaFont,
+  );
+
+  static TextStyle font25WhiteExtraBoldOrbitron = TextStyle(
+    fontSize: 25.sp,
+    fontWeight: FontWeightManager.extraBold,
+    color: ColorsManager.white,
+    fontFamily: Fonts.orbitronFont,
   );
   static TextStyle font13BlueMedium = TextStyle(
     color: ColorsManager.blue,
@@ -97,6 +110,12 @@ class TextStyles {
     color: ColorsManager.white,
     fontSize: 14.sp,
     fontWeight: FontWeight.normal,
+  );
+  static TextStyle font14WhiteBoldUbuntu = TextStyle(
+    color: ColorsManager.white,
+    fontSize: 14.sp,
+    fontWeight: FontWeight.bold,
+    fontFamily: Fonts.ubuntuFont,
   );
 
   static TextStyle font15WhiteBold = TextStyle(

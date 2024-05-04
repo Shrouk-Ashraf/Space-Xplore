@@ -1,6 +1,7 @@
 import 'package:retrofit/retrofit.dart';
 import 'package:dio/dio.dart';
 import 'package:space_app/core/networking/api_constants.dart';
+import 'package:space_app/features/company%20info/data/models/company_info_model.dart';
 import 'package:space_app/features/crew/data/models/crew_member_model.dart';
 import 'package:retrofit/http.dart';
 import 'package:space_app/features/launches/data/models/launch_response.dart';
@@ -31,4 +32,7 @@ abstract class ApiService {
 
   @GET('${ApiConstants.rockets}/{id}')
   Future<RocketModel> getRocket(@Path('id') String id);
+
+  @GET(ApiConstants.companyInfo)
+  Future<CompanyInfoModel> getCompanyInfo();
 }

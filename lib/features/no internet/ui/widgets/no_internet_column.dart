@@ -1,4 +1,3 @@
-import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
@@ -34,9 +33,7 @@ class NoInternetColumn extends StatelessWidget {
         verticalSpace(35),
         ElevatedButton.icon(
           label: const Text('Retry'),
-          onPressed: () {
-            Connectivity().checkConnectivity();
-          },
+          onPressed: () {},
           icon: const Icon(Icons.refresh),
           style: ElevatedButton.styleFrom(
             backgroundColor: ColorsManager.blue,
