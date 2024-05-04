@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/widgets/bottom_nav_bar.dart';
 import 'package:space_app/features/onboarding/ui/widgets/custom_page_view.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
+  _storeOnBoardingToShowOnlyOneTime() async {
+    int isViewd = 0;
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    preferences.setInt("onboardingKey", isViewd);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,6 +48,7 @@ class OnboardingScreen extends StatelessWidget {
             ),
           ),
           onDone: () {
+            _storeOnBoardingToShowOnlyOneTime();
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(

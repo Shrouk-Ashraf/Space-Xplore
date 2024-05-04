@@ -5,4 +5,5 @@ class Routes {
   static const String crewScreen = '/crewScreen';
   static const String shipsScreen = '/shipsScreen';
   static const String companyInfoScreen = '/companyInfoScreen';
+  static const String bottomNavBar = '/bottomNavBar';
 }
