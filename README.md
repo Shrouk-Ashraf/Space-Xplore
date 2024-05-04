@@ -16,7 +16,7 @@
   - Access information about SpaceX company, including its history, founders, and many more. Learn about the company's vision for space exploration.
 
 ## 🎨 Design
-- [Figma Design](https://www.figma.com/file/YAirxEYpVYm0pS22vVfKTs/Space-app-(Community)?type=design&node-id=0%3A1&mode=design&t=f3p1GypiTnTDOwZQ-1): The design for the Space Xplore app can be found on Figma which includes screens for the splash screen, onboarding screens, launches screen, rockets screen, ships screen, crew screen, and company info screen.
+- [Figma Design](https://www.figma.com/file/YAirxEYpVYm0pS22vVfKTs/Space-app-(Community)?type=design&node-id=0%3A1&mode=design&t=Xid2O5z6508EaBQQ-1): The design for the Space Xplore app can be found on Figma which includes screens for the splash screen, onboarding screens, launches screen, rockets screen, ships screen, crew screen, and company info screen.
 
 ## 🎯 How to use
 1. ⬇️ **Download & Install the App:** Get the app from the provided APK link [here]() and follow the installation instructions for your device's operating system.

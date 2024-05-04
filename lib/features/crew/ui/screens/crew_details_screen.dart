@@ -44,7 +44,7 @@ class _CrewDetailsScreenState extends State<CrewDetailsScreen> {
         child: SafeArea(
           child: Center(
             child: Container(
-              height: 450.h,
+              height: 490.h,
               width: 300.w,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8.r),
@@ -54,7 +54,7 @@ class _CrewDetailsScreenState extends State<CrewDetailsScreen> {
                 builder: (context, state) {
                   if (state is GetOneLaunchSuccess) {
                     return Padding(
-                      padding: EdgeInsets.all(15.w),
+                      padding: EdgeInsets.all(20.w),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
@@ -124,6 +124,8 @@ class _CrewDetailsScreenState extends State<CrewDetailsScreen> {
     return Text(
       text,
       style: textStyle,
+      overflow: TextOverflow.ellipsis,
+      maxLines: 3,
     );
   }
 }

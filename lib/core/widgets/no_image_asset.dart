@@ -7,9 +7,9 @@ class NoImageAsset extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Image.asset(
-      "assets/images/no_photo_placeholder.png",
+      "assets/images/photo.png",
       width: 80.w,
-      height: 80.h,
+      height: 125.h,
     );
   }
 }

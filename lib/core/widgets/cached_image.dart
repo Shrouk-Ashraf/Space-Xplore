@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:space_app/core/theming/colors.dart';
+import 'package:space_app/core/widgets/no_image_asset.dart';
 
 class CachedImage extends StatelessWidget {
   const CachedImage({
@@ -41,10 +42,7 @@ class CachedImage extends StatelessWidget {
           ),
         ),
       ),
-      errorWidget: (context, url, error) => const Icon(
-        Icons.error,
-        color: ColorsManager.blue,
-      ),
+      errorWidget: (context, url, error) => const NoImageAsset(),
     );
   }
 }

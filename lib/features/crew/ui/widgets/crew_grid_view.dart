@@ -23,6 +23,10 @@ class _CrewGridViewState extends State<CrewGridView>
   @override
   void initState() {
     super.initState();
+    _initializeAnimation();
+  }
+
+  void _initializeAnimation() {
     _animationController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 300),
