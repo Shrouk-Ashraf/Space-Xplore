@@ -27,7 +27,7 @@ abstract class ApiService {
   Future<List<ShipModel>> getAllShips();
 
   @GET(ApiConstants.rockets)
-  Future<List<RocketModel>> gethAllRockets();
+  Future<List<RocketModel>> getAllRockets();
 
   @GET('${ApiConstants.rockets}/{id}')
   Future<RocketModel> getRocket(@Path('id') String id);

@@ -1,20 +1,24 @@
+import 'package:dio/dio.dart';
+import 'package:either_dart/either.dart';
+import 'package:space_app/core/networking/api_service.dart';
+import 'package:space_app/core/networking/server_failure.dart';
 import 'package:space_app/features/rockets/data/models/rocket_model/rocket_model.dart';
 
-import '../rocket_service.dart';
-
 class RocketsRepo {
-  final RocketService rocketService;
+  final ApiService apiService;
 
-  RocketsRepo(this.rocketService);
-  Future<List<RocketModel>> fetchAllRockets() async {
-    var response = await rocketService.gethAllRockets();
-    return response
-        .map((singleRocket) => RocketModel.fromJson(singleRocket.toJson()))
-        .toList();
-  }
+  RocketsRepo(this.apiService);
 
-  Future<RocketModel> fetchRocket(String id) async {
-    var response = await rocketService.getRocket(id);
-    return RocketModel.fromJson(response.toJson());
+  Future<Either<Failure, List<RocketModel>>> getAllRockets() async {
+    try {
+      final rocketsList = await apiService.getAllRockets();
+      return Right(rocketsList);
+    } catch (e) {
+      if (e is DioException) {
+        return Left(ServerFailure.fromDioException(e));
+      } else {
+        return Left(ServerFailure(errorMessage: e.toString()));
+      }
+    }
   }
 }

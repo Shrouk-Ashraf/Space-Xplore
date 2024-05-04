@@ -133,7 +133,7 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<List<RocketModel>> gethAllRockets() async {
+  Future<List<RocketModel>> getAllRockets() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};

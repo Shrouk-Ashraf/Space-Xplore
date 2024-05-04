@@ -1,20 +1,14 @@
-
+import 'package:json_annotation/json_annotation.dart';
+part 'mass.g.dart';
+@JsonSerializable()
 class Mass  {
-	final int? kg;
-	final int? lb;
+	final int kg;
+	final int lb;
 
-	const Mass({this.kg, this.lb});
+	const Mass({required this.kg, required this.lb});
 
-	factory Mass.fromJson(Map<String, dynamic> json) => Mass(
-				kg: json['kg'] as int?,
-				lb: json['lb'] as int?,
-			);
-
-	Map<String, dynamic> toJson() => {
-				'kg': kg,
-				'lb': lb,
-			};
-
-	@override
-	List<Object?> get props => [kg, lb];
+  factory Mass.fromJson(json) {
+    return _$MassFromJson(json);
+  }
 }
+

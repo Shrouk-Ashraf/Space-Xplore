@@ -1,20 +1,13 @@
-
+import 'package:json_annotation/json_annotation.dart';
+part 'diameter.g.dart';
+@JsonSerializable()
 class Diameter  {
-	final double? meters;
-	final double? feet;
+	final double meters;
+	final double feet;
 
-	const Diameter({this.meters, this.feet});
-
-	factory Diameter.fromJson(Map<String, dynamic> json) => Diameter(
-				meters: (json['meters'] as num?)?.toDouble(),
-				feet: (json['feet'] as num?)?.toDouble(),
-			);
-
-	Map<String, dynamic> toJson() => {
-				'meters': meters,
-				'feet': feet,
-			};
-
-	@override
-	List<Object?> get props => [meters, feet];
+	const Diameter({required this.meters,required this.feet});
+  factory Diameter.fromJson(json) {
+    return _$DiameterFromJson(json);
+  }
 }
+

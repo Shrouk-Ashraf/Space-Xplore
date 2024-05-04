@@ -1,20 +1,12 @@
-
+import 'package:json_annotation/json_annotation.dart';
+part 'height.g.dart';
+@JsonSerializable()
 class Height {
-	final double? meters;
-	final int? feet;
+  final double meters;
+  final double feet;
 
-	const Height({this.meters, this.feet});
-
-	factory Height.fromJson(Map<String, dynamic> json) => Height(
-				meters: (json['meters'] as num?)?.toDouble(),
-				feet: json['feet'] as int?,
-			);
-
-	Map<String, dynamic> toJson() => {
-				'meters': meters,
-				'feet': feet,
-			};
-
-	@override
-	List<Object?> get props => [meters, feet];
+  const Height({required this.meters, required this.feet});
+  factory Height.fromJson(json) {
+    return _$HeightFromJson(json);
+  }
 }

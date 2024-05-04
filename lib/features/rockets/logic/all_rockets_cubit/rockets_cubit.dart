@@ -9,11 +9,13 @@ part 'rockets_state.dart';
 class RocketsCubit extends Cubit<RocketsState> {
   final RocketsRepo rocketsRepo;
   RocketsCubit(this.rocketsRepo) : super(RocketsInitial());
-  Future<void> getAllRockets() {
+  Future<void> getAllRockets()async {
     emit(RocketsLoading());
-    var result = rocketsRepo.fetchAllRockets();
-    
-    return result;
-    
+    var result = await rocketsRepo.getAllRockets();
+    result.fold((failure) {
+      emit(RocketsFailure(errMessage: failure.errorMessage));
+    }, (rocket) {
+      emit(RocketsSucces(rocketModel: rocket));
+    });
   }
 }
