@@ -14,7 +14,10 @@
 - ℹ **Company Information:**
   - Access information about SpaceX company, including its history, founders, and many more. Learn about the company's vision for space exploration.
 
-## How to use
+## 🎨 Design
+- [Figma Design](https://www.figma.com/file/YAirxEYpVYm0pS22vVfKTs/Space-app-(Community)?type=design&node-id=0%3A1&mode=design&t=f3p1GypiTnTDOwZQ-1): The design for the Space Xplore app can be found on Figma which  which includes screens for the splash screen, onboarding screens, launches screen, rockets screen, ships screen, crew screen, and company info screen.
+
+## 🎯 How to use
 1. **Clone Repository:** Clone this GitHub repository to your local machine with the following command:  ```git clone```
 2. **Install Dependencies:** Run the following command in your terminal to install all necessary dependencies: ```flutter pub get```
 3. **Launch App:** Run the following command to launch the app on your preferred emulator or physical device: ```flutter run```
@@ -25,8 +28,8 @@
 ## APIs used
 - [SpaceX API](https://github.com/r-spacex/SpaceX-API/tree/master/docs#rspacex-api-docs): The official SpaceX API v4 was used which provides access to a wealth of data related to SpaceX missions, rockets, crew members, ships, and more.
 
-## Contributors
-- Space Xplorer is made possible by the contributions of the following developers:
+## 📌 Contributors
+- Space Xplore is made possible by the contributions of the following developers:
   1. [Shrouk Ashraf](https://github.com/Shrouk-Ashraf)
   2. [Nada Mohammed](https://github.com/nadaamohhamed)
   3. [Islam Ashraf](https://github.com/islamashraf2003)
