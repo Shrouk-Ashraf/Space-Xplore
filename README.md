@@ -3,7 +3,7 @@
 
 - Welcome to Space Xplore, your gateway to the universe of SpaceX missions and exploration! This mobile app integrates seamlessly with the SpaceX API, offering you a comprehensive glimpse into the fascinating world of space travel. The app provides a wealth of information on SpaceX launches, rockets, ships, and crew members, all in a sleek, user-friendly interface. Whether you're a space enthusiast, a student, or just curious about the wonders of the universe, Space Xplore has something for everyone! 🌌 
 
-## 🔍 Features 
+## Features 
 - 👨🏼‍🚀 **Discover Crew Members:**
   - Delve into the profiles of astronauts involved in SpaceX missions. Learn about their backgrounds, agency, and their launches to space exploration.
 - 🚀 **Explore Rockets:**
@@ -26,8 +26,8 @@
 ## 🛠️ Frameworks
 - [Flutter](https://flutter.dev): An open-source UI software development kit created by Google used to develop cross-platform applications.
 
-## 🌐 APIs used
-- [SpaceX API](https://github.com/r-spacex/SpaceX-API/tree/master/docs#rspacex-api-docs): The official SpaceX API v4 was used which provides access to a wealth of data related to SpaceX missions, rockets, crew members, ships, and more.
+## APIs used
+- 🌐 [SpaceX API](https://github.com/r-spacex/SpaceX-API/tree/master/docs#rspacex-api-docs): The official SpaceX API v4 was used which provides access to a wealth of data related to SpaceX missions, rockets, crew members, ships, and more.
 
 ## 📌 Contributors
 - Space Xplore is made possible by the contributions of the following developers:
