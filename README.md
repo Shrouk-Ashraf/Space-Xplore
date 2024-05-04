@@ -3,7 +3,7 @@
 
 - Welcome to Space Xplore, your gateway to the universe of SpaceX missions and exploration! This mobile app integrates seamlessly with the SpaceX API, offering you a comprehensive glimpse into the fascinating world of space travel. The app provides a wealth of information on SpaceX launches, rockets, ships, and crew members, all in a sleek, user-friendly interface. Whether you're a space enthusiast, a student, or just curious about the wonders of the universe, Space Xplore has something for everyone! 🌌 
 
-## 🌟 Features 
+## Features 
 - 👨🏼‍🚀 **Discover Crew Members:**
   - Delve into the profiles of astronauts involved in SpaceX missions. Learn about their backgrounds, agency, and their launches to space exploration.
 - 🚀 **Explore Rockets:**
