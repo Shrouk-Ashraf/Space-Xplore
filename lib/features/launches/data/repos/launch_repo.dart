@@ -29,7 +29,7 @@ class LaunchRepo {
   }
 
   Future<Either<Failure, LaunchResponse>> getOneLaunch(
-      {required int id}) async {
+      {required String id}) async {
     try {
       final launch = await apiService.getOneLaunch(id: id);
       return Right(launch);

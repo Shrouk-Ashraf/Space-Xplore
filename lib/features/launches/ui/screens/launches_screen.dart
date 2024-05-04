@@ -14,17 +14,14 @@ class LaunchesScreen extends StatefulWidget {
 }
 
 class _LaunchesScreenState extends State<LaunchesScreen> {
-  final _scrollController = ScrollController();
   @override
   void initState() {
     super.initState();
     context.read<LaunchCubit>().getAllLaunches();
-    _scrollController.addListener(_scrollListener);
   }
 
   @override
   void dispose() {
-    _scrollController.removeListener(_scrollListener);
     super.dispose();
   }
 
@@ -47,21 +44,12 @@ class _LaunchesScreenState extends State<LaunchesScreen> {
                   "All Launches",
                   style: TextStyles.font18WhiteRegular,
                 ),
-                AllLaunchesBody(scrollController: _scrollController),
+                const AllLaunchesBody(),
               ],
             ),
           ),
         ),
       ),
     );
-  }
-
-  void _scrollListener() {
-    final maxScrollExtent = _scrollController.position.maxScrollExtent;
-    final currentScrollPosition = _scrollController.position.pixels;
-
-    if (currentScrollPosition >= maxScrollExtent) {
-      context.read<LaunchCubit>().getAllLaunches();
-    }
   }
 }

@@ -77,7 +77,7 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<LaunchResponse> getOneLaunch({required int id}) async {
+  Future<LaunchResponse> getOneLaunch({required String id}) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
