@@ -29,7 +29,7 @@ class _CompanyInfoScreenState extends State<CompanyInfoScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: const CustomAppBar(title: 'SpaceX'),
+      appBar: const CustomAppBar(),
       body: BackgroundContainer(
         child: SafeArea(
           child: BlocBuilder<CompanyInfoCubit, CompanyInfoState>(

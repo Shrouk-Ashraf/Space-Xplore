@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:space_app/core/di/dependency_injection.dart';
+import 'package:space_app/core/helpers/constants.dart';
 import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/theming/styles.dart';
 import 'package:space_app/features/company%20info/logic/cubit/company_info_cubit.dart';
@@ -47,11 +48,13 @@ class BottomNavBar extends StatelessWidget {
 
   List<PersistentBottomNavBarItem> _buildNavBarsItems() {
     return [
-      _buildNavBarItem(Icons.rocket_sharp, 'Rockets'),
-      _buildNavBarItem(Icons.rocket_launch_sharp, 'Launches'),
-      _buildNavBarItem(Icons.people_sharp, 'Crew'),
-      _buildNavBarItem(Icons.directions_boat_filled_sharp, 'Ships'),
-      _buildNavBarItem(Icons.info_outline, 'Company Info'),
+      _buildNavBarItem(Icons.rocket_sharp, Constants.bottomNavBarItemText1),
+      _buildNavBarItem(
+          Icons.rocket_launch_sharp, Constants.bottomNavBarItemText2),
+      _buildNavBarItem(Icons.people_sharp, Constants.bottomNavBarItemText3),
+      _buildNavBarItem(
+          Icons.directions_boat_filled_sharp, Constants.bottomNavBarItemText4),
+      _buildNavBarItem(Icons.info_outline, Constants.bottomNavBarItemText5),
     ];
   }
 

@@ -88,17 +88,21 @@ class LaunchDetailsScreen extends StatelessWidget {
                       textDescription: item.failures[0].reason ?? "-",
                     ),
                   verticalSpace(20),
-                  if (item.links.article != null)
-                    LinkText(
-                      text: "Article",
-                      wikipediaUrl: item.links.article!,
+                  GestureDetector(
+                    onTap: () {},
+                    child: LinkText(
+                      linkUrl: item.links.article!,
+                      linkName: 'Article',
                     ),
+                  ),
                   verticalSpace(20),
-                  if (item.links.wikipedia != null)
-                    LinkText(
-                      text: "Wikipedia",
-                      wikipediaUrl: item.links.wikipedia!,
+                  GestureDetector(
+                    onTap: () {},
+                    child: LinkText(
+                      linkUrl: item.links.wikipedia!,
+                      linkName: 'Wikipedia',
                     ),
+                  ),
                 ],
               ),
             ),

@@ -46,9 +46,9 @@ class TextStyles {
   );
 
   // ------------------- Medium Fonts -------------------
-  static TextStyle font10WhiteMedium = TextStyle(
+  static TextStyle font12WhiteMedium = TextStyle(
     color: ColorsManager.white,
-    fontSize: 10.sp,
+    fontSize: 12.sp,
     fontWeight: FontWeightManager.medium,
     fontFamily: Fonts.orientaFont,
   );
@@ -127,6 +127,12 @@ class TextStyles {
     color: ColorsManager.white,
     fontSize: 12.sp,
     fontWeight: FontWeightManager.bold,
+  );
+  // ------------------------------------------------
+  static TextStyle font13WhiteRegular = TextStyle(
+    color: ColorsManager.white,
+    fontSize: 13.sp,
+    fontWeight: FontWeight.normal,
   );
 
   static TextStyle font14WhiteRegular = TextStyle(

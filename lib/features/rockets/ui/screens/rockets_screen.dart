@@ -27,9 +27,7 @@ class _RocketsScreenState extends State<RocketsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: const CustomAppBar(
-        title: 'SpaceX',
-      ),
+      appBar: const CustomAppBar(),
       body: BackgroundContainer(
         child: SafeArea(
           child: Padding(

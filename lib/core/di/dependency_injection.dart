@@ -24,15 +24,16 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton(() => RocketsRepo(getIt()));
   getIt.registerLazySingleton(() => RocketsCubit(getIt()));
 
-  // Launch
+  // Launches
   getIt.registerLazySingleton(() => LaunchRepo(getIt()));
   getIt.registerLazySingleton(() => LaunchCubit(getIt()));
 
   // crew
   getIt.registerLazySingleton<CrewRepo>(() => CrewRepo(getIt()));
-  getIt.registerFactory<CrewCubit>(() => CrewCubit(getIt()));
+  getIt.registerLazySingleton<CrewCubit>(() => CrewCubit(getIt()));
 
   // ships
+  getIt.registerLazySingleton<ShipsRepo>(() => ShipsRepo(getIt()));
   getIt.registerLazySingleton<ShipsCubit>(() => ShipsCubit(getIt()));
   getIt.registerLazySingleton<ShipsRepo>(() => ShipsRepo(getIt()));
 

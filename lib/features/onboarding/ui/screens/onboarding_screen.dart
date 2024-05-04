@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:space_app/core/helpers/constants.dart';
 import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/widgets/bottom_nav_bar.dart';
 import 'package:space_app/features/onboarding/ui/widgets/custom_page_view.dart';
@@ -20,21 +21,22 @@ class OnboardingScreen extends StatelessWidget {
       body: SafeArea(
         child: IntroductionScreen(
           globalBackgroundColor: ColorsManager.backgroundColor,
-          dotsDecorator:
-              const DotsDecorator(activeColor: ColorsManager.mainColor),
+          dotsDecorator: const DotsDecorator(
+            activeColor: ColorsManager.mainColor,
+          ),
           pages: [
             CustomPageView.generateCustomPageView(
-                context: context,
-                image: 'assets/json/onboarding_screen1.json',
-                title: 'Welcome to SpaceX',
-                body:
-                    'Explore the world of SpaceX rockets, launches, and the crew shaping the future of space travel.'),
+              context: context,
+              image: Constants.onboardingAsset1Path,
+              title: Constants.welcomeText,
+              body: Constants.onboardingText1,
+            ),
             CustomPageView.generateCustomPageView(
-                context: context,
-                image: 'assets/json/onboarding_screen2.json',
-                title: 'Unleash Your Inner Space Explorer',
-                body:
-                    'Stay informed with the latest SpaceX news and updates - all at your fingertips!'),
+              context: context,
+              image: Constants.onboardingAsset2Path,
+              title: Constants.onboardingText2,
+              body: Constants.onboardingText3,
+            ),
           ],
           doneStyle: const ButtonStyle(
             padding: MaterialStatePropertyAll(EdgeInsets.zero),
@@ -43,8 +45,10 @@ class OnboardingScreen extends StatelessWidget {
           done: const Align(
             alignment: Alignment.centerRight,
             child: Text(
-              "Done",
-              style: TextStyle(color: ColorsManager.mainColor),
+              Constants.doneText,
+              style: TextStyle(
+                color: ColorsManager.mainColor,
+              ),
             ),
           ),
           onDone: () {

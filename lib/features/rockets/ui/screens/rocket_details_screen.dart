@@ -14,9 +14,7 @@ class RocketDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: const CustomAppBar(
-        title: 'Rocket Details',
-      ),
+      appBar: const CustomAppBar(),
       body: BackgroundContainer(
         child: SafeArea(
           child: SingleChildScrollView(

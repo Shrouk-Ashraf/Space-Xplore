@@ -57,8 +57,7 @@ class AllCategoryOfShips extends StatelessWidget {
                       );
                     },
                     child: CustomGridContainer(
-                      imageUrl: shipsModel[index].image ??
-                          "https://i.imgur.com/woCxpkj.jpg",
+                      imageUrl: shipsModel[index].image ?? '',
                       title:
                           shipsModel[index].shipName ?? "name of ships error ",
                     ),

@@ -9,7 +9,7 @@ class NoImageAsset extends StatelessWidget {
     return Image.asset(
       "assets/images/no_photo_placeholder.png",
       width: 80.w,
-      height: 80.h,
+      height: 120.h,
     );
   }
 }

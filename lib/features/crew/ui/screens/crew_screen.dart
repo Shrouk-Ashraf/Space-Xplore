@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:space_app/core/helpers/constants.dart';
 import 'package:space_app/core/helpers/spacing.dart';
 import 'package:space_app/core/theming/styles.dart';
 import 'package:space_app/core/widgets/custom_app_bar.dart';
@@ -28,7 +29,7 @@ class _CrewScreenState extends State<CrewScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: const CustomAppBar(title: 'SpaceX'),
+      appBar: const CustomAppBar(),
       body: BackgroundContainer(
         child: SafeArea(
           child: Padding(
@@ -44,7 +45,10 @@ class _CrewScreenState extends State<CrewScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       verticalSpace(10),
-                      Text('Crew', style: TextStyles.font18WhiteMedium),
+                      Text(
+                        Constants.crewModelName,
+                        style: TextStyles.font18WhiteMedium,
+                      ),
                       verticalSpace(20),
                       CrewGridView(
                         crewList: state.crewMembers,

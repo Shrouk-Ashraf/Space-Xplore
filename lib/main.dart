@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:space_app/core/di/dependency_injection.dart';
 import 'package:space_app/core/routing/app_router.dart';
-import 'package:space_app/features/onboarding/ui/screens/onboarding_screen.dart';
+import 'package:space_app/core/routing/routes.dart';
 
 int? isViewd;
 void main() async {
@@ -11,19 +11,21 @@ void main() async {
   setupGetIt();
   SharedPreferences preferences = await SharedPreferences.getInstance();
   isViewd = preferences.getInt("onboardingKey");
-  runApp(SpaceApp(
-    appRouter: AppRouter(),
-  ));
+  runApp(SpaceApp(appRouter: AppRouter()));
 }
 
 class SpaceApp extends StatelessWidget {
+  const SpaceApp({
+    super.key,
+    required this.appRouter,
+  });
+
   final AppRouter appRouter;
-  const SpaceApp({super.key, required this.appRouter});
 
   @override
   Widget build(BuildContext context) {
-    return const ScreenUtilInit(
-      designSize: Size(375, 840),
+    return ScreenUtilInit(
+      designSize: const Size(375, 840),
       minTextAdapt: true,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

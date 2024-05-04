@@ -44,7 +44,7 @@ class CustomCard extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           item.links.patch.small == null
-              ? const NoImageAsset()
+              ? SizedBox(height: 80.h, child: const NoImageAsset())
               : CachedNetworkImage(
                   imageUrl: item.links.patch.small!,
                   width: 80.w,

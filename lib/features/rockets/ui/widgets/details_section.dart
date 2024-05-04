@@ -1,10 +1,10 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:space_app/core/helpers/spacing.dart';
 import 'package:space_app/core/theming/styles.dart';
-import 'package:space_app/core/widgets/wikipedia_link_text.dart';
-import 'package:space_app/features/rockets/data/models/rocket_model/rocket_model.dart';
+import 'package:space_app/core/widgets/link_text.dart';
 import 'details_section_text_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:space_app/features/rockets/data/models/rocket_model/rocket_model.dart';
 
 class DetailsSection extends StatelessWidget {
   const DetailsSection({
@@ -62,8 +62,9 @@ class DetailsSection extends StatelessWidget {
             subTitle: rocket.country,
           ),
           verticalSpace(10),
-          WikipediaLinkText(
-            wikipediaUrl: rocket.wikipedia,
+          LinkText(
+            linkUrl: rocket.wikipedia,
+            linkName: 'Wikipedia',
           ),
         ],
       ),

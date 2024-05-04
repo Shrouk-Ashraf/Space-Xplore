@@ -22,7 +22,7 @@ abstract class ApiService {
   Future<QueryLaunchResponse> getAllLaunches(@Body() body);
 
   @GET('${ApiConstants.launch}/{id}')
-  Future<LaunchResponse> getOneLaunch({@Path('id') required int id});
+  Future<LaunchResponse> getOneLaunch({@Path('id') required String id});
 
   @GET(ApiConstants.ships)
   Future<List<ShipModel>> getAllShips();
