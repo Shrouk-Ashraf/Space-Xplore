@@ -19,10 +19,10 @@ class _ShipsScreenState extends State<ShipsScreen> {
   @override
   void initState() {
     super.initState();
-    fetchData();
+    _fetchData();
   }
 
-  void fetchData() {
+  void _fetchData() {
     BlocProvider.of<ShipsCubit>(context).getAllShipsData();
   }
 
@@ -45,7 +45,7 @@ class _ShipsScreenState extends State<ShipsScreen> {
                   );
                 } else if (state is ShipsFailure) {
                   return FailedRequestColumn(
-                    fetchData: fetchData,
+                    fetchData: _fetchData,
                   );
                 } else {
                   return const CustomLoadingWidget();

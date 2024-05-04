@@ -24,10 +24,6 @@ class _CrewScreenState extends State<CrewScreen> {
     _fetchData();
   }
 
-  void _fetchData() {
-    BlocProvider.of<CrewCubit>(context).getAllCrew();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,5 +62,9 @@ class _CrewScreenState extends State<CrewScreen> {
         ),
       ),
     );
+  }
+
+  void _fetchData() {
+    BlocProvider.of<CrewCubit>(context).getAllCrew();
   }
 }
