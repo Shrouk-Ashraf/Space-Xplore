@@ -7,7 +7,7 @@
 - 👨🏼‍🚀 **Discover Crew Members:**
   - Delve into the profiles of astronauts involved in SpaceX missions. Learn about their backgrounds, agency, and their launches into space exploration.
 - 🚀 **Explore Rockets:**
-  - Get up close and personal with SpaceX's impressive fleet of rockets. From the Falcon 9 to the mighty Starship, explore the capabilities and specifications of each spacecraft.
+  - Get up close and personal with SpaceX's impressive fleet of rockets. From the Falcon 9 to the Starship rocket, explore the capabilities and specifications of each spacecraft.
 - 🛰️ **Track Launches:**
    - Stay informed about upcoming launches and relive past missions. Explore launch schedules, and mission details, and watch live streams directly from your device.
 - 🚢 **Monitor Ships:**
