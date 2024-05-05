@@ -27,6 +27,7 @@ class Constants {
   static const doneText = "Done";
   static const articleText = "Article";
   static const wikipediaText = "Wikipedia";
+  static const marineTrafficText = "Marine Traffic";
   static const retryText = "Retry";
 
   // -------------------- App assets path --------------------

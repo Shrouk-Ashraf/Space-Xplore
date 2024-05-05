@@ -75,7 +75,7 @@ class ShipDetailsScreen extends StatelessWidget {
                       if (ship.link != null)
                         LinkText(
                           linkUrl: ship.link!,
-                          linkName: Constants.wikipediaText,
+                          linkName: Constants.marineTrafficText,
                         ),
                       verticalSpace(35),
                       const Divider(color: ColorsManager.darkGreyColor),
