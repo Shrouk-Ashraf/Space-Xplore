@@ -38,7 +38,7 @@ class Constants {
   static const onboardingAsset2Path = "assets/lotties/onboarding_screen2.json";
   static const noInternetAssetPath = "assets/lotties/no_internet.json";
   static const failedRequestAssetPath = "assets/lotties/failed_request.json";
-  static const spaceXLogoAssetPath = "assets/icons/spaceX.jpg";
+  static const spaceXLogoAssetPath = "assets/icons/spacex.jpg";
   static const twitterLogoAssetPath = "assets/icons/twitter.png";
   static const flickrLogoAssetPath = "assets/icons/flickr.png";
   static const companyLogoAssetPath = "assets/icons/company_logo.jpeg";
