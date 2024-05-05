@@ -35,3 +35,28 @@ Map<String, dynamic> _$CompanyInfoModelToJson(CompanyInfoModel instance) =>
       'ceo': instance.ceo,
       'summary': instance.summary,
     };
+
+Headquarters _$HeadquartersFromJson(Map<String, dynamic> json) => Headquarters(
+      address: json['address'] as String,
+      city: json['city'] as String,
+      state: json['state'] as String,
+    );
+
+Map<String, dynamic> _$HeadquartersToJson(Headquarters instance) =>
+    <String, dynamic>{
+      'address': instance.address,
+      'city': instance.city,
+      'state': instance.state,
+    };
+
+Links _$LinksFromJson(Map<String, dynamic> json) => Links(
+      website: json['website'] as String,
+      flickr: json['flickr'] as String,
+      twitter: json['twitter'] as String,
+    );
+
+Map<String, dynamic> _$LinksToJson(Links instance) => <String, dynamic>{
+      'website': instance.website,
+      'flickr': instance.flickr,
+      'twitter': instance.twitter,
+    };

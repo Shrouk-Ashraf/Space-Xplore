@@ -36,3 +36,33 @@ Map<String, dynamic> _$RocketModelToJson(RocketModel instance) =>
       'description': instance.description,
       'id': instance.id,
     };
+
+Diameter _$DiameterFromJson(Map<String, dynamic> json) => Diameter(
+      meters: (json['meters'] as num).toDouble(),
+      feet: (json['feet'] as num).toDouble(),
+    );
+
+Map<String, dynamic> _$DiameterToJson(Diameter instance) => <String, dynamic>{
+      'meters': instance.meters,
+      'feet': instance.feet,
+    };
+
+Height _$HeightFromJson(Map<String, dynamic> json) => Height(
+      meters: (json['meters'] as num).toDouble(),
+      feet: (json['feet'] as num).toDouble(),
+    );
+
+Map<String, dynamic> _$HeightToJson(Height instance) => <String, dynamic>{
+      'meters': instance.meters,
+      'feet': instance.feet,
+    };
+
+Mass _$MassFromJson(Map<String, dynamic> json) => Mass(
+      kg: (json['kg'] as num).toInt(),
+      lb: (json['lb'] as num).toInt(),
+    );
+
+Map<String, dynamic> _$MassToJson(Mass instance) => <String, dynamic>{
+      'kg': instance.kg,
+      'lb': instance.lb,
+    };

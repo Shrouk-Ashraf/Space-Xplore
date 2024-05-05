@@ -4,7 +4,8 @@ part 'query_launch_response.g.dart';
 
 @JsonSerializable()
 class QueryLaunchResponse {
-  List<LaunchResponse>? docs;
+  @JsonKey(name: "docs")
+  List<LaunchResponse>? launches;
   int? totalDocs;
   int? limit;
   int? totalPages;
@@ -16,7 +17,7 @@ class QueryLaunchResponse {
   int? nextPage;
 
   QueryLaunchResponse({
-    required this.docs,
+    required this.launches,
     required this.totalDocs,
     required this.limit,
     required this.totalPages,

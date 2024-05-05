@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 
 abstract class Failure {
   final String errorMessage;
+
   Failure({required this.errorMessage});
 }
 

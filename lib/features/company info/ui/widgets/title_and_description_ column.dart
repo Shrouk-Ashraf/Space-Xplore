@@ -5,8 +5,12 @@ import 'package:space_app/core/theming/styles.dart';
 class TitleAndDescriptionColumn extends StatelessWidget {
   final String title;
   final String description;
-  const TitleAndDescriptionColumn(
-      {super.key, required this.title, required this.description});
+
+  const TitleAndDescriptionColumn({
+    super.key,
+    required this.title,
+    required this.description,
+  });
 
   @override
   Widget build(BuildContext context) {

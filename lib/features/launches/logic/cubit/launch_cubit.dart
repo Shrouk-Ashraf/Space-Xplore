@@ -8,7 +8,9 @@ class LaunchCubit extends Cubit<LaunchState> {
   final LaunchRepo _launchRepo;
   final List<LaunchResponse> allLaunches = [];
   int page = 1;
+
   LaunchCubit(this._launchRepo) : super(LaunchInitial());
+
   static LaunchCubit get(BuildContext context) => BlocProvider.of(context);
 
   void getAllLaunches() async {
@@ -22,7 +24,7 @@ class LaunchCubit extends Cubit<LaunchState> {
       emit(GetAllLaunchesFailure(errorMessage: failure.errorMessage));
     }, (successData) {
       page++;
-      allLaunches.addAll(successData.docs!);
+      allLaunches.addAll(successData.launches!);
       if (successData.hasNextPage == false) {
         emit(NoMoreLaunches());
       } else {

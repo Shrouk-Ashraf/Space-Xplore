@@ -8,7 +8,7 @@ part of 'query_launch_response.dart';
 
 QueryLaunchResponse _$QueryLaunchResponseFromJson(Map<String, dynamic> json) =>
     QueryLaunchResponse(
-      docs: (json['docs'] as List<dynamic>?)
+      launches: (json['docs'] as List<dynamic>?)
           ?.map((e) => LaunchResponse.fromJson(e as Map<String, dynamic>))
           .toList(),
       totalDocs: (json['totalDocs'] as num?)?.toInt(),
@@ -25,7 +25,7 @@ QueryLaunchResponse _$QueryLaunchResponseFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$QueryLaunchResponseToJson(
         QueryLaunchResponse instance) =>
     <String, dynamic>{
-      'docs': instance.docs,
+      'docs': instance.launches,
       'totalDocs': instance.totalDocs,
       'limit': instance.limit,
       'totalPages': instance.totalPages,

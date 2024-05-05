@@ -5,7 +5,8 @@ import 'package:space_app/core/widgets/background_container.dart';
 import 'package:space_app/core/widgets/custom_app_bar.dart';
 import 'package:space_app/core/widgets/custom_loading_widget.dart';
 import 'package:space_app/core/widgets/failed_request_column.dart';
-import 'package:space_app/features/ships/logic/ships_cubit.dart';
+import 'package:space_app/features/ships/logic/cubit/ships_cubit.dart';
+import 'package:space_app/features/ships/logic/cubit/ships_state.dart';
 import 'package:space_app/features/ships/ui/widgets/all_category_of_ships.dart';
 
 class ShipsScreen extends StatefulWidget {
@@ -20,10 +21,6 @@ class _ShipsScreenState extends State<ShipsScreen> {
   void initState() {
     super.initState();
     _fetchData();
-  }
-
-  void _fetchData() {
-    BlocProvider.of<ShipsCubit>(context).getAllShipsData();
   }
 
   @override
@@ -41,7 +38,7 @@ class _ShipsScreenState extends State<ShipsScreen> {
               builder: (context, state) {
                 if (state is ShipsSuccess) {
                   return AllCategoryOfShips(
-                    shipsModel: state.shipsData,
+                    ships: state.shipsData,
                   );
                 } else if (state is ShipsFailure) {
                   return FailedRequestColumn(
@@ -56,5 +53,9 @@ class _ShipsScreenState extends State<ShipsScreen> {
         ),
       ),
     );
+  }
+
+  void _fetchData() {
+    BlocProvider.of<ShipsCubit>(context).getAllShipsData();
   }
 }

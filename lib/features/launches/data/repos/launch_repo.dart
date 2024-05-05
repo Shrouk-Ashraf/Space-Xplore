@@ -7,6 +7,7 @@ import 'package:space_app/features/launches/data/models/query_launch_response.da
 
 class LaunchRepo {
   final ApiService apiService;
+
   LaunchRepo(this.apiService);
 
   Future<Either<Failure, QueryLaunchResponse>> getAllLaunches(

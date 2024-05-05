@@ -9,12 +9,12 @@ import 'package:space_app/features/launches/ui/screens/launch_details_screen.dar
 import 'package:space_app/features/launches/ui/widgets/custom_card.dart';
 
 class LaunchesGridView extends StatefulWidget {
+  final List<LaunchResponse> allLaunches;
+
   const LaunchesGridView({
     super.key,
     required this.allLaunches,
   });
-
-  final List<LaunchResponse> allLaunches;
 
   @override
   State<LaunchesGridView> createState() => _LaunchesGridViewState();
@@ -22,6 +22,7 @@ class LaunchesGridView extends StatefulWidget {
 
 class _LaunchesGridViewState extends State<LaunchesGridView> {
   final _scrollController = ScrollController();
+
   @override
   void initState() {
     super.initState();
@@ -39,41 +40,45 @@ class _LaunchesGridViewState extends State<LaunchesGridView> {
   Widget build(BuildContext context) {
     return Expanded(
       child: AnimationLimiter(
-        child: GridView.builder(
-          controller: _scrollController,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            crossAxisSpacing: 35.w,
-            mainAxisSpacing: 15.h,
-          ),
-          itemCount: widget.allLaunches.length,
-          itemBuilder: (context, index) {
-            return AnimationConfiguration.staggeredGrid(
-              position: index,
-              columnCount: widget.allLaunches.length,
-              duration: const Duration(milliseconds: 375),
-              child: SlideAnimation(
-                horizontalOffset: 50.0.h,
-                child: FadeInAnimation(
-                  child: GestureDetector(
-                    onTap: () {
-                      PersistentNavBarNavigator.pushNewScreen(
-                        context,
-                        withNavBar: false,
-                        pageTransitionAnimation: PageTransitionAnimation.sizeUp,
-                        screen: LaunchDetailsScreen(
-                          item: widget.allLaunches[index],
-                        ),
-                      );
-                    },
-                    child: CustomCard(
-                      item: widget.allLaunches[index],
+        child: Padding(
+          padding: EdgeInsets.only(bottom: 10.h),
+          child: GridView.builder(
+            controller: _scrollController,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              crossAxisSpacing: 35.w,
+              mainAxisSpacing: 15.h,
+            ),
+            itemCount: widget.allLaunches.length,
+            itemBuilder: (context, index) {
+              return AnimationConfiguration.staggeredGrid(
+                position: index,
+                columnCount: widget.allLaunches.length,
+                duration: const Duration(milliseconds: 375),
+                child: SlideAnimation(
+                  horizontalOffset: 50.0.h,
+                  child: FadeInAnimation(
+                    child: GestureDetector(
+                      onTap: () {
+                        PersistentNavBarNavigator.pushNewScreen(
+                          context,
+                          withNavBar: false,
+                          pageTransitionAnimation:
+                              PageTransitionAnimation.sizeUp,
+                          screen: LaunchDetailsScreen(
+                            item: widget.allLaunches[index],
+                          ),
+                        );
+                      },
+                      child: CustomCard(
+                        item: widget.allLaunches[index],
+                      ),
                     ),
                   ),
                 ),
-              ),
-            );
-          },
+              );
+            },
+          ),
         ),
       ),
     );

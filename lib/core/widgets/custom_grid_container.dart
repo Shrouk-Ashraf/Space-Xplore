@@ -8,14 +8,14 @@ import 'package:space_app/core/theming/styles.dart';
 import 'package:space_app/core/widgets/cached_image.dart';
 
 class CustomGridContainer extends StatelessWidget {
+  final String title;
+  final String imageUrl;
+
   const CustomGridContainer({
     super.key,
     required this.title,
     required this.imageUrl,
   });
-
-  final String title;
-  final String imageUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class CustomGridContainer extends StatelessWidget {
           ),
         ],
         borderRadius: BorderRadius.circular(20.r),
-        color: ColorsManager.semiTransparent,
+        color: ColorsManager.cardColor,
       ),
       child: Column(
         children: [
@@ -49,7 +49,7 @@ class CustomGridContainer extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 8.w),
             child: Text(
               title,
-              style: TextStyles.font12WhiteBold,
+              style: TextStyles.font12WhiteBoldOrienta,
               overflow: TextOverflow.ellipsis,
               maxLines: 1,
             ),

@@ -1,6 +1,6 @@
 import 'package:space_app/features/company%20info/data/models/company_info_model.dart';
 
-sealed class CompanyInfoState {}
+abstract class CompanyInfoState {}
 
 final class CompanyInfoStateInitial extends CompanyInfoState {}
 

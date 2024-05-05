@@ -1,9 +1,10 @@
 import 'package:space_app/features/launches/data/models/launch_response.dart';
 
-sealed class LaunchState {}
+abstract class LaunchState {}
 
 final class LaunchInitial extends LaunchState {}
 
+// All launches
 final class GetAllLaunchesSuccess extends LaunchState {
   final List<LaunchResponse> launchesData;
 
@@ -18,6 +19,11 @@ final class GetAllLaunchesFailure extends LaunchState {
   GetAllLaunchesFailure({required this.errorMessage});
 }
 
+final class LoadingMoreLaunches extends LaunchState {}
+
+final class NoMoreLaunches extends LaunchState {}
+
+// One launch
 final class GetOneLaunchSuccess extends LaunchState {
   final LaunchResponse launchData;
 
@@ -31,7 +37,3 @@ final class GetOneLaunchFailure extends LaunchState {
 
   GetOneLaunchFailure({required this.errorMessage});
 }
-
-final class LoadingMoreLaunches extends LaunchState {}
-
-final class NoMoreLaunches extends LaunchState {}

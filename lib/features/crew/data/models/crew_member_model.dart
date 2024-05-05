@@ -4,17 +4,13 @@ part 'crew_member_model.g.dart';
 
 @JsonSerializable()
 class CrewMemberModel {
-  @JsonKey(name: 'name')
   final String name;
-  @JsonKey(name: 'agency')
   final String agency;
-  @JsonKey(name: 'status')
   final String status;
   @JsonKey(name: 'image')
   final String imageUrl;
   @JsonKey(name: 'wikipedia')
   final String wikipediaUrl;
-  @JsonKey(name: 'launches')
   final List<String> launches;
 
   CrewMemberModel({

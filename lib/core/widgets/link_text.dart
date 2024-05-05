@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/widgets/web_view.dart';
 
 import '../theming/styles.dart';
 
 class LinkText extends StatelessWidget {
+  final String linkUrl;
+  final String linkName;
+
   const LinkText({
     super.key,
     required this.linkUrl,
     required this.linkName,
   });
-
-  final String linkUrl;
-  final String linkName;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +28,6 @@ class LinkText extends StatelessWidget {
               ).animate(animation),
               child: WebView(
                 webViewUrl: linkUrl,
-                appBarColor: ColorsManager.white,
               ),
             ),
           ),
@@ -37,7 +35,7 @@ class LinkText extends StatelessWidget {
       },
       child: Text(
         linkName,
-        style: TextStyles.font11BlueMedium,
+        style: TextStyles.font13BlueMediumOrienta,
       ),
     );
   }

@@ -1,6 +1,4 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:space_app/features/company%20info/data/models/headquarters.dart';
-import 'package:space_app/features/company%20info/data/models/links.dart';
 part 'company_info_model.g.dart';
 
 @JsonSerializable()
@@ -34,4 +32,34 @@ class CompanyInfoModel {
   });
 
   factory CompanyInfoModel.fromJson(json) => _$CompanyInfoModelFromJson(json);
+}
+
+@JsonSerializable()
+class Headquarters {
+  String address;
+  String city;
+  String state;
+
+  Headquarters({
+    required this.address,
+    required this.city,
+    required this.state,
+  });
+
+  factory Headquarters.fromJson(json) => _$HeadquartersFromJson(json);
+}
+
+@JsonSerializable()
+class Links {
+  String website;
+  String flickr;
+  String twitter;
+
+  Links({
+    required this.website,
+    required this.flickr,
+    required this.twitter,
+  });
+
+  factory Links.fromJson(json) => _$LinksFromJson(json);
 }

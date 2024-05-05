@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:space_app/features/rockets/logic/all_rockets_cubit/rockets_cubit.dart';
-import '../../../../core/theming/colors.dart';
-import '../../../../core/theming/styles.dart';
-import '../../../../core/widgets/background_container.dart';
-import '../../../../core/widgets/custom_app_bar.dart';
-
-import '../widgets/rocket_grid_view.dart';
+import 'package:space_app/core/helpers/constants.dart';
+import 'package:space_app/core/helpers/spacing.dart';
+import 'package:space_app/core/theming/styles.dart';
+import 'package:space_app/core/widgets/background_container.dart';
+import 'package:space_app/core/widgets/custom_app_bar.dart';
+import 'package:space_app/core/widgets/custom_loading_widget.dart';
+import 'package:space_app/core/widgets/failed_request_column.dart';
+import 'package:space_app/features/rockets/logic/cubit/rockets_cubit.dart';
+import 'package:space_app/features/rockets/logic/cubit/rockets_state.dart';
+import 'package:space_app/features/rockets/ui/widgets/rocket_grid_view.dart';
 
 class RocketsScreen extends StatefulWidget {
   const RocketsScreen({super.key});
@@ -20,7 +23,7 @@ class _RocketsScreenState extends State<RocketsScreen> {
   @override
   void initState() {
     super.initState();
-    BlocProvider.of<RocketsCubit>(context).getAllRockets();
+    _fetchData();
   }
 
   @override
@@ -36,38 +39,25 @@ class _RocketsScreenState extends State<RocketsScreen> {
             ),
             child: BlocBuilder<RocketsCubit, RocketsState>(
               builder: (context, state) {
-                if (state is RocketsLoading) {
-                  return const Center(
-                    child: CircularProgressIndicator(
-                      color: ColorsManager.blue,
-                    ),
-                  );
-                } else if (state is RocketsSucces) {
+                if (state is RocketsFailure) {
+                  return FailedRequestColumn(fetchData: _fetchData);
+                } else if (state is RocketsSuccess) {
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(height: 10.h),
-                      Text('Rockets', style: TextStyles.font18WhiteMedium),
-                      SizedBox(height: 20.h),
+                      verticalSpace(10),
+                      Text(
+                        Constants.rocketsModelName,
+                        style: TextStyles.font18WhiteMediumOrienta,
+                      ),
+                      verticalSpace(20),
                       RocketGridView(
                         rockets: state.rocketModel,
                       ),
                     ],
                   );
-                } else if (state is RocketsFailure) {
-                  return Center(
-                    child: Text(
-                      state.errMessage,
-                      style: TextStyles.font20WhiteBold,
-                    ),
-                  );
                 } else {
-                  return Center(
-                    child: Text(
-                      'Oops there was an error, try again.',
-                      style: TextStyles.font20WhiteBold,
-                    ),
-                  );
+                  return const CustomLoadingWidget();
                 }
               },
             ),
@@ -75,5 +65,9 @@ class _RocketsScreenState extends State<RocketsScreen> {
         ),
       ),
     );
+  }
+
+  void _fetchData() {
+    BlocProvider.of<RocketsCubit>(context).getAllRockets();
   }
 }
