@@ -26,7 +26,7 @@ class TextStyles {
   );
   static TextStyle font16WhiteRegularOrienta = TextStyle(
     color: ColorsManager.whiteColor,
-    fontSize: 10.sp,
+    fontSize: 16.sp,
     fontWeight: FontWeightManager.regular,
     fontFamily: Fonts.orientaFont,
   );
