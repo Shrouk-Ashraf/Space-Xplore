@@ -9,14 +9,14 @@ import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/theming/styles.dart';
 import 'package:space_app/features/company%20info/logic/cubit/company_info_cubit.dart';
 import 'package:space_app/features/company%20info/ui/screens/company_info_screen.dart';
-import 'package:space_app/features/crew/logic/crew_cubit.dart';
+import 'package:space_app/features/crew/logic/cubit/crew_cubit.dart';
 import 'package:space_app/features/crew/ui/screens/crew_screen.dart';
 import 'package:space_app/features/launches/logic/cubit/launch_cubit.dart';
 import 'package:space_app/features/launches/ui/screens/launches_screen.dart';
 import 'package:space_app/features/no%20internet/ui/screens/no_internet_screen.dart';
-import 'package:space_app/features/rockets/logic/all_rockets_cubit/rockets_cubit.dart';
+import 'package:space_app/features/rockets/logic/cubit/rockets_cubit.dart';
 import 'package:space_app/features/rockets/ui/screens/rockets_screen.dart';
-import 'package:space_app/features/ships/logic/ships_cubit.dart';
+import 'package:space_app/features/ships/logic/cubit/ships_cubit.dart';
 import 'package:space_app/features/ships/ui/screens/ships_screen.dart';
 
 class BottomNavBar extends StatelessWidget {

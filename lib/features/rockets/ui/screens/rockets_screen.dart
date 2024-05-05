@@ -8,8 +8,8 @@ import 'package:space_app/core/widgets/background_container.dart';
 import 'package:space_app/core/widgets/custom_app_bar.dart';
 import 'package:space_app/core/widgets/custom_loading_widget.dart';
 import 'package:space_app/core/widgets/failed_request_column.dart';
-import 'package:space_app/features/rockets/logic/all_rockets_cubit/rockets_cubit.dart';
-import 'package:space_app/features/rockets/logic/all_rockets_cubit/rockets_state.dart';
+import 'package:space_app/features/rockets/logic/cubit/rockets_cubit.dart';
+import 'package:space_app/features/rockets/logic/cubit/rockets_state.dart';
 import 'package:space_app/features/rockets/ui/widgets/rocket_grid_view.dart';
 
 class RocketsScreen extends StatefulWidget {

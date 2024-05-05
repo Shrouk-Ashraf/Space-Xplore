@@ -8,8 +8,8 @@ import 'package:space_app/core/widgets/custom_app_bar.dart';
 import 'package:space_app/core/widgets/background_container.dart';
 import 'package:space_app/core/widgets/custom_loading_widget.dart';
 import 'package:space_app/core/widgets/failed_request_column.dart';
-import 'package:space_app/features/crew/logic/crew_cubit.dart';
-import 'package:space_app/features/crew/logic/crew_state.dart';
+import 'package:space_app/features/crew/logic/cubit/crew_cubit.dart';
+import 'package:space_app/features/crew/logic/cubit/crew_state.dart';
 import 'package:space_app/features/crew/ui/widgets/crew_grid_view.dart';
 
 class CrewScreen extends StatefulWidget {

@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:space_app/features/rockets/data/repos/rockets_repo.dart';
-import 'package:space_app/features/rockets/logic/all_rockets_cubit/rockets_state.dart';
+import 'package:space_app/features/rockets/logic/cubit/rockets_state.dart';
 
 class RocketsCubit extends Cubit<RocketsState> {
   final RocketsRepo rocketsRepo;
