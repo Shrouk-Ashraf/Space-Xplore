@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:space_app/core/helpers/constants.dart';
 
 class BackgroundContainer extends StatelessWidget {
+  final Widget child;
+
   const BackgroundContainer({
     super.key,
     required this.child,
   });
-
-  final Widget child;
 
   @override
   Widget build(BuildContext context) {

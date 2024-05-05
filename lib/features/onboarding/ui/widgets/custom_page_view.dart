@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:lottie/lottie.dart';
+import 'package:space_app/core/theming/styles.dart';
 
 class CustomPageView {
   static PageViewModel generateCustomPageView({
@@ -14,29 +15,22 @@ class CustomPageView {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height / 2,
-              child: Lottie.asset(
-                image,
-                fit: BoxFit.fill,
-              )),
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height / 2,
+            child: Lottie.asset(
+              image,
+              fit: BoxFit.fill,
+            ),
+          ),
           Text(
             title,
-            style: const TextStyle(
-              fontFamily: 'Orbitron',
-              fontSize: 24,
-              color: Colors.white,
-            ),
+            style: TextStyles.font24WhiteRegularOrbitron,
           ),
         ],
       ),
       bodyWidget: Text(
         body,
-        style: TextStyle(
-          fontFamily: "Ubuntu",
-          fontSize: 14,
-          color: Colors.white.withOpacity(0.7),
-        ),
+        style: TextStyles.font14LightWhiteRegularUbuntu,
       ),
     );
   }

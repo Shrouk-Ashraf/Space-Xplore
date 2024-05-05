@@ -1,8 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:space_app/features/crew/data/repos/crew_repo.dart';
-import 'package:space_app/features/crew/data/models/crew_member_model.dart';
-
-part 'crew_state.dart';
+import 'package:space_app/features/crew/logic/crew_state.dart';
 
 class CrewCubit extends Cubit<CrewState> {
   final CrewRepo _crewRepo;

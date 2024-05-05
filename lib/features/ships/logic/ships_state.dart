@@ -1,6 +1,6 @@
-part of 'ships_cubit.dart';
+import 'package:space_app/features/ships/data/models/ship_model.dart';
 
-sealed class ShipsState {}
+abstract class ShipsState {}
 
 final class ShipsInitial extends ShipsState {}
 

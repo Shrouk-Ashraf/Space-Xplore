@@ -4,6 +4,7 @@ import 'package:space_app/core/theming/styles.dart';
 class CustomTextSpan extends StatelessWidget {
   final String textTitle;
   final String? textDescription;
+
   const CustomTextSpan({
     super.key,
     required this.textTitle,
@@ -17,11 +18,11 @@ class CustomTextSpan extends StatelessWidget {
         children: [
           TextSpan(
             text: textTitle,
-            style: TextStyles.font16LightBlueRegular,
+            style: TextStyles.font16LightBlueRegularOrienta,
           ),
           TextSpan(
             text: textDescription,
-            style: TextStyles.font14WhiteRegular,
+            style: TextStyles.font14WhiteRegularOrienta,
           ),
         ],
       ),

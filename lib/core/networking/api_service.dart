@@ -14,25 +14,29 @@ part 'api_service.g.dart';
 abstract class ApiService {
   factory ApiService(Dio dio, {String baseUrl}) = _ApiService;
 
-  // crew
+  // Crew
   @GET(ApiConstants.crew)
   Future<List<CrewMemberModel>> getAllCrew();
 
-  @POST(ApiConstants.allLaunches)
+  // Launches
+  @POST(ApiConstants.queryLaunches)
   Future<QueryLaunchResponse> getAllLaunches(@Body() body);
 
-  @GET('${ApiConstants.launch}/{id}')
+  @GET('${ApiConstants.launches}/{id}')
   Future<LaunchResponse> getOneLaunch({@Path('id') required String id});
 
+  // Ships
   @GET(ApiConstants.ships)
   Future<List<ShipModel>> getAllShips();
 
+  // Rockets
   @GET(ApiConstants.rockets)
   Future<List<RocketModel>> getAllRockets();
 
   @GET('${ApiConstants.rockets}/{id}')
   Future<RocketModel> getRocket(@Path('id') String id);
 
+  // Company Info
   @GET(ApiConstants.companyInfo)
   Future<CompanyInfoModel> getCompanyInfo();
 }

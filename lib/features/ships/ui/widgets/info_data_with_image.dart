@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:space_app/core/helpers/constants.dart';
 import 'package:space_app/core/helpers/spacing.dart';
 import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/theming/styles.dart';
+import 'package:space_app/core/widgets/cached_image.dart';
 import 'package:space_app/features/ships/data/models/ship_model.dart';
 import 'package:space_app/features/ships/ui/widgets/titile_and_sub_title_info.dart';
 
 class InfoDataWithImage extends StatelessWidget {
-  const InfoDataWithImage({super.key, required this.shipModel});
-  final ShipModel shipModel;
+  final ShipModel ship;
+
+  const InfoDataWithImage({
+    super.key,
+    required this.ship,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,24 +26,24 @@ class InfoDataWithImage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                shipModel.shipName ?? 'name of ships error',
-                style: TextStyles.font15WhiteBold,
-              ),
-              verticalSpace(10.h),
+              verticalSpace(30),
               TitleAndSubTitle(
-                title: "Type:",
-                subTitle: shipModel.shipType ?? '_',
+                title: Constants.shipTypeAttribute,
+                subTitle: ship.shipType ?? '_',
               ),
-              verticalSpace(10.h),
+              verticalSpace(10),
               TitleAndSubTitle(
-                title: "Status:",
-                subTitle: isActive(shipModel.active!),
-                textStyle: isActive(shipModel.active!) == "Inactive"
-                    ? TextStyles.font15White500Weight
-                        .copyWith(color: ColorsManager.red)
-                    : TextStyles.font15White500Weight
-                        .copyWith(color: Colors.green),
+                title: Constants.shipStatusAttribute,
+                subTitle: ship.active!
+                    ? Constants.activeText
+                    : Constants.inactiveText,
+                textStyle: ship.active!
+                    ? TextStyles.font15WhiteMediumOrienta.copyWith(
+                        color: ColorsManager.activeColor,
+                      )
+                    : TextStyles.font15WhiteMediumOrienta.copyWith(
+                        color: ColorsManager.inactiveColor,
+                      ),
               ),
             ],
           ),
@@ -47,17 +53,14 @@ class InfoDataWithImage extends StatelessWidget {
           height: 90.h,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(4.r),
-            child: Image.network(
-              shipModel.image ?? "https://i.imgur.com/woCxpkj.jpg",
-              fit: BoxFit.cover,
+            child: CachedImage(
+              networkImageUrl: ship.image ?? '',
+              height: 90.h,
+              width: 90.h,
             ),
           ),
         ),
       ],
     );
-  }
-
-  String isActive(bool state) {
-    return state ? "Active" : "Inactive";
   }
 }

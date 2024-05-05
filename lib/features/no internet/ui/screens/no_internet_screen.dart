@@ -2,6 +2,7 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
+import 'package:space_app/core/helpers/constants.dart';
 import 'package:space_app/core/helpers/spacing.dart';
 import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/theming/styles.dart';
@@ -15,41 +16,41 @@ class NoInternetScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: const CustomAppBar(title: 'Space Xplore'),
+      appBar: const CustomAppBar(),
       body: BackgroundContainer(
         child: SafeArea(
             child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Lottie.asset(
-              'assets/json/no_internet.json',
+              Constants.noInternetAssetPath,
               fit: BoxFit.fill,
             ),
             Text(
-              'Whoops!',
-              style: TextStyles.font24WhiteBold,
+              Constants.whoopsText,
+              style: TextStyles.font24WhiteBoldOrbitron,
             ),
             verticalSpace(10),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.w),
               child: Text(
-                'Failed to connect to Space Xplore, please check your device\'s network connection.',
-                style: TextStyles.font12WhiteBold,
+                Constants.failedConnectionText,
+                style: TextStyles.font12WhiteBoldOrienta,
                 textAlign: TextAlign.center,
               ),
             ),
             verticalSpace(35),
             ElevatedButton.icon(
-              label: const Text('Retry'),
+              label: const Text(Constants.retryText),
               onPressed: () {
                 Connectivity().checkConnectivity();
               },
               icon: const Icon(Icons.refresh),
               style: ElevatedButton.styleFrom(
-                backgroundColor: ColorsManager.blue,
-                foregroundColor: ColorsManager.white,
+                backgroundColor: ColorsManager.mainColor,
+                foregroundColor: ColorsManager.whiteColor,
                 minimumSize: Size(120.w, 50.h),
-                textStyle: TextStyles.font12WhiteBold,
+                textStyle: TextStyles.font12WhiteBoldOrienta,
               ),
             ),
           ],

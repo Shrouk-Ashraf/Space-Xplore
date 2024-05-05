@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:space_app/core/helpers/constants.dart';
 import 'package:space_app/core/helpers/spacing.dart';
 import 'package:space_app/core/theming/colors.dart';
 import 'package:space_app/core/theming/styles.dart';
@@ -11,8 +13,12 @@ import 'package:space_app/features/ships/ui/widgets/info_data_with_image.dart';
 import 'package:space_app/features/ships/ui/widgets/titile_and_sub_title_info.dart';
 
 class ShipDetailsScreen extends StatelessWidget {
-  const ShipDetailsScreen({super.key, required this.singleShipModel});
-  final ShipModel singleShipModel;
+  final ShipModel ship;
+
+  const ShipDetailsScreen({
+    super.key,
+    required this.ship,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -23,55 +29,56 @@ class ShipDetailsScreen extends StatelessWidget {
         child: SafeArea(
           child: Center(
             child: Container(
-              height: 440.h,
               width: 330.w,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8.r),
-                color: ColorsManager.lightTransparent,
+                color: ColorsManager.lightTransparentColor,
               ),
               child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 24,
-                  vertical: 24,
+                padding: EdgeInsets.symmetric(
+                  horizontal: 24.w,
+                  vertical: 24.h,
                 ),
                 child: SingleChildScrollView(
                   child: Column(
+                    mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        "Ship Details",
-                        style: TextStyles.font20WhiteBold,
-                      ),
-                      verticalSpace(24.h),
-                      const Divider(color: ColorsManager.darkGrey),
-                      verticalSpace(12.h),
-                      InfoDataWithImage(
-                        shipModel: singleShipModel,
-                      ),
-                      verticalSpace(10.h),
-                      TitleAndSubTitle(
-                        title: "Home port:",
-                        subTitle: singleShipModel.homePort ?? "empty",
-                      ),
-                      verticalSpace(10.h),
-                      TitleAndSubTitle(
-                        title: "Year Built:",
-                        subTitle: singleShipModel.yearBuilt.toString(),
-                      ),
-                      verticalSpace(10.h),
-                      TitleAndSubTitle(
-                        title: "Weight:",
-                        subTitle:
-                            "${singleShipModel.weightKg?.toString() ?? ''} kg",
-                      ),
-                      verticalSpace(24.h),
-                      if (singleShipModel.link != null)
-                        LinkText(
-                          linkUrl: singleShipModel.link!,
-                          linkName: 'Wikipedia',
+                      Center(
+                        child: Text(
+                          ship.shipName!,
+                          style: TextStyles.font24WhiteBoldOrbitron,
                         ),
-                      verticalSpace(24.h),
-                      const Divider(color: ColorsManager.darkGrey),
+                      ),
+                      verticalSpace(12),
+                      const Divider(color: ColorsManager.darkGreyColor),
+                      verticalSpace(12),
+                      InfoDataWithImage(
+                        ship: ship,
+                      ),
+                      verticalSpace(10),
+                      TitleAndSubTitle(
+                        title: Constants.shipHomePortAttribute,
+                        subTitle: ship.homePort ?? "_",
+                      ),
+                      verticalSpace(10),
+                      TitleAndSubTitle(
+                        title: Constants.shipYearBuiltAttribute,
+                        subTitle: ship.yearBuilt.toString(),
+                      ),
+                      verticalSpace(10),
+                      TitleAndSubTitle(
+                        title: Constants.shipWeightAttribute,
+                        subTitle: "${ship.weightKg?.toString() ?? '_'} kg",
+                      ),
+                      verticalSpace(24),
+                      if (ship.link != null)
+                        LinkText(
+                          linkUrl: ship.link!,
+                          linkName: Constants.wikipediaText,
+                        ),
+                      verticalSpace(35),
+                      const Divider(color: ColorsManager.darkGreyColor),
                     ],
                   ),
                 ),

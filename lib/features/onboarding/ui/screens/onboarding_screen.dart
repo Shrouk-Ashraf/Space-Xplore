@@ -8,16 +8,11 @@ import 'package:space_app/features/onboarding/ui/widgets/custom_page_view.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
-  _storeOnBoardingToShowOnlyOneTime() async {
-    int isViewd = 0;
-    SharedPreferences preferences = await SharedPreferences.getInstance();
-    preferences.setInt("onboardingKey", isViewd);
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorsManager.darkBlue,
+      backgroundColor: ColorsManager.darkBlueColor,
       body: SafeArea(
         child: IntroductionScreen(
           globalBackgroundColor: ColorsManager.backgroundColor,
@@ -65,5 +60,11 @@ class OnboardingScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  _storeOnBoardingToShowOnlyOneTime() async {
+    bool isOnboardingViewed = true;
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    preferences.setBool(Constants.onboardingKey, isOnboardingViewed);
   }
 }

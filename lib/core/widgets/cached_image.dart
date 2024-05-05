@@ -1,20 +1,20 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:space_app/core/theming/colors.dart';
+import 'package:space_app/core/widgets/custom_loading_widget.dart';
 import 'package:space_app/core/widgets/no_image_asset.dart';
 
 class CachedImage extends StatelessWidget {
+  final String networkImageUrl;
+  final double height;
+  final double width;
+
   const CachedImage({
     super.key,
     required this.networkImageUrl,
     required this.height,
     required this.width,
   });
-
-  final String networkImageUrl;
-  final double height;
-  final double width;
 
   @override
   Widget build(BuildContext context) {
@@ -35,14 +35,11 @@ class CachedImage extends StatelessWidget {
         child: SizedBox(
           height: height,
           width: width,
-          child: const Center(
-            child: CircularProgressIndicator(
-              color: ColorsManager.blue,
-            ),
-          ),
+          child: const CustomLoadingWidget(),
         ),
       ),
-      errorWidget: (context, url, error) => const NoImageAsset(),
+      errorWidget: (context, url, error) =>
+          const NoImageAsset(width: 80, height: 120),
     );
   }
 }

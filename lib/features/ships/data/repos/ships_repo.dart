@@ -6,7 +6,9 @@ import 'package:space_app/features/ships/data/models/ship_model.dart';
 
 class ShipsRepo {
   ApiService apiService;
+
   ShipsRepo(this.apiService);
+
   Future<Either<Failure, List<ShipModel>>> getAllShips() async {
     try {
       var response = await apiService.getAllShips();

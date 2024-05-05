@@ -1,20 +1,19 @@
-part of 'rockets_cubit.dart';
+import 'package:space_app/features/rockets/data/models/rocket_model/rocket_model.dart';
 
-@immutable
-sealed class RocketsState {}
+abstract class RocketsState {}
 
 final class RocketsInitial extends RocketsState {}
 
 final class RocketsLoading extends RocketsState {}
 
-final class RocketsSucces extends RocketsState {
+final class RocketsSuccess extends RocketsState {
   final List<RocketModel> rocketModel;
 
-  RocketsSucces({required this.rocketModel});
+  RocketsSuccess({required this.rocketModel});
 }
 
 final class RocketsFailure extends RocketsState {
-  final String errMessage;
+  final String errorMessage;
 
-  RocketsFailure({required this.errMessage});
+  RocketsFailure({required this.errorMessage});
 }

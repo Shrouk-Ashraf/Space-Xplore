@@ -6,14 +6,12 @@ import 'package:space_app/core/theming/styles.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class WebView extends StatefulWidget {
+  final String webViewUrl;
+
   const WebView({
     super.key,
     required this.webViewUrl,
-    required this.appBarColor,
   });
-
-  final String webViewUrl;
-  final Color appBarColor;
 
   @override
   State<WebView> createState() => _WebViewState();
@@ -26,18 +24,18 @@ class _WebViewState extends State<WebView> {
   @override
   void initState() {
     super.initState();
-    initializeWebViewController();
+    _initializeWebViewController();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: widget.appBarColor,
+        backgroundColor: ColorsManager.whiteColor,
         centerTitle: false,
         title: Text(
           Constants.appName,
-          style: TextStyles.font24BlackBoldOrbitorn,
+          style: TextStyles.font24BlackBoldOrbitron,
         ),
       ),
       body: Padding(
@@ -45,7 +43,7 @@ class _WebViewState extends State<WebView> {
         child: _isLoading
             ? const Center(
                 child: CircularProgressIndicator(
-                  color: ColorsManager.black,
+                  color: ColorsManager.blackColor,
                 ),
               )
             : WebViewWidget(
@@ -55,9 +53,9 @@ class _WebViewState extends State<WebView> {
     );
   }
 
-  WebViewController initializeWebViewController() {
+  WebViewController _initializeWebViewController() {
     return _controller = WebViewController()
-      ..setJavaScriptMode(JavaScriptMode.disabled)
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)
       ..loadRequest(Uri.parse(widget.webViewUrl))
       ..setNavigationDelegate(
         NavigationDelegate(

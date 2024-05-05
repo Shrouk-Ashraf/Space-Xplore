@@ -6,6 +6,7 @@ import 'package:space_app/features/company%20info/data/models/company_info_model
 
 class CompanyInfoRepo {
   final ApiService apiService;
+
   CompanyInfoRepo(this.apiService);
 
   Future<Either<Failure, CompanyInfoModel>> getCompanyInfo() async {

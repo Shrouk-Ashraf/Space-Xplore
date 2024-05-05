@@ -1,18 +1,19 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:space_app/core/helpers/constants.dart';
 import 'package:space_app/core/helpers/spacing.dart';
 import 'package:space_app/core/theming/styles.dart';
+import 'package:space_app/core/widgets/custom_text_span.dart';
 import 'package:space_app/core/widgets/link_text.dart';
-import 'details_section_text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:space_app/features/rockets/data/models/rocket_model/rocket_model.dart';
 
 class DetailsSection extends StatelessWidget {
+  final RocketModel rocket;
+
   const DetailsSection({
     super.key,
     required this.rocket,
   });
-
-  final RocketModel rocket;
 
   @override
   Widget build(BuildContext context) {
@@ -27,44 +28,43 @@ class DetailsSection extends StatelessWidget {
           Center(
             child: Text(
               rocket.name,
-              style: TextStyles.font24WhiteBold,
+              style: TextStyles.font24WhiteBoldOrbitron,
             ),
           ),
           verticalSpace(10),
-          DetailsSectionTextWidget(
-            title: "Description : ",
-            subTitle: rocket.description,
+          CustomTextSpan(
+            textTitle: Constants.rocketDescriptionAttribute,
+            textDescription: rocket.description,
           ),
           verticalSpace(24),
-          DetailsSectionTextWidget(
-            title: "Height : ",
-            subTitle: "${rocket.height.meters} m",
+          CustomTextSpan(
+            textTitle: Constants.rocketHeightAttribute,
+            textDescription: "${rocket.height.meters} m",
           ),
           verticalSpace(9),
-          DetailsSectionTextWidget(
-            title: "Diameter : ",
-            subTitle: "${rocket.diameter.meters} m",
+          CustomTextSpan(
+            textTitle: Constants.rocketDiameterAttribute,
+            textDescription: "${rocket.diameter.meters} m",
           ),
           verticalSpace(9),
-          DetailsSectionTextWidget(
-            title: "Mass : ",
-            subTitle: "${rocket.mass.kg} Kg",
+          CustomTextSpan(
+            textTitle: Constants.rocketMassAttribute,
+            textDescription: "${rocket.mass.kg} Kg",
           ),
           verticalSpace(24),
-          verticalSpace(24),
-          DetailsSectionTextWidget(
-            title: "Company : ",
-            subTitle: rocket.company,
+          CustomTextSpan(
+            textTitle: Constants.rocketCompanyAttribute,
+            textDescription: rocket.company,
           ),
           verticalSpace(9),
-          DetailsSectionTextWidget(
-            title: "Country : ",
-            subTitle: rocket.country,
+          CustomTextSpan(
+            textTitle: Constants.rocketCountryAttribute,
+            textDescription: rocket.country,
           ),
           verticalSpace(10),
           LinkText(
             linkUrl: rocket.wikipedia,
-            linkName: 'Wikipedia',
+            linkName: Constants.wikipediaText,
           ),
         ],
       ),

@@ -2,25 +2,31 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:space_app/core/di/dependency_injection.dart';
-import 'package:space_app/core/routing/app_router.dart';
-import 'package:space_app/core/routing/routes.dart';
+import 'package:space_app/core/helpers/constants.dart';
+import 'package:space_app/core/widgets/bottom_nav_bar.dart';
+import 'package:space_app/features/onboarding/ui/screens/onboarding_screen.dart';
 
-int? isViewd;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   setupGetIt();
+  final isOnboardingViewed = await checkOnboardingViewed();
+  runApp(SpaceApp(isOnboardingViewed: isOnboardingViewed));
+}
+
+Future<bool> checkOnboardingViewed() async {
   SharedPreferences preferences = await SharedPreferences.getInstance();
-  isViewd = preferences.getInt("onboardingKey");
-  runApp(SpaceApp(appRouter: AppRouter()));
+  final isOnboardingViewed =
+      preferences.getBool(Constants.onboardingKey) ?? false;
+  return isOnboardingViewed;
 }
 
 class SpaceApp extends StatelessWidget {
   const SpaceApp({
     super.key,
-    required this.appRouter,
+    required this.isOnboardingViewed,
   });
 
-  final AppRouter appRouter;
+  final bool isOnboardingViewed;
 
   @override
   Widget build(BuildContext context) {
@@ -29,9 +35,9 @@ class SpaceApp extends StatelessWidget {
       minTextAdapt: true,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute:
-            isViewd != 0 ? Routes.onBoardingScreen : Routes.bottomNavBar,
-        onGenerateRoute: appRouter.generateRoute,
+        home: isOnboardingViewed
+            ? const BottomNavBar()
+            : const OnboardingScreen(),
       ),
     );
   }

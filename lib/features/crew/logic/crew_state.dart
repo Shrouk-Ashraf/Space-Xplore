@@ -1,4 +1,4 @@
-part of 'crew_cubit.dart';
+import 'package:space_app/features/crew/data/models/crew_member_model.dart';
 
 abstract class CrewState {}
 

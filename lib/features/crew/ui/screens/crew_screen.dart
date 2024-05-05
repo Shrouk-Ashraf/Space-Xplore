@@ -9,6 +9,7 @@ import 'package:space_app/core/widgets/background_container.dart';
 import 'package:space_app/core/widgets/custom_loading_widget.dart';
 import 'package:space_app/core/widgets/failed_request_column.dart';
 import 'package:space_app/features/crew/logic/crew_cubit.dart';
+import 'package:space_app/features/crew/logic/crew_state.dart';
 import 'package:space_app/features/crew/ui/widgets/crew_grid_view.dart';
 
 class CrewScreen extends StatefulWidget {
@@ -47,7 +48,7 @@ class _CrewScreenState extends State<CrewScreen> {
                       verticalSpace(10),
                       Text(
                         Constants.crewModelName,
-                        style: TextStyles.font18WhiteMedium,
+                        style: TextStyles.font18WhiteMediumOrienta,
                       ),
                       verticalSpace(20),
                       CrewGridView(

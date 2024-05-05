@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:space_app/core/widgets/web_view.dart';
 
 class LogosLinkCircle extends StatelessWidget {
   final String link;
   final String logo;
+
   const LogosLinkCircle({
     super.key,
     required this.link,
@@ -14,13 +16,10 @@ class LogosLinkCircle extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (context) => WebView(
-              webViewUrl: link,
-            ),
-          ),
-        );
+        PersistentNavBarNavigator.pushNewScreen(context,
+            withNavBar: false,
+            pageTransitionAnimation: PageTransitionAnimation.sizeUp,
+            screen: WebView(webViewUrl: link));
       },
       child: CircleAvatar(
         radius: 35,
