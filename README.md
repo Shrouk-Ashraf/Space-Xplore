@@ -23,9 +23,6 @@
 2. 🔍 **Explore Features:** Open the app and navigate through the app's different screens (launches, rockets, ships, crew, and company info) to explore Space content.
 3. 📲 **Interact with the App:** View details about SpaceX launches, rockets, ships, crew members, and company information & use the device's navigation features to go back or exit the app.
 
-## 🛠️ Frameworks
-- [Flutter](https://flutter.dev): An open-source UI software development kit created by Google used to develop cross-platform applications.
-
 ## APIs used
 - 🛸 [SpaceX API](https://github.com/r-spacex/SpaceX-API/tree/master/docs#rspacex-api-docs): The official SpaceX API v4 was used which provides access to a wealth of data related to SpaceX missions, rockets, crew members, ships, and more.
 
@@ -37,7 +34,7 @@
   4. [Abdelrahman Sobhy](https://github.com/abdarahmann)
 -  For any inquiries, feedback, or collaborations, feel free to contact us.
 
-## App Preview
+## 📱 App Preview
 https://github.com/Shrouk-Ashraf/Space-Xplore/assets/96924895/307aa1bb-cd63-4df8-84de-7c37e65e413d
 
 
