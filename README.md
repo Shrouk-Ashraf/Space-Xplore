@@ -19,7 +19,7 @@
 - [Figma Design](https://www.figma.com/file/YAirxEYpVYm0pS22vVfKTs/Space-app-(Community)?type=design&node-id=0%3A1&mode=design&t=Xid2O5z6508EaBQQ-1): The design for the Space Xplore app can be found on Figma which includes screens for the splash screen, onboarding screens, launches screen, rockets screen, ships screen, crew screen, and company info screen.
 
 ## 🎯 How to use
-1. ⬇️ **Download & Install the App:** Get the app from the provided APK link [here](https://drive.google.com/file/d/1HmusoMnBAs8kvg-Q2TccOrHb8NquYNPH/view?usp=sharing) and follow the installation instructions for your device's operating system.
+1. ⬇️ **Download & Install the App:** Get the app from the provided APK link [here](https://drive.google.com/file/d/1iKs60qtHNew0_ZlxEGzGljEwGnVt-MPT/view?usp=sharing) and follow the installation instructions for your device's operating system.
 2. 🔍 **Explore Features:** Open the app and navigate through the app's different screens (launches, rockets, ships, crew, and company info) to explore Space content.
 3. 📲 **Interact with the App:** View details about SpaceX launches, rockets, ships, crew members, and company information & use the device's navigation features to go back or exit the app.
 
