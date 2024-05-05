@@ -54,6 +54,7 @@ class _CompanyInfoScreenState extends State<CompanyInfoScreen> {
                               mainAxisSize: MainAxisSize.min,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
+                                verticalSpace(10),
                                 Row(
                                   children: [
                                     ClipRRect(
