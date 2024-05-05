@@ -59,7 +59,7 @@ class ShipDetailsScreen extends StatelessWidget {
                       verticalSpace(10),
                       TitleAndSubTitle(
                         title: Constants.shipHomePortAttribute,
-                        subTitle: ship.homePort ?? "_",
+                        subTitle: ship.homePort ?? Constants.noDataText,
                       ),
                       verticalSpace(10),
                       TitleAndSubTitle(
@@ -69,7 +69,9 @@ class ShipDetailsScreen extends StatelessWidget {
                       verticalSpace(10),
                       TitleAndSubTitle(
                         title: Constants.shipWeightAttribute,
-                        subTitle: "${ship.weightKg?.toString() ?? '_'} kg",
+                        subTitle: ship.weightKg?.toString() != null
+                            ? "${ship.weightKg?.toString()} kg"
+                            : Constants.noDataText,
                       ),
                       verticalSpace(24),
                       if (ship.link != null)

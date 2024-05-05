@@ -38,19 +38,21 @@ class _CompanyInfoScreenState extends State<CompanyInfoScreen> {
         child: SafeArea(
           child: BlocBuilder<CompanyInfoCubit, CompanyInfoState>(
             builder: (context, state) {
-              return SingleChildScrollView(
-                child: Center(
-                  child: Container(
-                    width: 300.w,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8.r),
-                      color: ColorsManager.lightTransparentColor,
-                    ),
-                    child: Padding(
-                      padding:
-                          EdgeInsets.symmetric(vertical: 5.h, horizontal: 15.w),
-                      child: state is CompanyInfoStateSuccess
-                          ? Column(
+              return state is CompanyInfoStateSuccess
+                  ? SingleChildScrollView(
+                      child: Center(
+                        child: Container(
+                          width: 300.w,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8.r),
+                            color: ColorsManager.lightTransparentColor,
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                              vertical: 5.h,
+                              horizontal: 15.w,
+                            ),
+                            child: Column(
                               mainAxisSize: MainAxisSize.min,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -108,14 +110,14 @@ class _CompanyInfoScreenState extends State<CompanyInfoScreen> {
                                     links: state.companyInfo.links),
                                 verticalSpace(10),
                               ],
-                            )
-                          : state is CompanyInfoStateFailure
-                              ? FailedRequestColumn(fetchData: _fetchData)
-                              : const CustomLoadingWidget(),
-                    ),
-                  ),
-                ),
-              );
+                            ),
+                          ),
+                        ),
+                      ),
+                    )
+                  : state is CompanyInfoStateFailure
+                      ? FailedRequestColumn(fetchData: _fetchData)
+                      : const CustomLoadingWidget();
             },
           ),
         ),

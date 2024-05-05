@@ -29,7 +29,7 @@ class InfoDataWithImage extends StatelessWidget {
               verticalSpace(30),
               TitleAndSubTitle(
                 title: Constants.shipTypeAttribute,
-                subTitle: ship.shipType ?? '_',
+                subTitle: ship.shipType ?? Constants.noDataText,
               ),
               verticalSpace(10),
               TitleAndSubTitle(

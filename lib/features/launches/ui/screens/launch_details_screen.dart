@@ -49,7 +49,7 @@ class LaunchDetailsScreen extends StatelessWidget {
                   verticalSpace(25),
                   CustomTextSpan(
                     textTitle: Constants.launchDetailsAttribute,
-                    textDescription: item.details ?? Constants.noDetailsText,
+                    textDescription: item.details ?? Constants.noDataText,
                   ),
                   verticalSpace(20),
                   Row(
@@ -80,7 +80,8 @@ class LaunchDetailsScreen extends StatelessWidget {
                   if (item.failures.isNotEmpty)
                     CustomTextSpan(
                       textTitle: Constants.launchFailuresAttribute,
-                      textDescription: item.failures[0].reason ?? "-",
+                      textDescription:
+                          item.failures[0].reason ?? Constants.noDataText,
                     ),
                   verticalSpace(20),
                   if (item.links.article != null)

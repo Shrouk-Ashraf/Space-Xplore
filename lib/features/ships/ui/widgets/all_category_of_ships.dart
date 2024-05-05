@@ -70,7 +70,7 @@ class AllCategoryOfShips extends StatelessWidget {
                               );
                             },
                             child: CustomGridContainer(
-                              title: ship.shipName ?? '_',
+                              title: ship.shipName ?? Constants.noDataText,
                               imageUrl: ship.image ?? '',
                             ),
                           ),
