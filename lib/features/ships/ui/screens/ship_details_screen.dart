@@ -64,7 +64,9 @@ class ShipDetailsScreen extends StatelessWidget {
                       verticalSpace(10),
                       TitleAndSubTitle(
                         title: Constants.shipYearBuiltAttribute,
-                        subTitle: ship.yearBuilt.toString(),
+                        subTitle: ship.yearBuilt != null
+                            ? ship.yearBuilt.toString()
+                            : Constants.noDataText,
                       ),
                       verticalSpace(10),
                       TitleAndSubTitle(
