@@ -15,7 +15,7 @@ class Constants {
   static const failedRequestText =
       "Failed to fetch data from the server since it's currently unable to handle requests, please try again later.";
   static const failedConnectionText =
-      "Failed to connect to Space Xplore, please check your device's network connection.";
+      "Failed to connect to ${Constants.appName}, please check your device's network connection.";
   static const noDataText = "No specified data yet";
   static const trueText = "True";
   static const falseText = "False";

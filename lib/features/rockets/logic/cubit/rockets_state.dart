@@ -1,4 +1,4 @@
-import 'package:space_app/features/rockets/data/models/rocket_model/rocket_model.dart';
+import 'package:space_app/features/rockets/data/models/rocket_model.dart';
 
 abstract class RocketsState {}
 
