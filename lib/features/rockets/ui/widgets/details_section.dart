@@ -5,7 +5,7 @@ import 'package:space_app/core/theming/styles.dart';
 import 'package:space_app/core/widgets/custom_text_span.dart';
 import 'package:space_app/core/widgets/link_text.dart';
 import 'package:flutter/material.dart';
-import 'package:space_app/features/rockets/data/models/rocket_model/rocket_model.dart';
+import 'package:space_app/features/rockets/data/models/rocket_model.dart';
 
 class DetailsSection extends StatelessWidget {
   final RocketModel rocket;

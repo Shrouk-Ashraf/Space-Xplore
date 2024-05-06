@@ -5,7 +5,7 @@ import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 import 'package:space_app/core/widgets/custom_grid_container.dart';
 
-import '../../data/models/rocket_model/rocket_model.dart';
+import '../../data/models/rocket_model.dart';
 import '../screens/rocket_details_screen.dart';
 
 class RocketGridView extends StatelessWidget {

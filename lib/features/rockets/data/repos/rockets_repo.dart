@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:either_dart/either.dart';
 import 'package:space_app/core/networking/api_service.dart';
 import 'package:space_app/core/networking/server_failure.dart';
-import 'package:space_app/features/rockets/data/models/rocket_model/rocket_model.dart';
+import 'package:space_app/features/rockets/data/models/rocket_model.dart';
 
 class RocketsRepo {
   final ApiService apiService;
