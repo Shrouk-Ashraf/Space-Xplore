@@ -21,20 +21,20 @@ class _ApiService implements ApiService {
   String? baseUrl;
 
   @override
-  Future<List<CrewMemberModel>> getAllCrew() async {
+  Future<QueryCrewResponse> getAllCrew(dynamic body) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
+    final _data = body;
     final _result = await _dio
-        .fetch<List<dynamic>>(_setStreamType<List<CrewMemberModel>>(Options(
-      method: 'GET',
+        .fetch<Map<String, dynamic>>(_setStreamType<QueryCrewResponse>(Options(
+      method: 'POST',
       headers: _headers,
       extra: _extra,
     )
             .compose(
               _dio.options,
-              'crew',
+              'crew/query',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -43,9 +43,7 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    var value = _result.data!
-        .map((dynamic i) => CrewMemberModel.fromJson(i as Map<String, dynamic>))
-        .toList();
+    final value = QueryCrewResponse.fromJson(_result.data!);
     return value;
   }
 
