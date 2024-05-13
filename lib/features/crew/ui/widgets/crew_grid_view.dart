@@ -6,16 +6,37 @@ import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:space_app/core/di/dependency_injection.dart';
 import 'package:space_app/core/widgets/custom_grid_container.dart';
 import 'package:space_app/features/crew/data/models/crew_member_model.dart';
+import 'package:space_app/features/crew/logic/cubit/crew_cubit.dart';
 import 'package:space_app/features/crew/ui/screens/crew_details_screen.dart';
 import 'package:space_app/features/launches/logic/cubit/launch_cubit.dart';
 
-class CrewGridView extends StatelessWidget {
+class CrewGridView extends StatefulWidget {
   final List<CrewMemberModel> crewList;
 
   const CrewGridView({
     super.key,
     required this.crewList,
   });
+
+  @override
+  State<CrewGridView> createState() => _CrewGridViewState();
+}
+
+class _CrewGridViewState extends State<CrewGridView> {
+  final _scrollController = ScrollController();
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController.addListener(_scrollListener);
+  }
+
+  @override
+  void dispose() {
+    _scrollController.removeListener(_scrollListener);
+    _scrollController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +49,8 @@ class CrewGridView extends StatelessWidget {
         ),
         child: AnimationLimiter(
           child: GridView.builder(
-              itemCount: crewList.length,
+              controller: _scrollController,
+              itemCount: widget.crewList.length,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 childAspectRatio: 100.w / 120.h,
@@ -36,10 +58,10 @@ class CrewGridView extends StatelessWidget {
                 mainAxisSpacing: 35.h,
               ),
               itemBuilder: (context, index) {
-                final member = crewList[index];
+                final member = widget.crewList[index];
                 return AnimationConfiguration.staggeredGrid(
                   position: index,
-                  columnCount: crewList.length,
+                  columnCount: widget.crewList.length,
                   duration: const Duration(milliseconds: 375),
                   child: SlideAnimation(
                     horizontalOffset: 50.0.h,
@@ -69,5 +91,14 @@ class CrewGridView extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _scrollListener() {
+    final maxScrollExtent = _scrollController.position.maxScrollExtent;
+    final currentScrollPosition = _scrollController.position.pixels;
+
+    if (currentScrollPosition >= maxScrollExtent) {
+      BlocProvider.of<CrewCubit>(context).getAllCrew();
+    }
   }
 }

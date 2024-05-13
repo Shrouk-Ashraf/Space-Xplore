@@ -2,8 +2,8 @@ import 'package:retrofit/retrofit.dart';
 import 'package:dio/dio.dart';
 import 'package:space_app/core/networking/api_constants.dart';
 import 'package:space_app/features/company%20info/data/models/company_info_model.dart';
-import 'package:space_app/features/crew/data/models/crew_member_model.dart';
 import 'package:retrofit/http.dart';
+import 'package:space_app/features/crew/data/models/query_crew_response.dart';
 import 'package:space_app/features/launches/data/models/launch_response.dart';
 import 'package:space_app/features/launches/data/models/query_launch_response.dart';
 import 'package:space_app/features/rockets/data/models/rocket_model.dart';
@@ -15,8 +15,8 @@ abstract class ApiService {
   factory ApiService(Dio dio, {String baseUrl}) = _ApiService;
 
   // Crew
-  @GET(ApiConstants.crew)
-  Future<List<CrewMemberModel>> getAllCrew();
+  @POST(ApiConstants.queryCrew)
+  Future<QueryCrewResponse> getAllCrew(@Body() body);
 
   // Launches
   @POST(ApiConstants.queryLaunches)
