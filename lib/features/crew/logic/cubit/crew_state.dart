@@ -12,6 +12,10 @@ class CrewLoadedState extends CrewState {
   CrewLoadedState(this.crewMembers);
 }
 
+final class LoadingMoreCrewMembers extends CrewState {}
+
+final class NoMoreCrewMembers extends CrewState {}
+
 class CrewFailureState extends CrewState {
   final String errorMessage;
 

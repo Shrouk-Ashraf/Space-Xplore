@@ -5,6 +5,7 @@ class ApiConstants {
   static const String queryLaunches = "launches/query";
   static const String launches = "launches";
   // Crew endpoints
+  static const String queryCrew = "crew/query";
   static const String crew = "crew";
   // Ships endpoints
   static const String ships = "ships";
