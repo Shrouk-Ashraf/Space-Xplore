@@ -35,20 +35,27 @@ class _AllLaunchesBodyState extends State<AllLaunchesBody> {
               ? const CustomLoadingWidget()
               : state is GetAllLaunchesFailure
                   ? FailedRequestColumn(fetchData: _fetchData)
-                  : Column(
-                      children: [
-                        LaunchesGridView(
-                          allLaunches: allLaunches,
-                        ),
-                        state is LoadingMoreLaunches
-                            ? Center(
-                                child: SpinKitThreeBounce(
-                                  size: 30.sp,
-                                  color: ColorsManager.mainColor,
-                                ),
-                              )
-                            : const SizedBox.shrink(),
-                      ],
+                  : RefreshIndicator(
+                      color: ColorsManager.mainColor,
+                      onRefresh: () async {
+                        cubit.page = 1;
+                        _fetchData();
+                      },
+                      child: Column(
+                        children: [
+                          LaunchesGridView(
+                            allLaunches: allLaunches,
+                          ),
+                          state is LoadingMoreLaunches
+                              ? Center(
+                                  child: SpinKitThreeBounce(
+                                    size: 30.sp,
+                                    color: ColorsManager.mainColor,
+                                  ),
+                                )
+                              : const SizedBox.shrink(),
+                        ],
+                      ),
                     );
         },
       ),
