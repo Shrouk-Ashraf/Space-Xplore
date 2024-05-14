@@ -17,3 +17,7 @@ final class ShipsFailure extends ShipsState {
 
   ShipsFailure({required this.errorMessage});
 }
+
+final class LoadingMoreShips extends ShipsState {}
+
+final class NoMoreShips extends ShipsState {}

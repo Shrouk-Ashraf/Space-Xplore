@@ -1,27 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:space_app/core/helpers/constants.dart';
+import 'package:space_app/core/helpers/spacing.dart';
+import 'package:space_app/core/theming/styles.dart';
 import 'package:space_app/core/widgets/background_container.dart';
 import 'package:space_app/core/widgets/custom_app_bar.dart';
-import 'package:space_app/core/widgets/custom_loading_widget.dart';
-import 'package:space_app/core/widgets/failed_request_column.dart';
-import 'package:space_app/features/ships/logic/cubit/ships_cubit.dart';
-import 'package:space_app/features/ships/logic/cubit/ships_state.dart';
-import 'package:space_app/features/ships/ui/widgets/all_category_of_ships.dart';
+import 'package:space_app/features/ships/ui/widgets/ships_body.dart';
 
-class ShipsScreen extends StatefulWidget {
+class ShipsScreen extends StatelessWidget {
   const ShipsScreen({super.key});
-
-  @override
-  State<ShipsScreen> createState() => _ShipsScreenState();
-}
-
-class _ShipsScreenState extends State<ShipsScreen> {
-  @override
-  void initState() {
-    super.initState();
-    _fetchData();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,28 +21,21 @@ class _ShipsScreenState extends State<ShipsScreen> {
             padding: EdgeInsets.symmetric(
               horizontal: 10.w,
             ),
-            child: BlocBuilder<ShipsCubit, ShipsState>(
-              builder: (context, state) {
-                if (state is ShipsSuccess) {
-                  return AllCategoryOfShips(
-                    ships: state.shipsData,
-                  );
-                } else if (state is ShipsFailure) {
-                  return FailedRequestColumn(
-                    fetchData: _fetchData,
-                  );
-                } else {
-                  return const CustomLoadingWidget();
-                }
-              },
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                verticalSpace(10),
+                Text(
+                  Constants.shipsModelName,
+                  style: TextStyles.font18WhiteMediumOrienta,
+                ),
+                verticalSpace(20),
+                const ShipsBody(),
+              ],
             ),
           ),
         ),
       ),
     );
-  }
-
-  void _fetchData() {
-    BlocProvider.of<ShipsCubit>(context).getAllShipsData();
   }
 }

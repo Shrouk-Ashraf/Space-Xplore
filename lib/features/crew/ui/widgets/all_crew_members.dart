@@ -35,20 +35,27 @@ class _AllCrewMembersState extends State<AllCrewMembers> {
               ? const CustomLoadingWidget()
               : state is CrewFailureState
                   ? FailedRequestColumn(fetchData: _fetchData)
-                  : Column(
-                      children: [
-                        CrewGridView(
-                          crewList: crewList,
-                        ),
-                        state is LoadingMoreCrewMembers
-                            ? Center(
-                                child: SpinKitThreeBounce(
-                                  size: 30.sp,
-                                  color: ColorsManager.mainColor,
-                                ),
-                              )
-                            : const SizedBox.shrink(),
-                      ],
+                  : RefreshIndicator(
+                      color: ColorsManager.mainColor,
+                      onRefresh: () async {
+                        cubit.page = 1;
+                        _fetchData();
+                      },
+                      child: Column(
+                        children: [
+                          CrewGridView(
+                            crewList: crewList,
+                          ),
+                          state is LoadingMoreCrewMembers
+                              ? Center(
+                                  child: SpinKitThreeBounce(
+                                    size: 30.sp,
+                                    color: ColorsManager.mainColor,
+                                  ),
+                                )
+                              : const SizedBox.shrink(),
+                        ],
+                      ),
                     );
         },
       ),
