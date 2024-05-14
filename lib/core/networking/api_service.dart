@@ -7,7 +7,7 @@ import 'package:space_app/features/crew/data/models/query_crew_response.dart';
 import 'package:space_app/features/launches/data/models/launch_response.dart';
 import 'package:space_app/features/launches/data/models/query_launch_response.dart';
 import 'package:space_app/features/rockets/data/models/rocket_model.dart';
-import 'package:space_app/features/ships/data/models/ship_model.dart';
+import 'package:space_app/features/ships/data/models/query_ship_response.dart';
 part 'api_service.g.dart';
 
 @RestApi(baseUrl: ApiConstants.baseUrl)
@@ -26,8 +26,8 @@ abstract class ApiService {
   Future<LaunchResponse> getOneLaunch({@Path('id') required String id});
 
   // Ships
-  @GET(ApiConstants.ships)
-  Future<List<ShipModel>> getAllShips();
+  @POST(ApiConstants.queryShips)
+  Future<QueryShipResponse> getAllShips(@Body() body);
 
   // Rockets
   @GET(ApiConstants.rockets)
