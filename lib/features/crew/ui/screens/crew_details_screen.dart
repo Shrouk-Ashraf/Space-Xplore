@@ -42,16 +42,16 @@ class _CrewDetailsScreenState extends State<CrewDetailsScreen> {
       body: BackgroundContainer(
         child: SafeArea(
           child: Center(
-            child: Container(
-              width: 320.w,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8.r),
-                color: ColorsManager.lightTransparentColor,
-              ),
-              child: BlocBuilder<LaunchCubit, LaunchState>(
-                builder: (context, state) {
-                  if (state is GetOneLaunchSuccess) {
-                    return Padding(
+            child: BlocBuilder<LaunchCubit, LaunchState>(
+              builder: (context, state) {
+                if (state is GetOneLaunchSuccess) {
+                  return Container(
+                    width: 320.w,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8.r),
+                      color: ColorsManager.lightTransparentColor,
+                    ),
+                    child: Padding(
                       padding: EdgeInsets.all(20.w),
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
@@ -92,14 +92,14 @@ class _CrewDetailsScreenState extends State<CrewDetailsScreen> {
                           )
                         ],
                       ),
-                    );
-                  } else if (state is GetOneLaunchFailure) {
-                    return FailedRequestColumn(fetchData: _fetchData);
-                  } else {
-                    return const CustomLoadingWidget();
-                  }
-                },
-              ),
+                    ),
+                  );
+                } else if (state is GetOneLaunchFailure) {
+                  return FailedRequestColumn(fetchData: _fetchData);
+                } else {
+                  return const CustomLoadingWidget();
+                }
+              },
             ),
           ),
         ),
