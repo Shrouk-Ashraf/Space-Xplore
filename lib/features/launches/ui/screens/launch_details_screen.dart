@@ -71,7 +71,7 @@ class LaunchDetailsScreen extends StatelessWidget {
                   CustomTextSpan(
                     textTitle: Constants.launchSuccessAttribute,
                     textDescription: item.success == null
-                        ? "-"
+                        ? Constants.noDataText
                         : item.success!
                             ? Constants.trueText
                             : Constants.falseText,

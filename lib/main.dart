@@ -13,6 +13,7 @@ void main() async {
   runApp(SpaceApp(isOnboardingViewed: isOnboardingViewed));
 }
 
+// View Onboarding screens only once when installed first time
 Future<bool> checkOnboardingViewed() async {
   SharedPreferences preferences = await SharedPreferences.getInstance();
   final isOnboardingViewed =
