@@ -80,6 +80,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+# Launcher icon
 flutter_icons:
   android: true
   ios: true
@@ -88,13 +89,13 @@ flutter_icons:
 flutter:
   uses-material-design: true
   
-  # assets
+  # Assets
   assets:
     - assets/images/
     - assets/icons/
     - assets/lotties/
 
-  # fonts
+  # Fonts
   fonts:
     - family: Orbitron
       fonts:

@@ -22,12 +22,14 @@
 - 🛸 [SpaceX API](https://github.com/r-spacex/SpaceX-API/tree/master/docs#rspacex-api-docs): The official SpaceX API v4 was used which provides access to a wealth of data related to SpaceX missions, rockets, crew members, ships, and more.
 
 ## 🎯 How to use
-1. ⬇️ **Download & Install the App:** Get the app from the provided APK link [here](https://drive.google.com/file/d/1CKoJN7DnFj--ftc2ZfWy6iRKMOYl8zF5/view?usp=sharing) and follow the installation instructions for your device's operating system.
+1. ⬇️ **Download & Install the App:** Get the app from the provided APK link [here](https://drive.google.com/file/d/1WWZixbr-tPCh8dZmClF2sRRvmtVmoMws/view?usp=sharing) and follow the installation instructions for your device's operating system.
 2. 🔍 **Explore Features:** Open the app and navigate through the app's different screens (launches, rockets, ships, crew, and company info) to explore Space content.
 3. 📲 **Interact with the App:** View details about SpaceX launches, rockets, ships, crew members, and company information & use the device's navigation features to go back or exit the app.
 
 ## 📱 App Preview
-https://github.com/Shrouk-Ashraf/Space-Xplore/assets/96924895/307aa1bb-cd63-4df8-84de-7c37e65e413d
+<div align="center">
+  <video src="https://github.com/Shrouk-Ashraf/Space-Xplore/assets/96924895/0a062b08-1fb1-440b-a620-ec22c713b089" />
+</div>
 
 ## 📌 Contributors
 - Space Xplore is made possible by the contributions of the following developers:
